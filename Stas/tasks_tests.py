@@ -65,7 +65,7 @@ def task_54(n=10):
 
 def task_60():
     from random import randrange
-    return randrange(100, 201, 2)
+    return [randrange(100, 201, 2) for i in range(5)]
 
 
 
@@ -99,10 +99,9 @@ class AllTest(unittest.TestCase):
         self.assertEqual(task_54(), '0, 2, 4, 6, 8, 10')
 
     def test_task_60(self):
-        self.assertEqual(task_60(), [2, 3, 3])
+        self.assertTrue(all([i for i in task_60() if 100 <= i <= 200 and not i%2]))
 
 
-print(task_42([1,2,3,4,5,6,7,8,9,10]))
 
 if __name__ == '__main__':
     unittest.main()
