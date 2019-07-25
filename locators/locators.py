@@ -1,8 +1,9 @@
 class Locators():
-    # login page objects
-    login_icon_className = 'dropdown'
-    login_item_className = 'dropdown-item'
-    email_textbox_id = 'username'
-    password_textbox_id = 'password'
-    singIn_button_css = 'input[value="Sign In"]'
+    icon_css_selector = "img[class='rounded-circle img-responsive z-depth-0']"
+    dropdown_css_selector = "a[class='dropdown-item']"
+    login_btn_css_selector = "a[href='/users/auth']"
+    email_sign_in_id = "username"
+    password_link_id = "password"
+    sign_in_css_selector = "input[value='Sign In']"
+
 
