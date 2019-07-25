@@ -1,5 +1,5 @@
-from tests.pages.login_page import LoginPage
-from tests import BasePage
+from pages.login_page import LoginPage
+from init import BasePage
 import unittest
 
 

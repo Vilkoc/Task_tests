@@ -1,4 +1,4 @@
-from tests.locators.locators import Locators
+from locators.locators import Locators
 
 
 class LoginPage():
