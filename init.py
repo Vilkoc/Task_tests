@@ -5,6 +5,8 @@ import unittest
 
 class BasePage(unittest.TestCase):
 
+    def __init__(self):
+
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
