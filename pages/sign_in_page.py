@@ -16,8 +16,8 @@ class SignInPage(HomePage):
         self.methods.send_keys('id', self.locators.ID_LOC[box_name], keys)
 
     def click_sign_in(self):
-        self.methods.click_element('css', self.locators.SIGN_IN)
+        self.methods.click_element('css', self.locators.SIGN_IN, wait_id='VISIBLE')
 
     def click_logout(self):
         self.click_icon()
-        self.methods.click_element('css', self.locators.DROPDOWN, 1)
+        self.methods.click_element('css', self.locators.DROPDOWN, numb_list=1, wait_id='VISIBLE')
