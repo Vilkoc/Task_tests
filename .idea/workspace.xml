@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35bf4661-2ad4-443a-ab89-bb3142f5d4f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/editResume_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/previewResume_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/vacancies_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/viewVacancy_page.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_change_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_send_resume.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/home_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/sign_in_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/credentials.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/locators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,12 +22,24 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/init.py">
+        <entry file="file://$PROJECT_DIR$/pages/home_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="51">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/sign_in_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,13 +48,53 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/methods.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/locators.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/credentials.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,19 +102,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/init.py" />
         <option value="$PROJECT_DIR$/test_change_data.py" />
+        <option value="$PROJECT_DIR$/pages/pages.py" />
+        <option value="$PROJECT_DIR$/init.py" />
+        <option value="$PROJECT_DIR$/locators.py" />
+        <option value="$PROJECT_DIR$/methods.py" />
+        <option value="$PROJECT_DIR$/pages/sign_in_page.py" />
+        <option value="$PROJECT_DIR$/pages/home_page.py" />
+        <option value="$PROJECT_DIR$/credentials.py" />
         <option value="$PROJECT_DIR$/test1.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/Task_tests.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
   </component>
@@ -176,38 +227,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564231755516</updated>
-      <workItem from="1564231756961" duration="3809000" />
+      <workItem from="1564231756961" duration="11616000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 37m 08s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 20m 29s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 37m 57s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 21m 24s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 40m 06s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 31m 08s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 47m 24s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 50m 06s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 57m 22s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 51m 21s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 57m 54s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 56m 30s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 16h 59m 14s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 18h 58m 46s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 17h 00m 28s.xml">
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 19h 02m 34s.xml">
+      <configuration name="Unittests in Task_tests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 19h 03m 22s.xml">
+      <configuration name="Unittests in Task_tests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_Task_tests - 2019.07.27 at 19h 11m 17s.xml">
       <configuration name="Unittests in Task_tests" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3809000" />
+    <option name="totallyTimeSpent" value="11616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -225,7 +282,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32900432" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -240,8 +297,32 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Task_tests$Unittests_in_Task_tests.coverage" NAME="Unittests in Task_tests Coverage Results" MODIFIED="1564236003582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Task_tests$Unittests_in_Task_tests.coverage" NAME="Unittests in Task_tests Coverage Results" MODIFIED="1564243923996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Task_tests$Task_tests.coverage" NAME="Task_tests Coverage Results" MODIFIED="1564234111884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>element[2]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>element[1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>element[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(element)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/backup.sql">
@@ -252,13 +333,6 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
@@ -308,16 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -325,10 +389,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/locators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credentials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/sign_in_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="204">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

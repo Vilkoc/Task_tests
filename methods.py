@@ -8,16 +8,18 @@ class Methods(object):
     def __init__(self, driver):
         self.driver = driver
 
-    def get_element(self, locator_type, locator):
+    def get_element(self, locator_type, locator, numb_list=0):
+        # This function seeks for elements
         types_By = {
             'id': By.ID,
             'css': By.CSS_SELECTOR}
-        element = self.driver.find_element(types_By[locator_type], locator)
-        return element
+        element = self.driver.find_elements(types_By[locator_type], locator)
+        return element[numb_list]
 
-    def click_element(self, locator_type, locator):
-        element = self.get_element(locator_type, locator)
+    def click_element(self, locator_type, locator, numb_list=0):
+        element = self.get_element(locator_type, locator, numb_list)
         element.click()
+
 
     def clear_element(self, locator_type, locator):
         element = self.get_element(locator_type, locator)
@@ -27,12 +29,5 @@ class Methods(object):
         element = self.get_element(locator_type, locator)
         element.send_keys(keys)
 
-
-    # def send_keys(self, locator, keys):
-    #     try:
-    #         element = get_element(locator)
-    #         element.send_keys(keys)
-    #     except:
-    #         print('Element not found')
 
             

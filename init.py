@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import del_from_db
 import unittest
-import time
 
 
 class BasePage(unittest.TestCase):
@@ -17,5 +16,4 @@ class BasePage(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        time.sleep(5)
-        # cls.driver.quit()
+        cls.driver.quit()

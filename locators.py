@@ -1,24 +1,25 @@
 class Locators:
 
-    icon = "img[class='rounded-circle img-responsive z-depth-0']"
-    login = "a[href='/users/auth']"
-    id_loc = {
+    ICON = "img[class='rounded-circle img-responsive z-depth-0']"
+    LOGIN = "a[href='/users/auth']"
+    ID_LOC = {
         'email': "username",
         'password': "password"
     }
-    sign_in = "input[value='Sign In']"
+    SIGN_IN = "input[value='Sign In']"
+    DROPDOWN = "a[class='dropdown-item']"
 
 
 class LocatorsUsers:
 
-    update_profile_css_selector = "input[value='Update Profile']"
-    dropdown_css_selector = "a[class='dropdown-item']"
-    navbar_css_selector = "a[class='navbar-brand']"
-    photo_id = "customFile"
+    UPDATE_PROFILE = "input[value='Update Profile']"
+    DROPDOWN = "a[class='dropdown-item']"
+    NAVBAR = "a[class='navbar-brand']"
+    PHOTO_ID = "customFile"
 
-    update_photo_css_selector = "input[value='Update Photo']"
+    UPDATE_PHOTO = "input[value='Update Photo']"
 
-    user_fields_id = {
+    USER_FIELDS = {
         'first_name_id': 'firstName',
         'last_name_id': 'lastName',
         'birthday_id': 'birthday',
@@ -31,4 +32,7 @@ class LocatorsUsers:
         'apartment_id': 'apartment',
         'zipcode_id': 'zipCode'
         }
+
+
+
 
