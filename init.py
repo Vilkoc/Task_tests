@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from tests import del_from_db
+import del_from_db
 import unittest
 import time
 

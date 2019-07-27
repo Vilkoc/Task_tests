@@ -1,9 +1,9 @@
-from tests.init import BasePage
-from tests.pages.login_page import LoginPage
-from tests.pages.vacancies_page import VacanciesPage
-from tests.pages.viewVacancy_page import ViewVacancyPage
-from tests.pages.previewResume_page import PreviewResumePage
-from tests.pages.editResume_page import EditResumePage
+from init import BasePage
+from pages.login_page import LoginPage
+from pages.vacancies_page import VacanciesPage
+from pages.viewVacancy_page import ViewVacancyPage
+from pages.previewResume_page import PreviewResumePage
+from pages.editResume_page import EditResumePage
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
