@@ -10,8 +10,8 @@ class HomePage:
 
 
     def click_icon(self):
-        self.methods.click_element('css', self.locators.ICON)
+        self.methods.click_element(self.locators.ICON)
 
     def click_login(self):
-        self.methods.click_element('css', self.locators.LOGIN)
+        self.methods.click_element(self.locators.LOGIN)
 
