@@ -1,6 +1,8 @@
 from selenium import webdriver
-import cleanDB
+from selenium.webdriver.support.ui import WebDriverWait
+import del_from_db
 import unittest
+import time
 
 
 class BasePage(unittest.TestCase):
@@ -9,9 +11,11 @@ class BasePage(unittest.TestCase):
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()
         cls.driver.maximize_window()
-        cls.driver.get('http://localhost:4200/vacancies')
-        #cleanDB.prepare_database()
+        cls.driver.get('http://localhost:4200')
+        cls.wait = WebDriverWait(cls.driver, 15)
+        del_from_db.delete_from_vacancy_resume()
 
     @classmethod
     def tearDownClass(cls):
-        cls.driver.quit()
+        time.sleep(5)
+        # cls.driver.quit()

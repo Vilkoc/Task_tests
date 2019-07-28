@@ -1,16 +1,20 @@
-from locators.locators import Locators
+LOGIN_ICON_CLASS_NAME = 'dropdown'
+LOGIN_ITEM_CLASS_NAME = 'dropdown-item'
+EMAIL_TEXTBOX_ID = 'username'
+PASSWORD_TEXTBOX_ID = 'password'
+SIGN_IN_BUTTON_CSS_SELECTOR = 'input[value="Sign In"]'
 
 
-class LoginPage():
+class LoginPage:
 
     def __init__(self, driver):
         self.driver = driver
 
-        self.login_icon_className = Locators.login_icon_className
-        self.login_item_className = Locators.login_item_className
-        self.email_textbox_id = Locators.email_textbox_id
-        self.password_textbox_id = Locators.password_textbox_id
-        self.singIn_button_css = Locators.singIn_button_css
+        self.login_icon_className = LOGIN_ICON_CLASS_NAME
+        self.login_item_className = LOGIN_ITEM_CLASS_NAME
+        self.email_textbox_id = EMAIL_TEXTBOX_ID
+        self.password_textbox_id = PASSWORD_TEXTBOX_ID
+        self.singIn_button_css = SIGN_IN_BUTTON_CSS_SELECTOR
 
     def go_to_loginPage(self):
         self.driver.find_element_by_class_name(self.login_icon_className).click()
