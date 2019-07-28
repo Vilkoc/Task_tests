@@ -1,10 +1,9 @@
 from methods import Methods
 from locators import Locators
 from pages.home_page import HomePage
-import  time
 
 
-class SignInPage(HomePage):
+class SignInPage():
     """Inherits click_icon method from HomePage"""
     def __init__(self, driver):
         self.driver = driver
@@ -23,6 +22,3 @@ class SignInPage(HomePage):
     def click_sign_in(self):
         self.methods.click_element(self.locators.SIGN_IN, wait_id='VISIBLE')
 
-    def click_logout(self):
-        self.click_icon()
-        self.methods.click_element(self.locators.DROPDOWN, numb_list=1, wait_id='CLICKABLE')

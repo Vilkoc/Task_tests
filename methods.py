@@ -1,6 +1,6 @@
+from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
 
 
 class Methods(object):
@@ -9,14 +9,13 @@ class Methods(object):
         self.driver = driver
 
     def get_element(self, locator, numb_list=0, wait_id='PRESENCE'):
-        """This function seeks for all elements for specific locator and returns only numb_list-th element"""
-        # try:
-        self.wait_for(locator, wait_id)
-        element = self.driver.find_elements(*locator)
-        return element[numb_list]
-        # except:
-        #     print("Exception on wait intercepted")
-            #self.get_element(locator_type, locator, numb_list=0, wait_id='PRESENCE')
+        """This function seeks for all elements for the specific locator and returns only numb_list-th element"""
+        try:
+            self.wait_for(locator, wait_id)
+            element = self.driver.find_elements(*locator)
+            return element[numb_list]
+        except StaleElementReferenceException:
+            print("Exception on wait intercepted")
 
 
     def click_element(self, locator, numb_list=0, wait_id="PRESENCE"):
