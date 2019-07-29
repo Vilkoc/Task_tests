@@ -13,30 +13,18 @@ class Locators(object):
     PASSWORD_VERIFY = (By.ID, "matchingPassword")
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
 
-
 class LocatorsUsers:
 
-     UPDATE_PROFILE = "input[value='Update Profile']"
-     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
-     PHOTO = (By.ID, "customFile")
-     UPDATE_PHOTO = (By.CSS_SELECTOR, "input[value='Update Photo']")
-
-
-    #
-    # USER_FIELDS = {
-    #     'first_name_id': 'firstName',
-    #     'last_name_id': 'lastName',
-    #     'birthday_id': 'birthday',
-    #     'email_id': 'email',
-    #     'phone_id': 'phoneNumber',
-    #     'country_id': 'country',
-    #     'city_id': 'city',
-    #     'street_id': 'street',
-    #     'building_id': 'building',
-    #     'apartment_id': 'apartment',
-    #     'zipcode_id': 'zipCode'
-    #     }
-
-
-
-
+     user_fields = {
+         'FIRST_NAME': (By.ID, 'firstName'),
+         'LAST_NAME': (By.ID, 'lastName'),
+         'BIRTHDAY': (By.ID, 'birthday'),
+         'EMAIL': (By.ID, 'email'),
+         'PHONE': (By.ID, 'phoneNumber'),
+         'COUNTRY': (By.ID, 'country'),
+         'CITY': (By.ID, 'city'),
+         'STREET': (By.ID, 'street'),
+         'BUILDING': (By.ID, 'building'),
+         'APARTMENT': (By.ID, 'apartment'),
+         'ZIP_CODE': (By.ID, 'zipCode')
+         }

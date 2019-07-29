@@ -1,10 +1,9 @@
 from methods import Methods
 from locators import Locators
-from pages.home_page import HomePage
 
 
 class SignInPage():
-    """Inherits click_icon method from HomePage"""
+    """Sign in so far, Sign Up expected here as well"""
     def __init__(self, driver):
         self.driver = driver
         self.methods = Methods(self.driver)
@@ -20,5 +19,5 @@ class SignInPage():
         self.methods.send_keys(self.locators.PASSWORD, passwd)
 
     def click_sign_in(self):
-        self.methods.click_element(self.locators.SIGN_IN, wait_id='VISIBLE')
+        self.methods.click_element(self.locators.SIGN_IN)
 
