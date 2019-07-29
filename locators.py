@@ -14,17 +14,14 @@ class Locators(object):
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
 
 
-
-
 class LocatorsUsers:
-    pass
 
-    # UPDATE_PROFILE = "input[value='Update Profile']"
-   # DROPDOWN = "a[class='dropdown-item']"
-    # NAVBAR = "a[class='navbar-brand']"
-    # PHOTO_ID = "customFile"
+     UPDATE_PROFILE = "input[value='Update Profile']"
+     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
+     PHOTO = (By.ID, "customFile")
+     UPDATE_PHOTO = (By.CSS_SELECTOR, "input[value='Update Photo']")
 
-    # UPDATE_PHOTO = "input[value='Update Photo']"
+
     #
     # USER_FIELDS = {
     #     'first_name_id': 'firstName',

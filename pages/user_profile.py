@@ -1,5 +1,5 @@
 from methods import Methods
-from locators import Locators
+from locators import Locators, LocatorsUsers
 from pages.home_page import HomePage
 
 class UserProfilePage(HomePage):

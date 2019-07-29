@@ -10,7 +10,7 @@ class HomePage:
 
 
     def click_icon(self):
-        self.methods.click_element(self.locators.ICON)
+        self.methods.click_element(self.locators.ICON, wait_id="VISIBLE")
 
     def click_dropdown(self, numb_list=0):
         """This function clicks on dropdown menu:
