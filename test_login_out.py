@@ -1,31 +1,22 @@
 from init import BasePage
 import unittest
-from pages.home_page import HomePage
+from pages.header import Header
 from pages.sign_in_page import SignInPage
-
-
-from credentials import Credentials
 
 
 class TestTrial(BasePage):
 
-    def test_login_logout(self, person='COWNER'):
+    def test_login_logout(self, person='USER'):
         driver = self.driver
+        start = Header(driver)
+        signin = SignInPage(driver)
 
-        start = HomePage(driver)
-        login = SignInPage(driver)
+        start.transit('Log in')
 
-        start.click_icon()
-        start.select_option('Log in')
+        signin.login(person)
 
-        login.clear_boxes()
-        login.enter_credentials(Credentials[person])
-        login.click_sign_in()
-
-        start.click_icon()
-        start.select_option('Profile')
-        start.click_icon()
-        start.select_option('Log out')
+        start.transit('Profile')
+        start.transit('Log out')
 
 if __name__ == "__main__":
     unittest.main()
