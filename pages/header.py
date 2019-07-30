@@ -1,6 +1,7 @@
 from methods import Methods
 from locators import LocatorsHeader
 
+
 class Header(Methods):
     """Header page, which will be inherited by other pages"""
     def __init__(self, driver):

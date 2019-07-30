@@ -11,6 +11,7 @@ class TestTrial(BasePage):
         start = Header(driver)
         signin = SignInPage(driver)
 
+
         start.transit('Log in')
 
         signin.login(person)

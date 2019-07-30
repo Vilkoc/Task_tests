@@ -14,9 +14,8 @@ class SignInPage(Methods):
         self.clear_element(self.locators.EMAIL)
         self.clear_element(self.locators.PASSWORD)
 
-    def enter_credentials(self, entry):
-        (email, passwd) = entry
-        self.send_keys(self.locators.EMAIL, email)
+    def enter_credentials(self, username, passwd):
+        self.send_keys(self.locators.EMAIL, username)
         self.send_keys(self.locators.PASSWORD, passwd)
 
     def click_sign_in(self):
@@ -24,6 +23,6 @@ class SignInPage(Methods):
 
     def login(self, person):
         self.clear_boxes()
-        self.enter_credentials(Credentials[person])
+        self.enter_credentials(*Credentials[person])
         self.click_sign_in()
 

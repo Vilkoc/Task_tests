@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class LocatorsHeader(object):
     ICON = (By.CSS_SELECTOR, "img[class='rounded-circle img-responsive z-depth-0']")
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
