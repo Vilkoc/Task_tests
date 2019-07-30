@@ -1,23 +1,28 @@
 from methods import Methods
-from locators import Locators
-from pages.home_page import HomePage
+from locators import LocatorsSignIn
+from credentials import Credentials
 
-class SignInPage(HomePage):
-    """Inherits click_icon method from HomePage"""
+
+class SignInPage(Methods):
+    """Sign in page with login method for any type of person"""
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
-        self.methods = Methods(self.driver)
-        self.locators = Locators
+        self.locators = LocatorsSignIn
 
-    def clear_box(self, box_name):
-        self.methods.clear_element('id', self.locators.ID_LOC[box_name])
+    def clear_boxes(self):
+        self.clear_element(self.locators.EMAIL)
+        self.clear_element(self.locators.PASSWORD)
 
-    def send_keys(self, box_name, keys):
-        self.methods.send_keys('id', self.locators.ID_LOC[box_name], keys)
+    def enter_credentials(self, username, passwd):
+        self.send_keys(self.locators.EMAIL, username)
+        self.send_keys(self.locators.PASSWORD, passwd)
 
     def click_sign_in(self):
-        self.methods.click_element('css', self.locators.SIGN_IN)
+        self.click_element(self.locators.SIGN_IN)
 
-    def click_logout(self):
-        self.click_icon()
-        self.methods.click_element('css', self.locators.DROPDOWN, 1)
+    def login(self, person):
+        self.clear_boxes()
+        self.enter_credentials(*Credentials[person])
+        self.click_sign_in()
+
