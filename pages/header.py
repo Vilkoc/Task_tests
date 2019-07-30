@@ -1,18 +1,18 @@
 from methods import Methods
-from locators import Locators
+from locators import LocatorsHeader
 
 class Header():
-    """This is parent class"""
+    """Header page, which will be inherited by other pages"""
     def __init__(self, driver):
         self.driver = driver
         self.methods = Methods(self.driver)
-        self.locators = Locators
+        self.locators = LocatorsHeader
 
     def click_icon(self):
         """Clicks on the round icon"""
         self.methods.click_element(self.locators.ICON)
 
-    def click_dropdown(self, pick_item):
+    def select_option(self, pick_item):
         """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""
         values = ('Log in', 'Profile', 'Log out')
         if pick_item not in values:

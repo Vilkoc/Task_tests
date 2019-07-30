@@ -25,14 +25,16 @@ class Methods(object):
             if element.text == text_value:
                 element.click()
 
-    def clear_element(self, locator, elem_number=0):
+    def clear_element(self, locator, text_value='default'):
         """Clears the element with number elem_number"""
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
         elements = self.get_elements(locator)
-        elements[elem_number].clear()
+        if text_value == 'default':
+            elements[0].clear()
 
-    def send_keys(self, locator, keys, elem_number=0):
+    def send_keys(self, locator, keys, text_value='default'):
         """Send keys to the element with number elem_number"""
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
         elements = self.get_elements(locator)
-        elements[elem_number].send_keys(keys)
+        if text_value == 'default':
+            elements[0].send_keys(keys)

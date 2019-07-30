@@ -7,7 +7,7 @@ from pages.sign_in_page import SignInPage
 from credentials import Credentials
 
 
-class Test1(BasePage):
+class TestTrial(BasePage):
 
     def test_login_logout(self, person='COWNER'):
         driver = self.driver
@@ -16,16 +16,16 @@ class Test1(BasePage):
         login = SignInPage(driver)
 
         start.click_icon()
-        start.click_dropdown('Log in')
+        start.select_option('Log in')
 
         login.clear_boxes()
         login.enter_credentials(Credentials[person])
         login.click_sign_in()
 
         start.click_icon()
-        start.click_dropdown('Profile')
+        start.select_option('Profile')
         start.click_icon()
-        start.click_dropdown('Log out')
+        start.select_option('Log out')
 
 if __name__ == "__main__":
     unittest.main()

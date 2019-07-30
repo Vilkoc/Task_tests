@@ -1,5 +1,5 @@
 from methods import Methods
-from locators import Locators
+from locators import LocatorsSignIn
 
 
 class SignInPage():
@@ -7,7 +7,7 @@ class SignInPage():
     def __init__(self, driver):
         self.driver = driver
         self.methods = Methods(self.driver)
-        self.locators = Locators
+        self.locators = LocatorsSignIn
 
     def clear_boxes(self):
         self.methods.clear_element(self.locators.EMAIL)
