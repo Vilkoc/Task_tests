@@ -1,5 +1,6 @@
 from base64 import b64decode as decode
 
+TIMEOUT = 10
 
 PAUSE = 2
 EXTRA_LONG_PAUSE = 120
