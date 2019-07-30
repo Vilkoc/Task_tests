@@ -10,3 +10,4 @@
 6.1. into tomcat/bin "startup" // start tomcat-server
 6.2. into tomcat/webapps/front run "ng serve" // initialize project
 7. open http://localhost:4200/
+

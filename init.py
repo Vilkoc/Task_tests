@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import del_from_db
 import unittest
 
+TIMEOUT = 10
 
 class BasePage(unittest.TestCase):
 
@@ -11,7 +12,6 @@ class BasePage(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.driver.maximize_window()
         cls.driver.get('http://localhost:4200')
-        cls.wait = WebDriverWait(cls.driver, 15)
         del_from_db.delete_from_vacancy_resume()
 
     @classmethod
