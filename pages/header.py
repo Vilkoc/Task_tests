@@ -1,3 +1,5 @@
+import time
+
 from methods import Methods
 from locators import LocatorsHeader
 
@@ -12,6 +14,21 @@ class Header(Methods):
     def click_icon(self):
         """Clicks on the round icon"""
         self.click_element(self.locators.ICON)
+
+    def click_log_out(self):
+        """Clicks on the round icon"""
+        self.click_element_by_text_simple(self.locators.LOG_OUT)
+
+    def click_log_in(self):
+        """Clicks on the round icon"""
+        self.click_element_by_text_simple(self.locators.LOG_IN)
+
+    def is_logined(self):
+        self.click_icon()
+        log_out = self.get_elements_by_text(self.locators.LOG_OUT)
+        # return log_out.text == TEXT.LOG_OUT
+        time.sleep(3) #test <<<<<<<<<<<<<<<<<<
+        return log_out.text == 'Log out'
 
     def select_option(self, pick_item):
         """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""

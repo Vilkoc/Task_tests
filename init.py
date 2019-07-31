@@ -11,7 +11,7 @@ class BasePage(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         prepare_db()
-        cls.driver = webdriver.Chrome()
+        cls.driver = webdriver.Chrome("C:/Users/BerlinOS/.wdm/chromedriver/75.0.3770.140/win32/chromedriver.exe")
         cls.driver.maximize_window()
         cls.driver.get('http://localhost:4200')
         cls.browser = Methods(cls.driver, TIMEOUT)

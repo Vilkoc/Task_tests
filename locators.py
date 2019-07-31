@@ -4,14 +4,33 @@ from selenium.webdriver.common.by import By
 class LocatorsHeader(object):
     ICON = (By.CSS_SELECTOR, "img[class='rounded-circle img-responsive z-depth-0']")
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
+    LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log in"
+    LOG_OUT = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log out"
 
 
 class LocatorsSignIn(object):
-    EMAIL = (By.ID, "username")
-    PASSWORD = (By.ID, "password")
-    SIGN_IN = (By.CSS_SELECTOR, "input[value='Sign In']")
-    SIGNUP = (By.ID, "login1")
-    PASSWORD_SIGNUP = (By.ID, "password1")
-    PASSWORD_VERIFY = (By.ID, "matchingPassword")
-    REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
+    EMAIL_SIGN_IN = (By.ID, "username")
+    PASSWORD_SIGN_IN = (By.ID, "password")
+    BUTTON_SIGN_IN = (By.CSS_SELECTOR, "input[value='Sign In']")
+
+    TAB_SIGN_UP = (By.CLASS_NAME, 'tablinks'), 'Sign Up'
+
+    EMAIL_SIGN_UP = (By.ID, "login1")
+    PASSWORD_SIGN_UP = (By.ID, "password1")
+    PASSWORD_MATCHING_SIGN_UP = (By.ID, "matchingPassword")
+    BUTTON_SIGN_UP = (By.CSS_SELECTOR, "input[value='Register']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
+
+    POP_UP_FORGOT_PASSWORD = (By.CSS_SELECTOR, 'div.wrap')
+    POP_UP_FORGOT_PASSWORD_TEXT = (By.TAG_NAME, 'p')
+    POP_UP_FORGOT_PASSWORD_BUTTON = (By.TAG_NAME, 'button')
+    POP_UP_FORGOT_PASSWORD_TEXT_CHECK = 'Password restored successfully! Please sign in.'
+
+
+class LocatorsVacanvies:
+    POP_UP_WINDOW_SIGN_UP_TEXT = (By.TAG_NAME, 'div.wrap > p')
+    POP_UP_WINDOW_SIGN_UP_BUTTON = (By.TAG_NAME, 'div.wrap > button')
+
+    POP_UP_WINDOW_FORGOT_PASSWORD_TEXT = (By.TAG_NAME, 'div.wrap > p')
+    POP_UP_WINDOW_FORGOT_PASSWORD_BUTTON = (By.TAG_NAME, 'div.wrap > button')
+

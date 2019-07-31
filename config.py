@@ -12,7 +12,7 @@ SMTP_SERVER = "imap.gmail.com"
 DB_FILE = 'backup.sql'
 DB_NAME = 'rabotyNET'
 DB_USER = 'postgres'
-DB_PASS = 'postgres'
+DB_PASS = 'root'
 DB_HOST = 'localhost'
 
 
@@ -21,7 +21,7 @@ USERNAME_SIGNUP = 'rabotynet.test@gmail.com'
 PASSWORD = 'Qdrwbj!23'
 PASSWORD_INCORRECT = 'vdeytvdv'
 
-EMAIL_SUBJECT = 'Restore password on website RabotyNet'
+EMAIL_SUBJECT_PASSW_RECOVERY = 'Restore password on website RPabotyNet'
 USERNAME_PASSW_RECOVERY = 'rabotynet.test@gmail.com'
 OLD_PASSWORD = 'Qdrwbj!23'
 NEW_PASSWORD = 'Qdrwbj1@3'
