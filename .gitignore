@@ -3,3 +3,4 @@ user_profile.py
 .xml
 .iml
 .pyc
+tests/ssstest_login_out.py
