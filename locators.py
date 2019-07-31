@@ -17,7 +17,7 @@ class LocatorsSignIn(object):
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
 
-<<<<<<< HEAD
+
 class LocatorsCreateCompanyPage(object):
     CREATE_COMPANY_TAB = (By.CSS_SELECTOR, "a[class='navbar-brand'][href='/createCompany']")
     COMPANY_NAME_TEXBOX = (By.ID, "name")
@@ -42,7 +42,7 @@ class LocatorsCreateCompanyPage(object):
 
 class MyCompaniesPage(object):
     CREATE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a[href='/createCompany']")
-=======
+
 class LocatorsUserPage:
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
     user_fields = {
@@ -58,4 +58,4 @@ class LocatorsUserPage:
         'APARTMENT': (By.ID, 'apartment'),
         'ZIP_CODE': (By.ID, 'zipCode')
     }
->>>>>>> dev
+
