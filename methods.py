@@ -32,6 +32,11 @@ class Methods(object):
         elements = self.get_elements(locator)
         if text_value == 'default':
             elements[0].clear()
+        else:
+            for element in elements:
+                if element.text == text_value:
+                    element.clear()
+
 
     def send_keys(self, locator, keys, text_value='default'):
         """Send keys to the element with number elem_number"""
@@ -39,3 +44,17 @@ class Methods(object):
         elements = self.get_elements(locator)
         if text_value == 'default':
             elements[0].send_keys(keys)
+        else:
+            for element in elements:
+                if element.text == text_value:
+                    element.send_keys(keys)
+
+
+    # def get_attr_value(self, locator, keys, attr):
+    #     """Send keys to the element with number elem_number"""
+    #     WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
+    #     elements = self.get_elements(locator)
+    #     for element in elements:
+    #         if element.text == text_value:
+    #             element.send_keys(keys)
+
