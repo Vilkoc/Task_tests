@@ -32,3 +32,4 @@ class LocatorsUserPage:
         'APARTMENT': (By.ID, 'apartment'),
         'ZIP_CODE': (By.ID, 'zipCode')
     }
+
