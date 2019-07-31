@@ -3,5 +3,9 @@ user_profile.py
 .xml
 .iml
 .pyc
+<<<<<<< HEAD
+tests/ssstest_login_out.py
+=======
 ssstest_login_out.py
 musor.py
+>>>>>>> dev
