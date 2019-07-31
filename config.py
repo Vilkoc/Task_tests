@@ -15,7 +15,6 @@ DB_USER = 'postgres'
 DB_PASS = 'postgres'
 DB_HOST = 'localhost'
 
-
 EMAIL_SUBJECT_SIGNUP = "Registration on website RabotyNet"
 USERNAME_SIGNUP = 'rabotynet.test@gmail.com'
 PASSWORD = 'Qdrwbj!23'

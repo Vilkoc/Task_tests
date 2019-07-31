@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class Methods(object):
     """Webdriver wrapper"""
+
     def __init__(self, driver, default_timeout=10):
         self.driver = driver
         self.default_timeout = default_timeout
