@@ -2,12 +2,11 @@ from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.user_profile_page import UserPage
 from user_data import user_data_rab_19 as entry
-import time
 
 
 class TestPositive(BasePage):
 
-    def test_positive(self, person='USER'):
+    def test_positive(self, person='COWNER'):
         driver = self.driver
 
         SignInPage(driver).login(person)

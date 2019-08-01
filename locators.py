@@ -5,6 +5,7 @@ class LocatorsHeader(object):
     ICON = (By.CSS_SELECTOR, "img[class='rounded-circle img-responsive z-depth-0']")
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
+    NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
 
 class LocatorsSignIn(object):
@@ -15,7 +16,7 @@ class LocatorsSignIn(object):
     PASSWORD_SIGNUP = (By.ID, "password1")
     PASSWORD_VERIFY = (By.ID, "matchingPassword")
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
-    NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
+
 
 
 class LocatorsCompaniesPage(object):

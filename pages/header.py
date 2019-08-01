@@ -30,3 +30,13 @@ class Header(Methods):
             self.click_element_by_text(self.locators.DROPDOWN, pick_item)
         else:
             self.click_icon()
+
+    def person_verify(self, person):
+        """Returns True if the number of elements on the navbar equals to person_criteria"""
+        person_criteria = {'ADMIN': 3, 'USER': 4, 'COWNER': 6}
+        default_person = 2
+        while default_person < person_criteria[person]:
+            default_person = len(self.get_elements(self.locators.NAVBAR))
+        if len(self.get_elements(self.locators.NAVBAR)) == person_criteria[person]:
+            return True
+        return False
