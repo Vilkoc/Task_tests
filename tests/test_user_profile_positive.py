@@ -11,7 +11,6 @@ class TestPositive(BasePage):
         driver = self.driver
 
         SignInPage(driver).login(person)
-        time.sleep(2)
 
         user_page = UserPage(driver)
         user_page.transmit('Profile')
@@ -19,10 +18,8 @@ class TestPositive(BasePage):
         for key in entry.keys():
             user_page.enter_data_textbox(key, entry[key])
 
-        time.sleep(2)
         user_page.click_update_profile()
 
-        time.sleep(2)
         for key in entry.keys():
             if key == 'BIRTHDAY':
                 tmp = entry[key]
