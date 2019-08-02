@@ -1,6 +1,8 @@
 from base64 import b64decode as decode
 
-TIMEOUT = 10
+TIMEOUT = 2
+WEBDRIVER = 'Chrome'
+URL = 'http://localhost:4200'
 
 PAUSE = 2
 EXTRA_LONG_PAUSE = 120

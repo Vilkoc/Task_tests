@@ -18,10 +18,6 @@ class TestTrial(BasePage):
 
         start.transit('Log in')
         signin.login(person)
-        time.sleep(1)
-        for i in companies.view_status_of_co():
-            print(i.text)
-            print('qwerty')
 
 
 if __name__ == "__main__":
