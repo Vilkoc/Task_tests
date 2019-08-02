@@ -48,5 +48,4 @@ def delete_from_claim():
     # for r in rows:
     #     print(f'v_id: {r[0]} r_id: {r[1]}')
 
-
-
+delete_from_vacancy_resume()

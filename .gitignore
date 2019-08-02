@@ -1,2 +1,5 @@
 .idea/
-__pycache__/
+user_profile.py
+.xml
+.iml
+.pyc

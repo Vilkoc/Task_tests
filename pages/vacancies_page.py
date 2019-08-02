@@ -1,18 +1,16 @@
-ALL_VACANCIES_LINK_TEXT = 'RabotyNet'
-VIEW_DETAILS_BUTTON_CSS_SELECTOR = 'a[href="/viewVacancy/10"]'
+from selenium.webdriver.support.ui import WebDriverWait
+from locators import LocatorsVacancies
+from methods import Methods
 
 
-class VacanciesPage:
+class VacanciesPage(Methods):
 
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
-
-        self.allVacancies_linkText = ALL_VACANCIES_LINK_TEXT
-        self.viewDetails_button_cssSelector = VIEW_DETAILS_BUTTON_CSS_SELECTOR
-
-    def go_to_allVacancies(self):
-        self.driver.find_element_by_link_text(self.allVacancies_linkText).click()
-        # WebDriverWait.until(ec.visibility_of_element_located((By.XPATH, '/html/body/app-root/rabotynet/html/body/div/div[2]/div[1]/div')))
+        self.wait = WebDriverWait(self.driver, 20)
+        self.locators = LocatorsVacancies
 
     def click_viewDetails_button(self):
-        self.driver.find_element_by_css_selector(self.viewDetails_button_cssSelector).click()
+        """This function provides a push of a 'View Details' button, which allows to see details about the vacancy"""
+        self.click_element(self.locators.VIEW_DETAILS_BUTTON)
