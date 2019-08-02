@@ -1,17 +1,13 @@
-from methods import Methods
 from pages.header import Header
 from locators import LocatorsUserPage
 
 
-class UserPage(Methods):
+class UserPage(Header):
     """User Page"""
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
         self.locators = LocatorsUserPage
-
-    def transmit(self, pick_item):
-        return Header(self.driver).select_option(pick_item)
 
     def enter_data_textbox(self, key, value):
         """Enters into the specific field data and returns True/False for valid/invalid data"""

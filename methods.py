@@ -1,6 +1,5 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import time
 
 
 class Methods(object):
@@ -16,12 +15,9 @@ class Methods(object):
 
     def click_element(self, locator, elem_number=0):
         """Clicks on the element with number elem_number"""
-        try:
-            WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
-            elements = self.get_elements(locator)
-            elements[elem_number].click()
-        except:
-            time.sleep(1000)
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
+        elements = self.get_elements(locator)
+        elements[elem_number].click()
 
     def click_element_by_text(self, locator, text_value):
         """Clicks on the element with text attribute text_value"""

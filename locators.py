@@ -8,7 +8,7 @@ class LocatorsHeader(object):
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
 
-class LocatorsSignIn(object):
+class LocatorsSignIn(LocatorsHeader):
     EMAIL = (By.ID, "username")
     PASSWORD = (By.ID, "password")
     SIGN_IN = (By.CSS_SELECTOR, "input[value='Sign In']")
@@ -45,7 +45,7 @@ class LocatorsCompaniesPage(object):
 
     POPUP = (By.CSS_SELECTOR, 'div.wrap')
 
-class LocatorsUserPage:
+class LocatorsUserPage(LocatorsHeader):
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
     user_fields = {
         'FIRST_NAME': (By.ID, 'firstName'),
