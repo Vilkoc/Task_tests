@@ -11,8 +11,8 @@ class TestLoginAll(BasePage):
             inquire = SignInPage(driver)
 
             inquire.login(person)
-            assert inquire.person_verify(person)
-            inquire.select_option('Log out')
+            assert inquire.header.person_verify(person)
+            inquire.header.select_option('Log out')
 
 
 if __name__ == "__main__":

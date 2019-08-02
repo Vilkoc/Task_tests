@@ -13,7 +13,7 @@ class TestPositive(BasePage):
         perform = UserPage(driver)
 
         start.login(person)
-        perform.select_option('Profile')
+        perform.header.select_option('Profile')
 
         for key in entry.keys():
             perform.enter_data_textbox(key, entry[key])
@@ -26,7 +26,7 @@ class TestPositive(BasePage):
                 entry[key] = tmp[2] + '-' + tmp[0] + '-' + tmp[1]
             assert entry[key] == perform.read_data_textbox(key)
 
-        perform.select_option('Log out')
+        perform.header.select_option('Log out')
         
 
 if __name__ == "__main__":

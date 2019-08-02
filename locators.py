@@ -1,14 +1,14 @@
 from selenium.webdriver.common.by import By
 
 
-class LocatorsHeader(object):
+class LocatorsHeader():
     ICON = (By.CSS_SELECTOR, "img[class='rounded-circle img-responsive z-depth-0']")
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
 
-class LocatorsSignIn(LocatorsHeader):
+class LocatorsSignIn():
     EMAIL = (By.ID, "username")
     PASSWORD = (By.ID, "password")
     SIGN_IN = (By.CSS_SELECTOR, "input[value='Sign In']")
@@ -45,7 +45,7 @@ class LocatorsCompaniesPage(object):
 
     POPUP = (By.CSS_SELECTOR, 'div.wrap')
 
-class LocatorsUserPage(LocatorsHeader):
+class LocatorsUserPage():
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
     user_fields = {
         'FIRST_NAME': (By.ID, 'firstName'),
@@ -60,4 +60,3 @@ class LocatorsUserPage(LocatorsHeader):
         'APARTMENT': (By.ID, 'apartment'),
         'ZIP_CODE': (By.ID, 'zipCode')
     }
-    

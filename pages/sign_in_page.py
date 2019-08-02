@@ -1,13 +1,15 @@
+from methods import Methods
 from pages.header import Header
 from locators import LocatorsSignIn
 from credentials import Credentials
 
 
-class SignInPage(Header):
+class SignInPage(Methods):
     """Sign in page with login method for any type of person"""
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
+        self.header = Header(driver)
         self.locators = LocatorsSignIn
 
     def clear_boxes(self):
@@ -22,7 +24,7 @@ class SignInPage(Header):
         self.click_element(self.locators.SIGN_IN)
 
     def login(self, person):
-        self.select_option('Log in')
+        self.header.select_option('Log in')
         self.clear_boxes()
         self.enter_credentials(*Credentials[person])
         self.click_sign_in()
