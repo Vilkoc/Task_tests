@@ -25,6 +25,6 @@ PASSWORD = 'Qdrwbj!23'
 PASSWORD_INCORRECT = 'vdeytvdv'
 
 EMAIL_SUBJECT_PASSW_RECOVERY = 'Restore password on website RabotyNet'
-USERNAME_PASSW_RECOVERY = 'rabotynet.test@gmail.com'
+USERNAME_PASSW_RECOVERY = 'rabotynet.test.fp@gmail.com'
 OLD_PASSWORD = 'Qdrwbj!23'
 NEW_PASSWORD = 'Qdrwbj1@3'

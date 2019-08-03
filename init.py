@@ -9,7 +9,7 @@ class BasePage():
 
     @classmethod
     def setUpClass(cls):
-#        prepare_db()
+        prepare_db()
         cls.driver = webdriver.Chrome()
 
         cls.driver.maximize_window()
@@ -17,6 +17,6 @@ class BasePage():
         cls.browser = Methods(cls.driver, TIMEOUT)
         cls.header = Header(cls.driver)
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.driver.quit()

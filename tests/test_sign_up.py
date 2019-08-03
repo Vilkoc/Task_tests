@@ -1,21 +1,18 @@
 from init import BasePage
-import unittest
-from pages.header import Header
 from pages.auth_page import AuthPage
 from pages.vacancies_page import VacanciesPage
-from config import EMAIL_SUBJECT_SIGNUP, USERNAME_SIGNUP, PASSWORD
+from config import EMAIL_SUBJECT_SIGNUP, USERNAME_SIGNUP, PASSWORD, EMAIL_SIGNUP, FROM_SIGNUP
 from utilities.get_email import get_link
 
 
 class TestSignUp(BasePage):
 
     def test_sign_up(self):
-        header = Header(self.driver)
-        page = AuthPage(self.driver)
-        vacancies = VacanciesPage(self.driver)
+        page = AuthPage(self)
+        vacancies = VacanciesPage(self)
 
-        header.click_icon()
-        header.click_log_in()
+        self.header.click_icon()
+        self.header.click_log_in()
 
         page.click_sign_up_tab()
 
@@ -26,9 +23,9 @@ class TestSignUp(BasePage):
 
         assert vacancies.is_confirmation_sent()
 
-        link = get_link(EMAIL_SUBJECT_SIGNUP)
+        link = get_link(EMAIL_SIGNUP, FROM_SIGNUP, EMAIL_SUBJECT_SIGNUP)
         vacancies.click_confirmation_link(link)
 
         page.login_user(USERNAME_SIGNUP, PASSWORD)
-        assert header.is_logined()
+        assert self.header.is_logined()
 

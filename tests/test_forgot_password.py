@@ -1,9 +1,8 @@
 from init import BasePage
-import unittest
-from pages.header import Header
 from pages.auth_page import AuthPage
 from pages.vacancies_page import VacanciesPage
-from config import EMAIL_SUBJECT_PASSW_RECOVERY, USERNAME_PASSW_RECOVERY, OLD_PASSWORD, NEW_PASSWORD
+from config import EMAIL_SUBJECT_PASSW_RECOVERY, USERNAME_PASSW_RECOVERY, \
+    EMAIL_FORGOT_PASSWORD, FROM_FORGOT_PASSWORD, OLD_PASSWORD, NEW_PASSWORD
 from utilities.get_email import get_link
 from pages.forgot_password_page import ForgotPasswordPage
 from pages.confirm_password_page import ConfirmPassword
@@ -28,7 +27,7 @@ class TestForgotPassword(BasePage):
         assert vacancies.is_instructions_sent()
         vacancies.click_ok()
 
-        link = get_link(EMAIL_SUBJECT_PASSW_RECOVERY)
+        link = get_link(EMAIL_FORGOT_PASSWORD, FROM_FORGOT_PASSWORD, EMAIL_SUBJECT_PASSW_RECOVERY)
         vacancies.click_confirmation_link(link)
 
         confirmation_password.enter_new_password(NEW_PASSWORD)
@@ -39,5 +38,5 @@ class TestForgotPassword(BasePage):
         login.click_ok()
 
         login.login_user(USERNAME_PASSW_RECOVERY, OLD_PASSWORD)
-        assert header.is_logined()
+        assert self.header.is_logined()
 

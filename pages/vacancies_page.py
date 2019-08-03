@@ -6,6 +6,7 @@ class VacanciesPage():
     """Sign in page with login method for any type of person"""
     def __init__(self, base_obj):
         self.browser = base_obj.browser
+        self.driver = base_obj.driver
         self.locators = LocatorsVacanvies
 
     def is_confirmation_sent(self):
