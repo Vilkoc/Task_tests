@@ -1,5 +1,4 @@
 from init import BasePage
-import unittest
 from pages.header import Header
 from pages.sign_in_page import SignInPage
 from pages.create_company_page import CreateCompanyPage
@@ -9,17 +8,15 @@ import time
 
 class TestCreateCompany(BasePage):
 
-    def test_create_company(self, person='COWNER'):
+    def test_create_company(self, option='Log in',  person='COWNER'):
         driver = self.driver
-        start = Header(driver)
-        signin = SignInPage(driver)
-
-        start.transit('Log in')
-
-        signin.login(person)
-
+        sign_in = SignInPage(driver)
+        header = Header(driver)
         create_company = CreateCompanyPage(driver)
-        time.sleep(1)
+
+        header.select_option(option)
+        sign_in.login(person)
+
         create_company.click_create_company_at_navbar()
         create_company.enter_data(CownerData.COMPANY_DATA)
         create_company.click_create_button()
@@ -27,8 +24,6 @@ class TestCreateCompany(BasePage):
 
         comp = self.driver.find_elements_by_xpath(
             "//table//td[contains(text(),'ShevaCo') and string-length(normalize-space(text()))<8]")
-        # self.assertTrue(comp)
+        self.assertTrue(comp)
 
 
-if __name__ == "__main__":
-    unittest.main()

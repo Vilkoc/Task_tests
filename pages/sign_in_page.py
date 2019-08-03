@@ -9,6 +9,7 @@ class SignInPage(Methods):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
+        self.header = Header(driver)
         self.locators = LocatorsSignIn
 
     def clear_boxes(self):
@@ -23,8 +24,7 @@ class SignInPage(Methods):
         self.click_element(self.locators.SIGN_IN)
 
     def login(self, person):
-        Header(self.driver).transit('Log in')
+        self.header.select_option('Log in')
         self.clear_boxes()
         self.enter_credentials(*Credentials[person])
         self.click_sign_in()
-

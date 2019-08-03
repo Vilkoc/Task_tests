@@ -7,3 +7,4 @@ class CownerData():
 
     REQUIREMENTS = ["Good knowledge of Python", "Fundamental understanding of testing process"]
 
+    UPDATE_COMPANY_NAME ="ForeverSheva"

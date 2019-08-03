@@ -4,7 +4,8 @@ from selenium.webdriver.common.by import By
 class LocatorsHeader(object):
     ICON = (By.CSS_SELECTOR, "img[class='rounded-circle img-responsive z-depth-0']")
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
-
+    CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
+    NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
 class LocatorsSignIn(object):
     EMAIL = (By.ID, "username")
@@ -14,8 +15,6 @@ class LocatorsSignIn(object):
     PASSWORD_SIGNUP = (By.ID, "password1")
     PASSWORD_VERIFY = (By.ID, "matchingPassword")
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
-    NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
-
 
 
 class LocatorsCreateCompanyPage(object):
@@ -36,12 +35,38 @@ class LocatorsCreateCompanyPage(object):
 
     COMPANY_FIELDS = ["name", "edrpou", "description", "website", "email", "phoneNumber", "country", "city", "street",
                       "building", "apartment", "zipCode"]
-
     MY_COMPANIES = (By.CSS_SELECTOR, "a[href='/companies/my']")
 
 
-class MyCompaniesPage(object):
+class LocatorsUpdateCompanyPage(LocatorsCreateCompanyPage):
+    INPUT_FIELD = (By.CSS_SELECTOR, "input[id = 'customFile']")
+    UPDATE_PHOTO_BUTTON = (By.CSS_SELECTOR, "input[class='btn btn-primary']")
+    UPDATE_COMPANY_BUTTON = (By.CSS_SELECTOR, "button[class='btn btn-success']")
+    GO_BACK_BUTTON = (By.CSS_SELECTOR, "a[class='btn btn-danger']")
+
+
+class LocatorsMyCompaniesPage(object):
+    MY_COMPANIES = (By.CSS_SELECTOR, "a[href='/companies/my']")
     CREATE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a[href='/createCompany']")
+    COMPANY_DETAIL_BUTTON_SOFTSERVE = (By.CSS_SELECTOR, "a[href ='/viewCompany/1']")
+    COMPANY_UPDATE_BUTTON_SHEVACO = (By.CSS_SELECTOR, "a[href ='/updateCompany/ShevaCo']")
+    TABLE_BODY = (By.CSS_SELECTOR, "table>tbody")
+    DELETE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a>i[class='fa fa-trash']")
+
+
+class LocatorsCreateVacancyPage(object):
+    CREATE_VACANCY_BUTTON = (By.CSS_SELECTOR, "a[href='/createVacancy/1']" )
+    VACANCY_DESCRIPTION_TEXTBOX =(By.ID, "description")
+    VACANCY_POSITION_TEXTBOX = (By.ID, "position")
+    VACANCY_EMPLOYMENT_DROPBOX = (By.CSS_SELECTOR, "select>option[value='HOURLY']")
+    VACANCY_SALARY_TEXTBOX = (By.ID, "salary")
+    VACANCY_CURRRENCY_DROPBOX = (By.CSS_SELECTOR, "select>option[value='USD']")
+    ADD_REQUIREMENT_BUTTON =(By.CSS_SELECTOR, "button[class='btn btn-success']")
+    VACANCY_REQUIREMENT_TEXTBOX = (By.ID, "description")
+    VAC_REQUIREMENT_TEXTBOX = (By.CSS_SELECTOR, "input[id = 'description'][placeholder = 'Input requirement']")
+    VACANCY_CREATE_BUTTON =(By.CSS_SELECTOR, "button[class='btn btn-primary'][type='submit']")
+
+    VACANCY_FIELDS = ["description", "position", "salary"]
 
 class LocatorsUserPage:
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
@@ -58,4 +83,3 @@ class LocatorsUserPage:
         'APARTMENT': (By.ID, 'apartment'),
         'ZIP_CODE': (By.ID, 'zipCode')
     }
-
