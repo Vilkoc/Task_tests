@@ -18,6 +18,32 @@ class LocatorsSignIn():
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
 
 
+class LocatorsVacancies(object):
+    DETAILS = (By.CSS_SELECTOR, 'a[href="/viewVacancy/34"]')
+    PAGINATION_NEXT = (By.CSS_SELECTOR, 'button[class="btn btn-info"]')
+    PAGINATION_PREVIOUS = (By.CSS_SELECTOR, 'button[class="btn btn-info"]')
+    VACANCY_INFO = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+    NEXT_TEST = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+    PREVIOUS_TEST = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+
+
+class LocatorsHotVacancies(object):
+    HOT_DETAILS = (By.CSS_SELECTOR, 'a[href="/viewVacancy/34"]')
+    HOT_PAGINATION_NEXT = (By.CSS_SELECTOR, 'button[class="btn btn-info"]')
+    HOT_PAGINATION_PREVIOUS = (By.CSS_SELECTOR, 'button[class="btn btn-info"]')
+    HOT_VACANCY_INFO = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+    HOT_NEXT_TEST = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+    HOT_PREVIOUS_TEST = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+    HOT_VACANCY_PAGE = (By.CSS_SELECTOR, 'a[href="/hotVacancies"]')
+
+
+class LocatorsSearch(object):
+    SEARCH = (By.CSS_SELECTOR, 'button[class="btn btn-outline-success my-2 my-sm-0"]')
+    CRITERIA = (By.CSS_SELECTOR, 'option[value="city"]')
+    KEY_WORD = (By.NAME, 'searchText')
+    SEARCH_START = (By.ID, 'startButton')
+
+
 
 class LocatorsCompaniesPage(object):
     STATUS_OF_CO = (By.CSS_SELECTOR, 'i[title]')

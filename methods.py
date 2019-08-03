@@ -49,8 +49,20 @@ class DriverWrapper(object):
                 if element.text == text_value:
                     element.send_keys(keys)
 
+
     def get_attr_value(self, locator, attr):
         """Get attribute value of the element"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
+
+
+    def get_one_element(self, locator):
+        """Returns one element for the specific locator"""
+        return self.driver.find_element(*locator)
+
+    def pop_up_element(self, locator):
+        """Returns element from pop-up window"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.driver.find_element(*locator)
+

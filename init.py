@@ -16,6 +16,7 @@ class BasePage():
         cls.browser = DriverWrapper(driver, TIMEOUT)
         cls.header = Header(cls)
 
+
     @classmethod
     def tearDownClass(cls):
         cls.browser.driver.quit()
