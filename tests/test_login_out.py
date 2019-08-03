@@ -11,13 +11,13 @@ class TestTrial(BasePage):
         start = Header(driver)
         signin = SignInPage(driver)
 
-
         start.transit('Log in')
 
         signin.login(person)
 
         start.transit('Profile')
         start.transit('Log out')
+
 
 if __name__ == "__main__":
     unittest.main()
