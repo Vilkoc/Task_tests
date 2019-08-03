@@ -2,7 +2,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class Methods(object):
+class DriverWrapper(object):
     """Webdriver wrapper"""
 
     def __init__(self, driver, default_timeout=10):
@@ -51,6 +51,6 @@ class Methods(object):
 
     def get_attr_value(self, locator, attr):
         """Get attribute value of the element"""
-        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
