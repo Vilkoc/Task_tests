@@ -5,8 +5,12 @@ TIMEOUT = 10
 PAUSE = 2
 EXTRA_LONG_PAUSE = 20
 
-EMAIL = "rabotynet.test@gmail.com"
-FROM_PWD = decode(b'cm9tYV9leHBlcnQ=').decode()
+EMAIL_SIGNUP = "rabotynet.test@gmail.com"
+FROM_SIGNUP = decode(b'cm9tYV9leHBlcnQ=').decode()
+
+EMAIL_FORGOT_PASSWORD = "rabotynet.test.fp@gmail.com"
+FROM_FORGOT_PASSWORD = decode(b'cm9tYV9leHBlcnQ=').decode()
+
 SMTP_SERVER = "imap.gmail.com"
 
 DB_FILE = 'backup.sql'

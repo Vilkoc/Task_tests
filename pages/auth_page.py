@@ -28,11 +28,6 @@ class AuthPage(Methods):
     def click_sign_in(self):
         self.click_element(self.locators.BUTTON_SIGN_IN)
 
-    def login(self, person):
-        self.clear_boxes()
-        self.enter_credentials(*Credentials[person])
-        self.click_sign_in()
-
     def login_user(self,username, password):
         header = Header(self.driver)
         header.click_icon()
