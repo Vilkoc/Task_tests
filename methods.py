@@ -13,6 +13,16 @@ class DriverWrapper(object):
         """Returns all elements for the specific locator"""
         return self.driver.find_elements(*locator)
 
+    def get_one_element(self, locator):
+        """Returns one element for the specific locator"""
+        return self.driver.find_element(*locator)
+
+    def click_one_element(self, locator):
+        """Clicks on the element with number elem_number"""
+        # WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
+        element = self.get_one_element(locator)
+        element.click()
+
     def click_element(self, locator, elem_number=0):
         """Clicks on the element with number elem_number"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
@@ -54,3 +64,11 @@ class DriverWrapper(object):
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
+
+    def companies(self, locator1, locator2, company_name):
+        # WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator2))
+        tbody = self.driver.find_elements(*locator1)
+        for i in tbody:
+            if company_name in i.text:
+                td = i.find_element(*locator2)
+                td.click()
