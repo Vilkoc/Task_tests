@@ -12,14 +12,13 @@ from pages.confirm_password_page import ConfirmPassword
 class TestForgotPassword(BasePage):
 
     def test_forgot_password(self):
-        header = Header(self.driver)
-        login = AuthPage(self.driver)
-        vacancies = VacanciesPage(self.driver)
-        forgot_password = ForgotPasswordPage(self.driver)
-        confirmation_password = ConfirmPassword(self.driver)
+        login = AuthPage(self)
+        vacancies = VacanciesPage(self)
+        forgot_password = ForgotPasswordPage(self)
+        confirmation_password = ConfirmPassword(self)
 
-        header.click_icon()
-        header.click_log_in()
+        self.header.click_icon()
+        self.header.click_log_in()
 
         login.click_forgot_password()
 
