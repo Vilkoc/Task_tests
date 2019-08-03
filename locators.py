@@ -41,3 +41,21 @@ class LocatorsSearch(object):
     CRITERIA = (By.CSS_SELECTOR, 'option[value="city"]')
     KEY_WORD = (By.NAME, 'searchText')
     SEARCH_START = (By.ID, 'startButton')
+
+
+
+class LocatorsUserPage:
+    UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
+    user_fields = {
+        'FIRST_NAME': (By.ID, 'firstName'),
+        'LAST_NAME': (By.ID, 'lastName'),
+        'BIRTHDAY': (By.ID, 'birthday'),
+        'EMAIL': (By.ID, 'email'),
+        'PHONE': (By.ID, 'phoneNumber'),
+        'COUNTRY': (By.ID, 'country'),
+        'CITY': (By.ID, 'city'),
+        'STREET': (By.ID, 'street'),
+        'BUILDING': (By.ID, 'building'),
+        'APARTMENT': (By.ID, 'apartment'),
+        'ZIP_CODE': (By.ID, 'zipCode')
+    }
