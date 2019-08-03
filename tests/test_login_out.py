@@ -8,6 +8,7 @@ from pages.auth_page import AuthPage
 USER = 'user@gmail.com'
 PASS = 'user'
 
+
 class TestLogin(BasePage):
 
     def test_login_logout(self):
@@ -22,6 +23,7 @@ class TestLogin(BasePage):
         page.click_sign_in()
 
         assert header.is_logined()
+
 
 if __name__ == "__main__":
     unittest.main()

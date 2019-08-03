@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium import webdriver
 
 
 class Methods(object):
@@ -14,15 +15,11 @@ class Methods(object):
 
     def get_elements_by_text(self, locator):
         """Returns element with specific text for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator[0]))
         elements = self.driver.find_elements(*locator[0])
         for element in elements:
             if element.text == locator[1]:
                 return element
-        # test------------------------------------
-        for number, element in enumerate(elements):
-            print(number, element.text)
-        raise 'No element for {}'.format(locator)
-        # test ====================================
 
     def click_element(self, locator, elem_number=0):
         """Clicks on the element with number elem_number"""
@@ -62,4 +59,11 @@ class Methods(object):
 
     def get_one_element(self, locator):
         """Returns element for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         return self.driver.find_element(*locator)
+
+    def get_text_of_element(self, locator):
+        return self.get_one_element(locator).text
+
+    def pause(self, time):
+        webdriver.support.wait.time.sleep(time)

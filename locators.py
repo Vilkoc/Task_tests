@@ -5,7 +5,7 @@ class LocatorsHeader(object):
     ICON = (By.CSS_SELECTOR, "img[class='rounded-circle img-responsive z-depth-0']")
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log in"
-    LOG_OUT = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log out"
+    LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']"), "Log out"
 
 
 class LocatorsSignIn(object):
@@ -21,16 +21,26 @@ class LocatorsSignIn(object):
     BUTTON_SIGN_UP = (By.CSS_SELECTOR, "input[value='Register']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
+    FORGOT_PASSWORD = (By.CSS_SELECTOR, 'a[href="/forgotPassword"]')
     POP_UP_FORGOT_PASSWORD = (By.CSS_SELECTOR, 'div.wrap')
     POP_UP_FORGOT_PASSWORD_TEXT = (By.TAG_NAME, 'p')
-    POP_UP_FORGOT_PASSWORD_BUTTON = (By.TAG_NAME, 'button')
+    POP_UP_FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
     POP_UP_FORGOT_PASSWORD_TEXT_CHECK = 'Password restored successfully! Please sign in.'
 
 
 class LocatorsVacanvies:
-    POP_UP_WINDOW_SIGN_UP_TEXT = (By.TAG_NAME, 'div.wrap > p')
-    POP_UP_WINDOW_SIGN_UP_BUTTON = (By.TAG_NAME, 'div.wrap > button')
+    POP_UP_WINDOW_SIGN_UP_TEXT = (By.CSS_SELECTOR, 'div.wrap > p')
+    POP_UP_WINDOW_SIGN_UP_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
 
-    POP_UP_WINDOW_FORGOT_PASSWORD_TEXT = (By.TAG_NAME, 'div.wrap > p')
-    POP_UP_WINDOW_FORGOT_PASSWORD_BUTTON = (By.TAG_NAME, 'div.wrap > button')
+    POP_UP_WINDOW_FORGOT_PASSWORD_TEXT = (By.CSS_SELECTOR, 'div.wrap > p')
+    POP_UP_WINDOW_FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
 
+class LocatorsForgotPassword:
+    EMAIL = (By.ID, 'username')
+    SUBMIT_BUTTON = (By.CSS_SELECTOR, 'input[value="Submit"]')
+
+
+class LocatorsConfirmPassword:
+    NEW_PASSWORD = (By.ID, 'newPassword')
+    CONFIRMATION_PASSWORD = (By.ID, 'confirmPassword')
+    REGISTER_BUTTON = (By.CSS_SELECTOR, 'input[value="Register"]')

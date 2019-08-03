@@ -4,14 +4,17 @@ from config import EMAIL, FROM_PWD, SMTP_SERVER
 
 
 def get_link(subject):
-    sleep(10)
     mail = imaplib.IMAP4_SSL(SMTP_SERVER)
     mail.login(EMAIL, FROM_PWD)
     mail.select('inbox')
 
     typ, data = mail.search(None, '(SUBJECT "%s")' % subject)
+    if len(data) == 0:
+        sleep(20)
+        print('wait email')
+        typ, data = mail.search(None, '(SUBJECT "%s")' % subject)
+
     mail_ids = data[0].split()[-1]
-    # print(mail_ids)
 
     typ, data = mail.fetch(mail_ids, '(RFC822)')
 

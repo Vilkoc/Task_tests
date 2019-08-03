@@ -1,6 +1,7 @@
 from methods import Methods
 from locators import LocatorsSignIn
 from credentials import Credentials
+from pages.header import Header
 
 
 class AuthPage(Methods):
@@ -32,6 +33,14 @@ class AuthPage(Methods):
         self.enter_credentials(*Credentials[person])
         self.click_sign_in()
 
+    def login_user(self,username, password):
+        header = Header(self.driver)
+        header.click_icon()
+        header.click_log_in()
+        self.enter_sign_in_email(username)
+        self.enter_sign_in_password(password)
+        self.click_sign_in()
+
     def click_sign_up_tab(self):
         self.click_element_by_text_simple(self.locators.TAB_SIGN_UP)
 
@@ -47,4 +56,14 @@ class AuthPage(Methods):
     def click_sing_up_button(self):
         self.click_element(self.locators.BUTTON_SIGN_UP)
 
-        
+    def click_forgot_password(self):
+        self.click_element(self.locators.FORGOT_PASSWORD)
+
+    def is_password_restored(self):
+        text = self.get_text_of_element(self.locators.POP_UP_FORGOT_PASSWORD_TEXT)
+        return text == 'Password restored successfully! Please sign in.'
+
+    def click_ok(self):
+        self.click_element(self.locators.POP_UP_FORGOT_PASSWORD_BUTTON)
+
+
