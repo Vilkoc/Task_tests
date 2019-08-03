@@ -37,3 +37,9 @@ class LocatorsViewVacancy(object):
     SEND_RESUME_BUTTON = (By.CSS_SELECTOR, 'a[class="btn btn-success"]')
     SHOW_COMPANY_BUTTON = (By.CSS_SELECTOR, 'a[href="/viewCompany/34"]')
     TEXT = (By.CSS_SELECTOR, "div[class='simpleVacancy']>td")
+
+class LocatorsEditResume(object):
+    POSITION_FIELD = (By.ID, 'position')
+    PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR,'button[class="btn btn-success"]')
+    GET_TEXT_FROM_FIELD = 'ng-reflect-model'
+

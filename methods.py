@@ -69,3 +69,5 @@ class Methods(object):
         element = self.get_one_element(locator2)
         element.click()
 
+
+

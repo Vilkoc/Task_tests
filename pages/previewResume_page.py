@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from locators import LocatorsPreviewResume
 from methods import Methods
+import time
 
 
 class PreviewResumePage(Methods):
@@ -15,15 +16,11 @@ class PreviewResumePage(Methods):
         """This function provides a push of a 'Send Email' button"""
         self.click_element_by_text(self.locators.BUTTONS, 'Send Email')
 
-    # def click_change_button(self):
-    #     """This function provides a push of a 'Change' button, which allows change information in resume"""
-    #     buttons = self.driver.find_elements_by_css_selector(self.buttons_cssSelector)
-    #     self.wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, self.preview_pdf_button_cssSelector)))
-    #     change = None
-    #     for i in buttons:
-    #         if i.text == 'Change':
-    #             i.click()
-    #     # change.click()
+    def click_change_button(self):
+        """This function provides a push of a 'Change' button, which allows change information in resume"""
+        self.click_element_by_text(self.locators.BUTTONS, 'Change')
+
+
 
     def confirmation_message(self):
         """This function reads the message from the popup window and passes it to the variable"""

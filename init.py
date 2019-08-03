@@ -12,13 +12,13 @@ class BasePage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        # prepare_db()
+        prepare_db()
         cls.driver = webdriver.Chrome()
         cls.driver.maximize_window()
         cls.driver.get('http://localhost:4200')
         cls.browser = Methods(cls.driver, TIMEOUT)
         cls.header = Header(cls.driver)
-        delete_from_vacancy_resume()
+        # delete_from_vacancy_resume()
 
     @classmethod
     def tearDownClass(cls):
