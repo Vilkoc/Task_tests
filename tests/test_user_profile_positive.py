@@ -18,6 +18,7 @@ class TestPositive(BasePage):
             perform.enter_data_textbox(key, entry[key])
 
         perform.click_update_profile()
+        self.browser.driver.save_screenshot('sample.png')
 
         for key in entry.keys():
             if key == 'BIRTHDAY':
@@ -26,4 +27,3 @@ class TestPositive(BasePage):
             assert entry[key] == perform.read_data_textbox(key)
 
         self.header.select_option('Log out')
-        

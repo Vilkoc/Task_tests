@@ -7,7 +7,6 @@ class UserPage():
         self.browser = base_obj.browser
         self.locators = LocatorsUserPage
 
-
     def enter_data_textbox(self, key, value):
         """Enters into the specific field data and returns True/False for valid/invalid data"""
         self.browser.clear_element(self.locators.user_fields[key])
