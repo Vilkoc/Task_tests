@@ -1,5 +1,5 @@
 from locators import LocatorsHeader
-
+from locators import LocatorsYourResume
 
 class Header():
     """Header page, which will be inherited by other pages"""
@@ -35,3 +35,10 @@ class Header():
         if len(self.browser.get_elements(self.locators.NAVBAR)) == person_criteria[person]:
             return True
         return False
+
+    def go_to_allVacancies(self):
+        """This function redirects from the start page to the vacancy page"""
+        # self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, SHOW_ALL_INFO_BUTTON_CSS_SELECTOR)))
+        self.browser.click_element_double_locator(self.browser.locators_your_resume.SHOW_ALL_INFO_BUTTON,
+                                          self.browser.locators_header.RABOTY_NET)
+

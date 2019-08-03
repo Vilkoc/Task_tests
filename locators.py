@@ -6,6 +6,7 @@ class LocatorsHeader():
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
+    RABOTY_NET = (By.LINK_TEXT, "RabotyNet")
 
 
 class LocatorsSignIn():
@@ -16,7 +17,6 @@ class LocatorsSignIn():
     PASSWORD_SIGNUP = (By.ID, "password1")
     PASSWORD_VERIFY = (By.ID, "matchingPassword")
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
-
 
 
 class LocatorsCompaniesPage(object):
@@ -45,6 +45,7 @@ class LocatorsCompaniesPage(object):
 
     POPUP = (By.CSS_SELECTOR, 'div.wrap')
 
+
 class LocatorsUserPage():
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
     user_fields = {
@@ -60,3 +61,29 @@ class LocatorsUserPage():
         'APARTMENT': (By.ID, 'apartment'),
         'ZIP_CODE': (By.ID, 'zipCode')
     }
+
+
+class LocatorsPreviewResume(object):
+    BUTTONS = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+    MESSAGE = (By.CSS_SELECTOR, 'div[class="wrap"]>p')
+    PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+
+
+class LocatorsYourResume(object):
+    SHOW_ALL_INFO_BUTTON = (By.CSS_SELECTOR, 'a[href="/update/2"]')
+
+
+class LocatorsVacancies(object):
+    VIEW_DETAILS_BUTTON = (By.CSS_SELECTOR, 'a[href="/viewVacancy/34"]')
+
+
+class LocatorsViewVacancy(object):
+    SEND_RESUME_BUTTON = (By.CSS_SELECTOR, 'a[class="btn btn-success"]')
+    SHOW_COMPANY_BUTTON = (By.CSS_SELECTOR, 'a[href="/viewCompany/34"]')
+    TEXT = (By.CSS_SELECTOR, "div[class='simpleVacancy']>td")
+
+
+class LocatorsEditResume(object):
+    POSITION_FIELD = (By.ID, 'position')
+    PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+    GET_TEXT_FROM_FIELD = 'ng-reflect-model'
