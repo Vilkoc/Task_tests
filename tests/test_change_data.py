@@ -22,7 +22,7 @@ SHOW_ALL_INFO_BUTTON_CSS_SELECTOR = 'a[href="/update/2"]'
 class TestChangeData(BasePage):
 
     def test_change_data(self, option='Log in', person='USER'):
-        driver = self.driver
+
 
         header = Header(driver)
         sign_in_page = SignInPage(driver)
