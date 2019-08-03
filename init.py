@@ -11,6 +11,7 @@ class BasePage():
     def setUpClass(cls):
 #        prepare_db()
         cls.driver = webdriver.Chrome()
+
         cls.driver.maximize_window()
         cls.driver.get('http://localhost:4200')
         cls.browser = Methods(cls.driver, TIMEOUT)
