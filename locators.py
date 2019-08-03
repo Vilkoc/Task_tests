@@ -34,6 +34,7 @@ class LocatorsHotVacancies(object):
     HOT_VACANCY_INFO = (By.CSS_SELECTOR, 'div[class="card"]>h2')
     HOT_NEXT_TEST = (By.CSS_SELECTOR, 'div[class="card"]>h2')
     HOT_PREVIOUS_TEST = (By.CSS_SELECTOR, 'div[class="card"]>h2')
+    HOT_VACANCY_PAGE = (By.CSS_SELECTOR, 'a[href="/hotVacancies"]')
 
 
 class LocatorsSearch(object):

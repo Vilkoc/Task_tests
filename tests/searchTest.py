@@ -5,19 +5,15 @@ from pages.searchPage import SearchPage
 class SearchTest(BasePage):
 
     def test_search_button(self):
-        driver = self.driver
 
-        search = SearchPage(driver)
+        search = SearchPage(self)
         search.search_button_click()
 
-        criteria = SearchPage(driver)
-        criteria.criteria_choose()
+        search.criteria_choose()
 
-        key_word = SearchPage(driver)
-        key_word.key_word_field()
+        search.key_word_field()
 
-        start = SearchPage(driver)
-        start.start_search_click()
+        search.start_search_click()
 
         # tmp = driver.find_element_by_xpath('//table//td[contains(text(), "Chernivtsi")]').text
         # self.assertEqual(tmp, "Chernivtsi")
