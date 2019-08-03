@@ -22,7 +22,3 @@ class TestTrial(BasePage):
         for i in companies.view_status_of_co():
             print(i.text)
             print('qwerty')
-
-
-if __name__ == "__main__":
-    unittest.main()

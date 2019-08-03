@@ -13,10 +13,7 @@ class Header():
 
     def check_dropdown(self):
         flag = self.browser.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
-        if flag == 'true':
-            return True
-        else:
-            return False
+        return flag == 'true'
 
     def select_option(self, pick_item):
         """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""
