@@ -1,28 +1,25 @@
-from methods import Methods
-from pages.header import Header
 from locators import LocatorsUserPage
 
 
-class UserPage(Methods):
+class UserPage():
     """User Page"""
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
+    def __init__(self, base_obj):
+        self.browser = base_obj.browser
         self.locators = LocatorsUserPage
-        self.header = Header(driver)
+
 
     def enter_data_textbox(self, key, value):
         """Enters into the specific field data and returns True/False for valid/invalid data"""
-        self.clear_element(self.locators.user_fields[key])
-        self.send_keys(self.locators.user_fields[key], value)
-        temp = self.get_attr_value(self.locators.user_fields[key], 'class')
+        self.browser.clear_element(self.locators.user_fields[key])
+        self.browser.send_keys(self.locators.user_fields[key], value)
+        temp = self.browser.get_attr_value(self.locators.user_fields[key], 'class')
         if 'ng-invalid' in temp:
             return False
         else:
             return True
 
     def read_data_textbox(self, key):
-        return self.get_attr_value(self.locators.user_fields[key], 'ng-reflect-model')
+        return self.browser.get_attr_value(self.locators.user_fields[key], 'ng-reflect-model')
 
     def click_update_profile(self):
-        self.click_element(self.locators.UPDATE_PROFILE)
+        self.browser.click_element(self.locators.UPDATE_PROFILE)

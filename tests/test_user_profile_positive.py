@@ -7,13 +7,12 @@ from user_data import user_data_rab_19 as entry
 class TestPositive(BasePage):
 
     def test_user_profile_positive(self, person='USER'):
-        driver = self.driver
 
-        start = SignInPage(driver)
-        perform = UserPage(driver)
+        start = SignInPage(self)
+        perform = UserPage(self)
 
         start.login(person)
-        perform.header.select_option('Profile')
+        self.header.select_option('Profile')
 
         for key in entry.keys():
             perform.enter_data_textbox(key, entry[key])
@@ -26,8 +25,5 @@ class TestPositive(BasePage):
                 entry[key] = tmp[2] + '-' + tmp[0] + '-' + tmp[1]
             assert entry[key] == perform.read_data_textbox(key)
 
-        perform.header.select_option('Log out')
+        self.header.select_option('Log out')
         
-
-if __name__ == "__main__":
-    unittest.main()

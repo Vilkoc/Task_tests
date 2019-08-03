@@ -1,10 +1,8 @@
-from selenium import webdriver
-from methods import Methods
+from methods import DriverWrapper
 from pages.header import Header
 from driver_selection import WebdriverSelection
 from utilities.db import prepare_db
 from config import URL, TIMEOUT, WEBDRIVER
-
 
 
 class BasePage():
@@ -15,8 +13,8 @@ class BasePage():
         cls.driver = WebdriverSelection().get_webdriver(WEBDRIVER)
         cls.driver.maximize_window()
         cls.driver.get(URL)
-        cls.browser = Methods(cls.driver, TIMEOUT)
-        cls.header = Header(cls.driver)
+        cls.browser = DriverWrapper(cls.driver, TIMEOUT)
+        cls.header = Header(cls)
 
     @classmethod
     def tearDownClass(cls):
