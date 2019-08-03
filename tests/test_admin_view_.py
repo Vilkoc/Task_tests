@@ -12,9 +12,8 @@ class TestTrial(BasePage):
         signin = SignInPage(driver)
         signin.login(person)
         companies = CompaniesPage(driver)
-
-        for i in companies.view_status_of_co():
-            print(i.text)
-            print('qwerty')
+        companies.view_detail_about_co()
 
 
+if __name__ == "__main__":
+    unittest.main()

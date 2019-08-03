@@ -14,4 +14,3 @@ class WebdriverSelection():
             return webdriver.Opera()
         else:
             raise Exception("There's no available driver for such browser")
-

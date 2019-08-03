@@ -1,3 +1,5 @@
+import unittest
+
 from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.user_profile_page import UserPage
@@ -19,7 +21,6 @@ class TestPositive(BasePage):
 
         perform.click_update_profile()
         self.browser.driver.save_screenshot('sample.png')
-
         for key in entry.keys():
             if key == 'BIRTHDAY':
                 tmp = entry[key]
