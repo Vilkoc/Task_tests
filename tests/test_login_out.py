@@ -24,6 +24,3 @@ class TestLogin(BasePage):
 
         assert header.is_logined()
 
-
-if __name__ == "__main__":
-    unittest.main()

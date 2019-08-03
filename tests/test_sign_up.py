@@ -32,5 +32,3 @@ class TestSignUp(BasePage):
         page.login_user(USERNAME_SIGNUP, PASSWORD)
         assert header.is_logined()
 
-if __name__ == "__main__":
-    unittest.main()

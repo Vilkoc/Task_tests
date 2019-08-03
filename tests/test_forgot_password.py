@@ -42,5 +42,3 @@ class TestForgotPassword(BasePage):
         login.login_user(USERNAME_PASSW_RECOVERY, OLD_PASSWORD)
         assert header.is_logined()
 
-if __name__ == "__main__":
-    unittest.main()
