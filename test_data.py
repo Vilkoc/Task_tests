@@ -7,6 +7,8 @@ class CownerData():
 
     REQUIREMENTS = ["Good knowledge of Python, Java, HTML/CSS", "Fundamental understanding of testing process"]
 
-    COMPANY_VALSOFT ="ForeverSheva"
+    COMPANY_RENAME ="ForeverSheva"
 
     COMPANY_DELETE = "InventorSoft"
+
+    COMPANY_CREATE = "ShevaCo"

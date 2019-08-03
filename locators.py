@@ -58,6 +58,7 @@ class LocatorsCreateCompanyPage(object):
     COMPANY_APARTMENT_TEXTBOX = (By.ID, "apartment")
     COMPANY_ZIPCODE_TEXTBOX = (By.ID, "zipCode")
     COMPANY_CREATE_BUTTON = (By.CSS_SELECTOR, "button[class='btn btn-primary']")
+    ATTRIBUTE_OF_COMPANIES_TEXTBOXES = "ng-reflect-model"
 
     COMPANY_FIELDS = ["name", "edrpou", "description", "website", "email", "phoneNumber", "country", "city", "street",
                       "building", "apartment", "zipCode"]

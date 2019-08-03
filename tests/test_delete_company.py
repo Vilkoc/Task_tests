@@ -2,7 +2,7 @@ from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.my_companies_page import MyCompaniesPage
 from test_data import CownerData
-import time
+
 
 
 class TestDeleteCompany(BasePage):

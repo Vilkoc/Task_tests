@@ -2,7 +2,6 @@ from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.create_company_page import CreateCompanyPage
 from test_data import CownerData
-import time
 
 
 class TestCreateCompany(BasePage):
@@ -18,10 +17,9 @@ class TestCreateCompany(BasePage):
         create_company.enter_data(CownerData.COMPANY_DATA)
         create_company.click_create_button()
         self.header.click_my_companies()
-        time.sleep(2)
-        create_company.click_update("ShevaCo")
-        time.sleep(2)
+        create_company.click_update(CownerData.COMPANY_CREATE)
         z = create_company.read_data_textbox()
+
         j = 0
         for i in CownerData.COMPANY_DATA:
             assert i == z[j]
