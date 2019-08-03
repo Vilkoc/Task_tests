@@ -65,10 +65,17 @@ class DriverWrapper(object):
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
 
-    def companies(self, locator1, locator2, company_name):
-        # WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator2))
+    def company_view_update_delete(self, locator1, locator2, company_name):
+        """This function clicks on company details/update/delete buttons
+         according to the company name and specific locators"""
         tbody = self.driver.find_elements(*locator1)
         for i in tbody:
             if company_name in i.text:
                 td = i.find_element(*locator2)
                 td.click()
+
+    def get_attr_value1(self, locator, attr):
+        """Get attribute value of the element"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        element = self.get_elements(locator)
+        return element.get_attribute(attr)

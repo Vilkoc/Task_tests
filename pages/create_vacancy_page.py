@@ -1,39 +1,43 @@
-from methods import Methods
 from locators import LocatorsCreateVacancyPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from config import TIMEOUT
 
-class CreateVacancyPage(Methods):
 
-    def __init__(self, driver):
-        super().__init__(driver)
+class CreateVacancyPage():
+    """On this page company owner can create vacancy after creation of the company"""
+
+    def __init__(self, base_obj):
         self.locators = LocatorsCreateVacancyPage
-        self.wait = WebDriverWait(self.driver, 10)
+        self.browser = base_obj.browser
+        self.wait = WebDriverWait(base_obj.browser.driver, TIMEOUT)
 
     def click_create_vacancy(self):
-        self.click_element(self.locators.CREATE_VACANCY_BUTTON)
+        self.browser.click_element(self.locators.CREATE_VACANCY_BUTTON)
 
     def enter_vacancy_data(self, vac_data):
+        """Enters into the specific field data"""
         for el in range(len(self.locators.VACANCY_FIELDS)):
-            self.send_keys((By.ID, self.locators.VACANCY_FIELDS[el]), vac_data[el])
+            self.browser.send_keys((By.ID, self.locators.VACANCY_FIELDS[el]), vac_data[el])
 
     def choose_employment(self):
-        self.click_element(self.locators.VACANCY_EMPLOYMENT_DROPBOX)
+        self.browser.click_element(self.locators.VACANCY_EMPLOYMENT_DROPBOX)
 
     def choose_currency(self):
-        self.click_element(self.locators.VACANCY_CURRRENCY_DROPBOX)
+        self.browser.click_element(self.locators.VACANCY_CURRRENCY_DROPBOX)
 
     def click_add_requirement(self):
-        self.click_element(self.locators.ADD_REQUIREMENT_BUTTON)
+        self.browser.click_element(self.locators.ADD_REQUIREMENT_BUTTON)
 
     def enter_requirements(self, req):
-        i = 0
+        """Enters into the requirement fields data"""
         self.click_add_requirement()
-        self.wait.until(EC.element_to_be_clickable(self.locators.VAC_REQUIREMENT_TEXTBOX))
-        for val in req:
-            self.send_keys((By.CSS_SELECTOR, self.locators.VAC_REQUIREMENT_TEXTBOX[i]), req[i])
-            i += 1
+        a = self.browser.get_elements(self.locators.VAC_REQUIREMENT_TEXTBOX)
+        c = 0
+        for i in a:
+            i.send_keys(req[c])
+            c += 1
 
     def click_vacancy_create(self):
-        self.click_element(self.locators.VACANCY_CREATE_BUTTON)
+        self.browser.click_element(self.locators.VACANCY_CREATE_BUTTON)

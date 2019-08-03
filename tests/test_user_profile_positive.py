@@ -6,7 +6,7 @@ from user_data import user_data_rab_19 as entry
 
 class TestPositive(BasePage):
 
-    def test_user_profile_positive(self, person='USER'):
+    def test_user_profile_positive(self, person='COWNER'):
 
         start = SignInPage(self)
         perform = UserPage(self)

@@ -1,11 +1,14 @@
 from locators import LocatorsHeader
-
+from locators import LocatorsCreateCompanyPage
+from locators import LocatorsMyCompaniesPage
 
 class Header():
     """Header page, which will be inherited by other pages"""
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsHeader
+        self.locator_create_company = LocatorsCreateCompanyPage
+        self.locator_my_companies = LocatorsMyCompaniesPage
 
     def click_icon(self):
         """Clicks on the round icon"""
@@ -14,13 +17,6 @@ class Header():
     def check_dropdown(self):
         flag = self.browser.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
         return flag == 'true'
-
-    def check_dropdown(self):
-        flag = self.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
-        if flag == 'true':
-            return True
-        else:
-            return False
 
     def select_option(self, pick_item):
         """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""
@@ -44,3 +40,9 @@ class Header():
         if len(self.browser.get_elements(self.locators.NAVBAR)) == person_criteria[person]:
             return True
         return False
+
+    def click_create_company(self):
+        self.browser.click_element(self.locator_create_company.CREATE_COMPANY_TAB)
+
+    def click_my_companies(self):
+        self.browser.click_element(self.locator_my_companies.MY_COMPANIES)

@@ -1,27 +1,30 @@
 from init import BasePage
-from pages.header import Header
 from pages.sign_in_page import SignInPage
 from pages.update_company_page import UpdateCompanyPage
 from pages.my_companies_page import MyCompaniesPage
 from test_data import CownerData
-
+import time
+from locators import LocatorsCreateCompanyPage
 
 
 class TestUpdateCompanyName(BasePage):
 
     def test_update_company_name(self, option='Log in',  person='COWNER'):
-        driver = self.driver
-        sign_in = SignInPage(driver)
-        header = Header(driver)
-        update_company = UpdateCompanyPage(driver)
-        my_companies = MyCompaniesPage(driver)
+        sign_in = SignInPage(self)
+        update_company = UpdateCompanyPage(self)
+        my_companies = MyCompaniesPage(self)
 
+        self.header.select_option(option)
         sign_in.login(person)
-        header.select_option(option)
 
-        my_companies.click_my_companies()
+        self.header.click_my_companies()
         my_companies.click_company_update()
-        update_company.update_company_name(CownerData.UPDATE_COMPANY_NAME)
+        update_company.update_company_name(CownerData.COMPANY_VALSOFT)
+        a = update_company.check_company_name()
+        assert a == CownerData.COMPANY_VALSOFT
         update_company.click_update_company_button()
+
+
+
 
 

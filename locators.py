@@ -75,9 +75,10 @@ class LocatorsMyCompaniesPage(object):
     MY_COMPANIES = (By.CSS_SELECTOR, "a[href='/companies/my']")
     CREATE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a[href='/createCompany']")
     COMPANY_DETAIL_BUTTON_SOFTSERVE = (By.CSS_SELECTOR, "a[href ='/viewCompany/1']")
-    COMPANY_UPDATE_BUTTON_SHEVACO = (By.CSS_SELECTOR, "a[href ='/updateCompany/ShevaCo']")
+    COMPANY_UPDATE_BUTTON_VALSOFT = (By.CSS_SELECTOR, "a[href='/updateCompany/ValSoft']")
     TABLE_BODY = (By.CSS_SELECTOR, "table>tbody")
     DELETE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a>i[class='fa fa-trash']")
+    COMPANY_UPDATE_BUTTON = (By.CSS_SELECTOR, "a>i[class='fa fa-edit']")
 
 
 class LocatorsCreateVacancyPage(object):
