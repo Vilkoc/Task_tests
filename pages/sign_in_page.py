@@ -21,6 +21,7 @@ class SignInPage():
         self.browser.click_element(self.locators.SIGN_IN)
 
     def login(self, person):
+        """It must be on home page to process"""
         self.header.select_option('Log in')
         self.clear_boxes()
         self.enter_credentials(*Credentials[person])
