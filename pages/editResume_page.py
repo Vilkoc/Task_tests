@@ -1,13 +1,12 @@
 from locators import LocatorsEditResume
-from methods import Methods
 
 
 
-class EditResumePage(Methods):
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
+class EditResumePage():
+
+    def __init__(self, base_obj):
+        self.browser = base_obj.browser
         self.locators = LocatorsEditResume
 
     def change_positionField(self, position):

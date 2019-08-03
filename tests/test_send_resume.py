@@ -3,7 +3,6 @@ from pages.sign_in_page import SignInPage
 from pages.vacancies_page import VacanciesPage
 from pages.viewVacancy_page import ViewVacancyPage
 from pages.previewResume_page import PreviewResumePage
-import time
 
 
 class TestSendResume(BasePage):
@@ -27,3 +26,5 @@ class TestSendResume(BasePage):
         msg = preview_resume_page.confirmation_message()
 
         # self.assertEqual(msg, 'Mail has been sent!')
+        assert msg == 'Mail has been sent!'
+
