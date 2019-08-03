@@ -1,6 +1,5 @@
 from init import BasePage
 from pages.sign_in_page import SignInPage
-from credentials import Credentials
 
 
 class TestLoginAll(BasePage):

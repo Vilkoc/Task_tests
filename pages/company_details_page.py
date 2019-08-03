@@ -1,13 +1,23 @@
-button_claim_css = 'body > div > div > section > div > div > button'
+from locators import LocatorsCompaniesDetailsPage
 
-set_title_none_of_claim_css = '#title > option'
 
-description_of_claim_textbox_css = '#description'
+class CompanyDetailsPage():
+    def __init__(self, base_obj):
+        self.browser = base_obj.browser
+        self.locators = LocatorsCompaniesDetailsPage
 
-button_send_claim_css = 'body > div > div > section > div > div > div:nth-child(7) > form > input.btn.btn-danger'
+    def create_claim(self):
+        self.browser.click_element(self.locators.CREATE_CLAIM_BTN)
 
-button_cancel_claim_css = 'body > div > div > section > div > div > div:nth-child(7) > form > input.btn.btn-default'
+    def send_claim(self):
+        self.browser.click_element(self.locators.SEND_CLAIM_BTN)
 
-button_next_vac_css = 'body > div > div > section > div > div > div.container > footer > div > button'
+    def cancel_claim(self):
+        self.browser.click_element(self.locators.CANCEL_CLAIM_BTN)
 
-button_previous_vac_css = 'body > div > div > section > div > div > div.container > footer > div > button'
+    def select_title_of_claim(self):
+        self.browser.click_element(self.locators.SELECT_TITLE)
+
+    def set_description_of_claim(self):
+        self.browser.send_keys(self.locators.CLAIM_DESCRIPTION, self.locators.DESCRIPTION_OF_CLAIM)
+

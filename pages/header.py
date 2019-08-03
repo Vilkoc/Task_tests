@@ -35,3 +35,6 @@ class Header():
         if len(self.browser.get_elements(self.locators.NAVBAR)) == person_criteria[person]:
             return True
         return False
+
+    def move_to_companies(self):
+        self.browser.click_element(self.locators.MOVE_TO_COMPANIES)

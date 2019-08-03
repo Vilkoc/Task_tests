@@ -1,11 +1,11 @@
-from init import BasePage
 import unittest
 
+from basepage import BasePage
 from pages.companies_page import CompaniesPage
 from pages.sign_in_page import SignInPage
 
 
-class TestTrial(BasePage):
+class TestAdmin(BasePage):
 
     def test_login_logout(self, person='ADMIN'):
         driver = self.driver
