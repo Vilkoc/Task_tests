@@ -12,6 +12,7 @@ class TestTrial(BasePage):
         signin = SignInPage(driver)
         signin.login(person)
         companies = CompaniesPage(driver)
+        companies.view_detail_about_co()
 
 
 if __name__ == "__main__":

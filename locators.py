@@ -26,9 +26,8 @@ class LocatorsCompaniesPage(object):
     OPEN_CLAIM_BTN = (By.CSS_SELECTOR, 'a[title="Show"]')
     REJECT_CLAIM_BTN = (By.CSS_SELECTOR, 'button[title"Reject claim"]')
     CLOSE_CLAIM_BTN = (By.CSS_SELECTOR, 'a[title="Hide"]')
-    name_of_1company_css = (By.CSS_SELECTOR, 'body > div > div > section > div > div > table >\
-     tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3)')
     POPUP = (By.CSS_SELECTOR, 'div.wrap')
+
 
 class LocatorsUserPage:
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
@@ -45,3 +44,13 @@ class LocatorsUserPage:
         'APARTMENT': (By.ID, 'apartment'),
         'ZIP_CODE': (By.ID, 'zipCode')
     }
+
+
+class LocatorsCompaniesDetailsPage:
+    CREATE_CLAIM_BTN = (By.CSS_SELECTOR, 'button[class="btn btn-warning"]')
+    CANCEL_CLAIM_BTN = (By.CSS_SELECTOR, 'button[class="btn btn-default"]')
+    SEND_CLAIM_BTN = (By.CSS_SELECTOR, 'button[class="btn btn-danger"]')
+    SELECT_TITLE = (By.CSS_SELECTOR, 'option[value="None"')
+    CLAIM_DESCRIPTION = (By.CSS_SELECTOR, '#description')
+
+

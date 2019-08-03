@@ -22,3 +22,14 @@ class CompaniesPage(Methods):
 
     def unblock_co(self):
         self.click_element(self.locators.UNBLOCK_2_CO)
+
+    def approve_co(self):
+        self.click_element(self.locators.APPROVE_CO)
+
+    def reject_claim(self):
+        self.click_element(self.locators.REJECT_CLAIM_BTN)
+
+    def confirm_with_popup(self):
+        tmp = self.driver.find_element_by_css_selector(self.popup_css)
+        tmp2 = tmp.find_element_by_tag_name('p').text
+        return tmp2
