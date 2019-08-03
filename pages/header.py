@@ -43,6 +43,5 @@ class Header():
 
     def go_to_allVacancies(self):
         """This function redirects from the start page to the vacancy page"""
-        # self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, SHOW_ALL_INFO_BUTTON_CSS_SELECTOR)))
         self.browser.click_element_double_locator(self.locators_your_resume.SHOW_ALL_INFO_BUTTON,
                                                   self.locators_header.RABOTY_NET)

@@ -18,4 +18,5 @@ class BasePage():
 
     @classmethod
     def tearDownClass(cls):
-        cls.browser.driver.quit()
+        pass
+        # cls.browser.driver.quit()

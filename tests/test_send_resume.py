@@ -25,6 +25,5 @@ class TestSendResume(BasePage):
         preview_resume_page.click_sendEmail_button()
         msg = preview_resume_page.confirmation_message()
 
-        # self.assertEqual(msg, 'Mail has been sent!')
         assert msg == 'Mail has been sent!'
 

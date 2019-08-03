@@ -68,3 +68,12 @@ class DriverWrapper(object):
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator1))
         element = self.get_one_element(locator2)
         element.click()
+
+    def click_one_button(self, locator1, locator2):
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator2))
+        buttons = self.get_elements(locator1)
+        change = None
+        for i in buttons:
+            if i.text == 'Change':
+                change = i
+        change.click()

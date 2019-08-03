@@ -67,6 +67,7 @@ class LocatorsPreviewResume(object):
     BUTTONS = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
     MESSAGE = (By.CSS_SELECTOR, 'div[class="wrap"]>p')
     PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+    RESUME = (By.CSS_SELECTOR, "div[class='form-group']>iframe")
 
 
 class LocatorsYourResume(object):
