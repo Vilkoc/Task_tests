@@ -6,6 +6,7 @@ class LocatorsHeader(object):
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log in"
     LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']"), "Log out"
+    LINKS = (By.CSS_SELECTOR, 'a[class="navbar-brand"]')
 
 
 class LocatorsSignIn(object):

@@ -42,3 +42,6 @@ class Header(Methods):
         self.click_icon()
         self.select_option(pick_item)
 
+    def get_text_of_first_link(self):
+        self.pause(PAUSE)
+        return self.get_elements(self.locators.LINKS)[1].text
