@@ -7,18 +7,36 @@ class UserPage():
         self.browser = base_obj.browser
         self.locators = LocatorsUserPage
 
+    def check_invalidity_data(self, key):
+        temp = self.browser.get_attr_value(self.locators.user_fields[key], 'class')
+        if 'ng-invalid' in temp:
+            return True
+        return False
+
+    def check_validity_data(self, key):
+        temp = self.browser.get_attr_value(self.locators.user_fields[key], 'class')
+        if 'ng-valid' in temp:
+            return True
+        return False
+
     def enter_data_textbox(self, key, value):
         """Enters into the specific field data and returns True/False for valid/invalid data"""
         self.browser.clear_element(self.locators.user_fields[key])
         self.browser.send_keys(self.locators.user_fields[key], value)
-        temp = self.browser.get_attr_value(self.locators.user_fields[key], 'class')
-        if 'ng-invalid' in temp:
-            return False
-        else:
+        if self.check_validity_data(key):
             return True
+        return False
 
     def read_data_textbox(self, key):
         return self.browser.get_attr_value(self.locators.user_fields[key], 'ng-reflect-model')
 
     def click_update_profile(self):
         self.browser.click_element(self.locators.UPDATE_PROFILE)
+
+    def clear_data_textbox(self, key):
+        return self.browser.clear_element(self.locators.user_fields[key])
+
+    def check_submit_button(self):
+        self.browser.get_property(self.locators.UPDATE_PROFILE, 'disabled')
+
+

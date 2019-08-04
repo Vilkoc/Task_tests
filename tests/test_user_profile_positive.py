@@ -12,18 +12,18 @@ class TestPositive(BasePage):
         perform = UserPage(self)
 
         start.login(person)
-        self.header.select_option('Profile')
 
+        self.header.select_option('Profile')
         for key in entry.keys():
             perform.enter_data_textbox(key, entry[key])
 
         perform.click_update_profile()
-        self.browser.driver.save_screenshot('sample.png')
 
+        data = {}
         for key in entry.keys():
-            if key == 'BIRTHDAY':
-                tmp = entry[key]
-                entry[key] = tmp[2] + '-' + tmp[0] + '-' + tmp[1]
-            assert entry[key] == perform.read_data_textbox(key)
-
-        self.header.select_option('Log out')
+            # if key == 'BIRTHDAY':
+            #     tmp = entry[key]
+            #     entry[key] = tmp[2] + '-' + tmp[0] + '-' + tmp[1]
+            data[key] = perform.read_data_textbox(key)
+            print(entry[key], data[key])
+            assert entry[key] == data[key]

@@ -6,6 +6,7 @@ user_profile.py
 tests/ssstest_login_out.py
 test_login_out.py
 musor.py
+test_musor.py
 __pycache__/
 pages/__pycache__
 sample.png

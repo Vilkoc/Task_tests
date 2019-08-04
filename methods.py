@@ -51,6 +51,14 @@ class DriverWrapper(object):
 
     def get_attr_value(self, locator, attr):
         """Get attribute value of the element"""
-        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
+
+    def get_property(self, locator, prop):
+        """Get attribute value of the element"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
+        element = self.get_elements(locator)[0]
+        return element.get_property(prop)
+
+
