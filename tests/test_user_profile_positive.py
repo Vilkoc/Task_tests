@@ -1,10 +1,10 @@
 from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.user_profile_page import UserPage
-from user_data import user_data_rab_26 as entry
+from user_data import user_data_rab_19 as entry
 
 
-class TestUserProfileNegative(BasePage):
+class TestUserProfilePositive(BasePage):
 
     def setUp(self):
         start = SignInPage(self)
@@ -14,8 +14,9 @@ class TestUserProfileNegative(BasePage):
 
     def routine(self, field):
         valid_entry = self.perform.enter_data_textbox(field, entry[field])
-        button_disabled = self.perform.disabled_update_profile_button()
-        assert not valid_entry and button_disabled
+        self.perform.click_update_profile()
+        read = self.perform.read_data_textbox(field)
+        assert entry[field] == read and valid_entry
 
     def test_first_name(self, field='FIRST_NAME'):
         self.routine(field)
@@ -47,13 +48,13 @@ class TestUserProfileNegative(BasePage):
     def test_zip_code(self, field='ZIP_CODE'):
         self.routine(field)
 
-    def birthday(self, field='BIRTHDAY'):
+    def test_birthday(self, field='BIRTHDAY'):
         valid_entry = self.perform.enter_data_textbox(field, entry[field])
-        button_disabled = self.perform.disabled_update_profile_button()
-        assert not valid_entry and button_disabled
+        self.perform.click_update_profile()
+        read = self.perform.read_data_textbox(field)
         tmp = entry[field]
         entry[field] = tmp[2] + '-' + tmp[0] + '-' + tmp[1]
-        self.routine(field)
+        assert entry[field] == read and valid_entry
 
     def tearDown(self):
         self.header.select_option('Log out')
