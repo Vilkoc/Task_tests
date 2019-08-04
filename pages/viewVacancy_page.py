@@ -13,6 +13,7 @@ class ViewVacancyPage():
         """This function provides a push of a 'Send Resume' button, which sends a resume to the company"""
         self.browser.click_element_double_locator(self.locators.TEXT, self.locators.SEND_RESUME_BUTTON)
 
-    # def click_showCompany_button(self):
-    #     """This function provides a push of a 'Show Company' button, which allows to see details about company"""
-    #     self.browser.driver.find_element_by_css_selector(self.showCompany_button_cssSelector).click()
+    def click_showCompany_button(self):
+        """This function provides a push of a 'Show Company' button, which allows to see details about company"""
+        # self.browser.driver.find_element_by_css_selector(self.showCompany_button_cssSelector).click()
+        self.browser.click_element(self.locators.SHOW_COMPANY_BUTTON)
