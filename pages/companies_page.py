@@ -35,3 +35,7 @@ class CompaniesPage():
         tmp = self.browser.driver.get_element(self.locators.POPUP)
         tmp2 = tmp.find_element_by_tag_name('p').text
         return tmp2
+
+    def companies_visible(self):
+        tmp = self.browser.get_element_with_time_delay(self.locators.TABLE_BODY)
+        return tmp != 0

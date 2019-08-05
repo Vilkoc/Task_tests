@@ -6,7 +6,7 @@ from pages.sign_in_page import SignInPage
 
 
 class TestAdminCreateClaim(BasePage):
-    def test_login_logout(self, person='ADMIN'):
+    def test_admin_create_claim(self, person='ADMIN'):
         signin = SignInPage(self)
         signin.login(person)
         companies = CompaniesPage(self)

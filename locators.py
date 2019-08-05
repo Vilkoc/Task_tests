@@ -32,6 +32,7 @@ class LocatorsCompaniesPage(object):
     REJECT_CLAIM_BTN = (By.CSS_SELECTOR, 'button[title"Reject claim"]')
     CLOSE_CLAIM_BTN = (By.CSS_SELECTOR, 'a[title="Hide"]')
     POPUP = (By.CSS_SELECTOR, 'div.wrap')
+    TABLE_BODY = (By.CSS_SELECTOR, "table > tbody")
 
 
 class LocatorsUserPage:

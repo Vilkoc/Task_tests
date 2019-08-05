@@ -54,3 +54,9 @@ class DriverWrapper(object):
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
+
+    def get_element_with_time_delay(self, locator):
+        """Returns all elements for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.driver.find_elements(*locator)
+
