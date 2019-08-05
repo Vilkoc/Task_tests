@@ -1,5 +1,4 @@
 class CownerData():
-
     PERSON = "COWNER"
 
     OPTION = "Log in"
@@ -13,7 +12,7 @@ class CownerData():
 
     REQUIREMENTS = ["Good knowledge of Python, Java", "Fundamental understanding of testing process"]
 
-    COMPANY_RENAME ="ForeverSheva"
+    COMPANY_RENAME = "ForeverSheva"
 
     COMPANY_DELETE = "InventorSoft"
 

@@ -5,7 +5,6 @@ from locators import LocatorsMyCompaniesPage
 from locators import LocatorsYourResume
 
 
-
 class Header():
     """Header page, which will be inherited by other pages"""
 
@@ -15,7 +14,6 @@ class Header():
         self.locator_create_company = LocatorsCreateCompanyPage
         self.locator_my_companies = LocatorsMyCompaniesPage
         self.locators_your_resume = LocatorsYourResume
-
 
     def click_icon(self):
         """Clicks on the round icon"""

@@ -3,6 +3,7 @@ from locators import LocatorsForgotPassword
 
 class ForgotPasswordPage:
     """ Page for renew password"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsForgotPassword
@@ -12,4 +13,3 @@ class ForgotPasswordPage:
 
     def click_submit_button(self):
         self.browser.click_element(self.locators.SUBMIT_BUTTON)
-

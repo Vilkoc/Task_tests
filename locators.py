@@ -82,21 +82,25 @@ class LocatorsMyCompaniesPage(object):
     COMPANY_UPDATE_BUTTON = (By.CSS_SELECTOR, "a>i[class='fa fa-edit']")
 
 
-class LocatorsViewCompanyPage(object):
+class LocatorsViewCompany(object):
     CREATE_VACANCY_BUTTON = (By.CSS_SELECTOR, "a[href='/createVacancy/1']")
     VACANCY_DETAILS_BUTTON = (By.PARTIAL_LINK_TEXT, "View details")
     SIMPLE_VACANCY_DIV = (By.CSS_SELECTOR, "div.simpleVacancy")
+    CLAIM_BUTTON = (By.CSS_SELECTOR, 'button[class = "btn btn-warning"]')
+    TITLE = (By.CSS_SELECTOR, 'select[id="title"]>option')
+    DESCRIPTION_FIELD = (By.ID, 'description')
+    SEND_CLAIM_BUTTON = (By.CSS_SELECTOR, 'input[value="Claim"]')
 
 
 class LocatorsCreateVacancyPage(object):
-    VACANCY_DESCRIPTION_TEXTBOX =(By.ID, "description")
+    VACANCY_DESCRIPTION_TEXTBOX = (By.ID, "description")
     VACANCY_POSITION_TEXTBOX = (By.ID, "position")
     VACANCY_EMPLOYMENT_DROPBOX = (By.CSS_SELECTOR, "select>option[value='HOURLY']")
     VACANCY_SALARY_TEXTBOX = (By.ID, "salary")
     VACANCY_CURRRENCY_DROPBOX = (By.CSS_SELECTOR, "select>option[value='USD']")
-    ADD_REQUIREMENT_BUTTON =(By.CSS_SELECTOR, "button[class='btn btn-success']")
+    ADD_REQUIREMENT_BUTTON = (By.CSS_SELECTOR, "button[class='btn btn-success']")
     VAC_REQUIREMENT_TEXTBOX = (By.CSS_SELECTOR, "input[id = 'description'][placeholder = 'Input requirement']")
-    VACANCY_CREATE_BUTTON =(By.CSS_SELECTOR, "button[class='btn btn-primary'][type='submit']")
+    VACANCY_CREATE_BUTTON = (By.CSS_SELECTOR, "button[class='btn btn-primary'][type='submit']")
 
     VACANCY_FIELDS = ["description", "position", "salary"]
 
@@ -117,6 +121,7 @@ class LocatorsUserPage:
         'ZIP_CODE': (By.ID, 'zipCode')
     }
 
+
 class LocatorsForgotPassword:
     EMAIL = (By.ID, 'username')
     SUBMIT_BUTTON = (By.CSS_SELECTOR, 'input[value="Submit"]')
@@ -126,8 +131,6 @@ class LocatorsConfirmPassword:
     NEW_PASSWORD = (By.ID, 'newPassword')
     CONFIRMATION_PASSWORD = (By.ID, 'confirmPassword')
     REGISTER_BUTTON = (By.CSS_SELECTOR, 'input[value="Register"]')
-
-
 
 
 class LocatorsPreviewResume(object):
@@ -160,10 +163,3 @@ class LocatorsEditResume(object):
     POSITION_FIELD = (By.ID, 'position')
     PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
     GET_TEXT_FROM_FIELD = 'ng-reflect-model'
-
-
-class LocatorsViewCompany(object):
-    CLAIM_BUTTON = (By.CSS_SELECTOR, 'button[class = "btn btn-warning"]')
-    TITLE = (By.CSS_SELECTOR, 'select[id="title"]>option')
-    DESCRIPTION_FIELD = (By.ID, 'description')
-    SEND_CLAIM_BUTTON = (By.CSS_SELECTOR, 'input[value="Claim"]')

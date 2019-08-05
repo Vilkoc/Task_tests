@@ -3,6 +3,7 @@ from locators import LocatorsSignIn
 
 class AuthPage():
     """ Page for sign in, sign up and forgot password"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.header = base_obj.header
@@ -56,5 +57,3 @@ class AuthPage():
 
     def click_ok(self):
         self.browser.click_element(self.locators.POP_UP_FORGOT_PASSWORD_BUTTON)
-
-

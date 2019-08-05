@@ -46,5 +46,3 @@ class CreateVacancyPage():
         z = self.browser.read_data_in_textbox(self.locators.VACANCY_FIELDS,
                                               self.loc.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
         return z
-
-

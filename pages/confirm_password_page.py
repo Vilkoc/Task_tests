@@ -1,7 +1,9 @@
 from locators import LocatorsConfirmPassword
 
+
 class ConfirmPassword:
     """Confirm new password"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsConfirmPassword
