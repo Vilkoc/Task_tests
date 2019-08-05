@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium import webdriver
 
 
 class DriverWrapper(object):
@@ -14,7 +15,8 @@ class DriverWrapper(object):
         return self.driver.find_elements(*locator)
 
     def get_one_element(self, locator):
-        """Returns one element for the specific locator"""
+        """Returns element for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         return self.driver.find_element(*locator)
 
     def click_one_element(self, locator):
@@ -22,6 +24,14 @@ class DriverWrapper(object):
         # WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
         element = self.get_one_element(locator)
         element.click()
+
+    def get_elements_by_text(self, locator):
+        """Returns element with specific text for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator[0]))
+        elements = self.driver.find_elements(*locator[0])
+        for element in elements:
+            if element.text == locator[1]:
+                return element
 
     def click_element(self, locator, elem_number=0):
         """Clicks on the element with number elem_number"""
@@ -35,6 +45,14 @@ class DriverWrapper(object):
         elements = self.get_elements(locator)
         for element in elements:
             if element.text == text_value:
+                element.click()
+
+    def click_element_by_text_simple(self, locator_and_text):
+        """Clicks on the element with text attribute text_value"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator_and_text[0]))
+        elements = self.get_elements(locator_and_text[0])
+        for element in elements:
+            if element.text == locator_and_text[1]:
                 element.click()
 
     def clear_element(self, locator, text_value='default'):
@@ -82,5 +100,12 @@ class DriverWrapper(object):
                 locator_attribute)
             data_list.append(a)
         return data_list
+
+    def get_text_of_element(self, locator):
+        return self.get_one_element(locator).text
+
+    def pause(self, time):
+        webdriver.support.wait.time.sleep(time)
+
 
 

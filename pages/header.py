@@ -1,4 +1,5 @@
 from locators import LocatorsHeader
+from config import PAUSE
 from locators import LocatorsCreateCompanyPage
 from locators import LocatorsMyCompaniesPage
 
@@ -12,11 +13,26 @@ class Header():
 
     def click_icon(self):
         """Clicks on the round icon"""
+        self.browser.pause(PAUSE)
         self.browser.click_element(self.locators.ICON)
 
     def check_dropdown(self):
         flag = self.browser.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
         return flag == 'true'
+
+    def click_log_out(self):
+        """Clicks on the round icon"""
+        self.browser.click_element_by_text_simple(self.locators.LOG_OUT)
+
+    def click_log_in(self):
+        """Clicks on the round icon"""
+        self.browser.click_element_by_text_simple(self.locators.LOG_IN)
+
+    def is_logined(self):
+        """ Check if user logined: if 'logout' button exist == logined """
+        self.click_icon()
+        log_out = self.browser.get_elements_by_text(self.locators.LOG_OUT)
+        return log_out.text == 'Log out'
 
     def select_option(self, pick_item):
         """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""
@@ -46,3 +62,7 @@ class Header():
 
     def click_my_companies(self):
         self.browser.click_element(self.locator_my_companies.MY_COMPANIES)
+
+    def get_text_of_first_link(self):
+        self.browser.pause(PAUSE)
+        return self.browser.get_elements(self.locators.LINKS)[1].text

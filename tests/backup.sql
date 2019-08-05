@@ -1,11 +1,13 @@
 INSERT INTO public.users VALUES (1, True, 'admin@gmail.com', '$2a$10$E2.PwtnpF2p6aB3NFM3Qo.TarTYsaiWD0yTZ7qY1U3K.ybKxNvCku');
 INSERT INTO public.users VALUES (2, True, 'cowner@gmail.com', '$2a$10$DmeWO6UlY/m2QjJaxLGUzezqOotvJmpzbBmZGBr8o/HHeNUuCWcpK');
 INSERT INTO public.users VALUES (3, True, 'user@gmail.com', '$2a$10$t31PsVNWl8eaWr9/gPwKKeX.4Q2grl12wmiRrN9fEZDMlMGHwA92m');
+INSERT INTO public.users VALUES (11, True, 'rabotynet.test.fp@gmail.com', '$2a$10$c0a3HsdYm6VHO9h1/ZXWg.qDqWve8GghCpCA7iRXlE7PyE3dyeaWi');
 INSERT INTO public.contact VALUES (1, 'den.ohorodnik@gmail.com', '+380973999060');
 INSERT INTO public.contact VALUES (2, 'jon.snow@gmail.com', '+380973219033');
 INSERT INTO public.contact VALUES (3, 'softserve.inc@gmail.com', '+380322409999');
 INSERT INTO public.contact VALUES (4, 'inventorsoft.inc@gmail.com', '+380984529012');
 INSERT INTO public.contact VALUES (5, 'valsoft@gmail.com', '+380972993270');
+INSERT INTO public.contact VALUES (13, 'rabotynet.test.fp@gmail.com', Null);
 INSERT INTO public.address VALUES (1, Null, '20', 'Chernivtsi', 'Ukraine', 'Holovna', 58000);
 INSERT INTO public.address VALUES (2, Null, '33', 'Chernivtsi', 'Ukraine', 'Shevchenka', 58000);
 INSERT INTO public.address VALUES (3, Null, '246', 'Chernivtsi', 'Ukraine', 'Holovna', 58000);
@@ -19,6 +21,7 @@ INSERT INTO public.education VALUES (2, 'Master', 2009, 'KPI', 'Software Enginee
 INSERT INTO public.person VALUES (1, Null, Null, Null, Null, Null, Null);
 INSERT INTO public.person VALUES (2, '1986-11-26', 'Jon', 'Snow', 2, 2, Null);
 INSERT INTO public.person VALUES (3, '1999-6-4', 'Denys', 'Ohorodnik', 1, 1, Null);
+INSERT INTO public.person VALUES (11, Null, Null, Null, Null, 13, Null);
 INSERT INTO public.resume VALUES (1, 'Junior Developer', False, 1, 2);
 INSERT INTO public.resume VALUES (2, 'Middle Developer', False, 2, 3);
 INSERT INTO public.roles VALUES (1, 'admin');
@@ -140,3 +143,4 @@ INSERT INTO public.user_role VALUES (1, 1);
 INSERT INTO public.user_role VALUES (2, 2);
 INSERT INTO public.user_role VALUES (2, 3);
 INSERT INTO public.user_role VALUES (3, 3);
+INSERT INTO public.user_role VALUES (11, 3);
