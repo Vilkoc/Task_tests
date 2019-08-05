@@ -1,5 +1,3 @@
-import time
-
 from init import BasePage
 from pages.companies_page import CompaniesPage
 from pages.company_details_page import CompanyDetailsPage
@@ -21,5 +19,3 @@ class TestAdminCreateClaim(BasePage):
         header = Header(self)
         header.move_to_companies()
         assert companies.view_warning_status_of_co()
-
-

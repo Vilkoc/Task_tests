@@ -15,4 +15,3 @@ class TestAdminBlockCo(BasePage):
             companies = CompaniesPage(self)
             companies.block_co()
             assert companies.confirm_with_popup() == "Company blocked"
-
