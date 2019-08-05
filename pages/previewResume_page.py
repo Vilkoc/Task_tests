@@ -3,6 +3,7 @@ from locators import LocatorsPreviewResume
 
 
 class PreviewResumePage():
+    """On this page user or cowner can change infjrmation in resume, send resume, and open resume in new tab"""
 
     def __init__(self, base_obj):
         self.browser = base_obj.browser
@@ -10,15 +11,12 @@ class PreviewResumePage():
         self.locators = LocatorsPreviewResume
 
     def click_sendEmail_button(self):
-        """This function provides a push of a 'Send Email' button"""
         self.browser.click_element_by_text(self.locators.BUTTONS, 'Send Email')
 
     def click_change_button(self):
-        """This function provides a push of a 'Change' button, which allows change information in resume"""
         self.browser.click_one_button(self.locators.BUTTONS, self.locators.RESUME)
 
     def confirmation_message(self):
-        """This function reads the message from the popup window and passes it to the variable"""
         msg = self.browser.pop_up_element(self.locators.MESSAGE).text
         return msg
 

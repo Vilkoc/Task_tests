@@ -24,12 +24,10 @@ class CompaniesPage():
         self.browser.click_element(self.locators.UNBLOCK_2_CO)
 
     def click_show_claims_button(self):
-        """This function allows to view claims of the company"""
         self.browser.driver.execute_script("window.scrollTo(0, 0);")
         self.browser.click_element(self.locators.SHOW_CLAIMS_BUTTON)
 
     def description(self):
-        """This function take value from claim"""
         element = self.browser.get_elements(self.locators.DESCRIPTION)
         description = None
         for i in element:

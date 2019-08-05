@@ -4,15 +4,16 @@ from pages.vacancies_page import VacanciesPage
 from pages.viewVacancy_page import ViewVacancyPage
 from pages.previewResume_page import PreviewResumePage
 from pages.editResume_page import EditResumePage
+from data_tests import test_data_Nazar as td
 
 
 class TestChangeData(BasePage):
 
-    def test_change_data(self, option='Log in', person='USER'):
+    def test_change_data(self):
         sign_in_page = SignInPage(self)
 
-        self.header.select_option(option)
-        sign_in_page.login(person)
+        self.header.select_option(td.LOG_IN)
+        sign_in_page.login(td.USER)
 
         self.header.go_to_allVacancies()
 
@@ -26,10 +27,10 @@ class TestChangeData(BasePage):
         preview_resume_page.click_change_button()
 
         edit_resume_page = EditResumePage(self)
-        edit_resume_page.change_positionField('Middle Developer')
+        edit_resume_page.change_positionField(td.POSITION_FIELD)
         edit_resume_page.click_previewPDF_button()
 
         preview_resume_page.click_change_button()
 
         text = edit_resume_page.confirmation_changes()
-        assert text == 'Middle Developer'
+        assert text == td.POSITION_FIELD
