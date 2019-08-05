@@ -6,7 +6,9 @@ def prepare_db():
   'pdf_resume', 'person', 'photo', 'requirement', 'resume', 'roles',
   'skill', 'user_role', 'vacancy', 'vacancy_resume',
   'verificationtoken']
+
     print('prepare database')
+
     with psycopg2.connect(dbname=DB_NAME, user=DB_USER,
                           password=DB_PASS, host=DB_HOST) as conn:
         cur = conn.cursor()
@@ -18,3 +20,5 @@ def prepare_db():
                 cur.execute(line)
 
         back_up.close()
+
+

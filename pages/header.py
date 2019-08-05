@@ -2,14 +2,20 @@ from locators import LocatorsHeader
 from config import PAUSE
 from locators import LocatorsCreateCompanyPage
 from locators import LocatorsMyCompaniesPage
+from locators import LocatorsYourResume
+
+
 
 class Header():
     """Header page, which will be inherited by other pages"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsHeader
         self.locator_create_company = LocatorsCreateCompanyPage
         self.locator_my_companies = LocatorsMyCompaniesPage
+        self.locators_your_resume = LocatorsYourResume
+
 
     def click_icon(self):
         """Clicks on the round icon"""
@@ -41,9 +47,7 @@ class Header():
             raise Exception('Incorrect value for click_dropdown function')
         self.click_icon()
         if self.check_dropdown():
-
             self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
-
         else:
             self.click_icon()
 
@@ -66,3 +70,7 @@ class Header():
     def get_text_of_first_link(self):
         self.browser.pause(PAUSE)
         return self.browser.get_elements(self.locators.LINKS)[1].text
+
+    def go_to_allVacancies(self):
+        self.browser.click_element_double_locator(self.locators_your_resume.SHOW_ALL_INFO_BUTTON,
+                                                  self.locators.RABOTY_NET)

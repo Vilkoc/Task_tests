@@ -107,5 +107,27 @@ class DriverWrapper(object):
     def pause(self, time):
         webdriver.support.wait.time.sleep(time)
 
+    def click_element_double_locator(self, locator1, locator2):
+        """This function takes two locators, first one for 'WebDriverWait', the second one for click on the element"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator1))
+        element = self.get_one_element(locator2)
+        element.click()
 
+    def click_one_button(self, locator1, locator2):
+        """Special function for press 'Change' button"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator2))
+        buttons = self.get_elements(locator1)
+        change = None
+        for i in buttons:
+            if i.text == 'Change':
+                change = i
+        change.click()
 
+    def invisibility_of_element(self, locator):
+        """This function wait until element will be invisible"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.invisibility_of_element(locator))
+
+    def pop_up_element(self, locator):
+        """Returns element from pop-up window"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.driver.find_element(*locator)

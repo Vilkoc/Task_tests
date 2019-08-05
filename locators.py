@@ -9,6 +9,7 @@ class LocatorsHeader():
     LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log in"
     LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']"), "Log out"
     LINKS = (By.CSS_SELECTOR, 'a[class="navbar-brand"]')
+    RABOTY_NET = (By.LINK_TEXT, "RabotyNet")
 
 
 class LocatorsSignIn():
@@ -39,30 +40,8 @@ class LocatorsSignIn():
 
 
 class LocatorsCompaniesPage(object):
-    STATUS_OF_CO = (By.CSS_SELECTOR, 'i[title]')
-
-    BLOCK_1_CO = (By.CSS_SELECTOR, 'a[title="Block"]')
-
-    UNBLOCK_2_CO = (By.CSS_SELECTOR, 'a[title="Unblock"]')
-
-    DETAILS_ABOUT_CO = (By.CSS_SELECTOR, 'a[href="/viewCompany/1"]')
-
-    APPROVE_CO = (By.CSS_SELECTOR, 'a[title="Approve"]')
-    ###########################################
-    button_next_css = (By.CSS_SELECTOR, 'button')
-
-    PREVIEWS_PAGE_BTN = (By.CSS_SELECTOR, 'body > div > div > section > div > div > button:nth-child(4)')
-
-    OPEN_CLAIM_BTN = (By.CSS_SELECTOR, 'a[title="Show"]')
-
-    REJECT_CLAIM_BTN = (By.CSS_SELECTOR, 'button[title"Reject claim"]')
-
-    CLOSE_CLAIM_BTN = (By.CSS_SELECTOR, 'a[title="Hide"]')
-
-    name_of_1company_css = (By.CSS_SELECTOR, 'body > div > div > section > div > div > table >\
-     tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3)')
-
-    POPUP = (By.CSS_SELECTOR, 'div.wrap')
+    SHOW_CLAIMS_BUTTON = (By.CSS_SELECTOR, 'a[title = "Show"]')
+    DESCRIPTION = (By.CSS_SELECTOR, 'table[class="table table-stripped"]>tbody>tr>td')
 
 
 class LocatorsCreateCompanyPage(object):
@@ -121,6 +100,7 @@ class LocatorsCreateVacancyPage(object):
 
     VACANCY_FIELDS = ["description", "position", "salary"]
 
+
 class LocatorsUserPage:
     UPDATE_PROFILE = (By.CSS_SELECTOR, "input[value='Update Profile']")
     user_fields = {
@@ -137,15 +117,6 @@ class LocatorsUserPage:
         'ZIP_CODE': (By.ID, 'zipCode')
     }
 
-
-class LocatorsVacanvies:
-    POP_UP_WINDOW_SIGN_UP_TEXT = (By.CSS_SELECTOR, 'div.wrap > p')
-    POP_UP_WINDOW_SIGN_UP_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
-
-    POP_UP_WINDOW_FORGOT_PASSWORD_TEXT = (By.CSS_SELECTOR, 'div.wrap > p')
-    POP_UP_WINDOW_FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
-
-
 class LocatorsForgotPassword:
     EMAIL = (By.ID, 'username')
     SUBMIT_BUTTON = (By.CSS_SELECTOR, 'input[value="Submit"]')
@@ -156,3 +127,43 @@ class LocatorsConfirmPassword:
     CONFIRMATION_PASSWORD = (By.ID, 'confirmPassword')
     REGISTER_BUTTON = (By.CSS_SELECTOR, 'input[value="Register"]')
 
+
+
+
+class LocatorsPreviewResume(object):
+    BUTTONS = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+    MESSAGE = (By.CSS_SELECTOR, 'div[class="wrap"]>p')
+    PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+    RESUME = (By.CSS_SELECTOR, "div[class='form-group']>iframe")
+
+
+class LocatorsYourResume(object):
+    SHOW_ALL_INFO_BUTTON = (By.CSS_SELECTOR, 'a[href="/update/2"]')
+
+
+class LocatorsVacancies(object):
+    VIEW_DETAILS_BUTTON = (By.CSS_SELECTOR, 'a[href="/viewVacancy/34"]')
+    POP_UP_WINDOW_SIGN_UP_TEXT = (By.CSS_SELECTOR, 'div.wrap > p')
+    POP_UP_WINDOW_SIGN_UP_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
+
+    POP_UP_WINDOW_FORGOT_PASSWORD_TEXT = (By.CSS_SELECTOR, 'div.wrap > p')
+    POP_UP_WINDOW_FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
+
+
+class LocatorsViewVacancy(object):
+    SEND_RESUME_BUTTON = (By.CSS_SELECTOR, 'a[class="btn btn-success"]')
+    SHOW_COMPANY_BUTTON = (By.CSS_SELECTOR, 'a[href="/viewCompany/1"]')
+    TEXT = (By.CSS_SELECTOR, "div[class='simpleVacancy']>td")
+
+
+class LocatorsEditResume(object):
+    POSITION_FIELD = (By.ID, 'position')
+    PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
+    GET_TEXT_FROM_FIELD = 'ng-reflect-model'
+
+
+class LocatorsViewCompany(object):
+    CLAIM_BUTTON = (By.CSS_SELECTOR, 'button[class = "btn btn-warning"]')
+    TITLE = (By.CSS_SELECTOR, 'select[id="title"]>option')
+    DESCRIPTION_FIELD = (By.ID, 'description')
+    SEND_CLAIM_BUTTON = (By.CSS_SELECTOR, 'input[value="Claim"]')

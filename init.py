@@ -1,8 +1,8 @@
 from methods import DriverWrapper
-from pages.header import Header
 from driver_selection import WebdriverSelection
-from utilities.db import prepare_db
 from config import URL, TIMEOUT, WEBDRIVER
+from pages.header import Header
+from utilities.db import prepare_db
 
 
 class BasePage():
