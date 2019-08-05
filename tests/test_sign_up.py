@@ -28,4 +28,3 @@ class TestSignUp(BasePage):
 
         page.login_user(USERNAME_SIGNUP, PASSWORD)
         assert self.header.is_logined()
-

@@ -2,7 +2,7 @@ from locators import LocatorsSignIn
 
 
 class AuthPage():
-    """Sign in page with login method for any type of person"""
+    """ Page for sign in, sign up and forgot password"""
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.header = base_obj.header

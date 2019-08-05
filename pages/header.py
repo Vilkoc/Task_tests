@@ -7,6 +7,7 @@ from config import PAUSE
 
 class Header(Methods):
     """Header page, which will be inherited by other pages"""
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver

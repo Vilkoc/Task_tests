@@ -1,5 +1,4 @@
 from init import BasePage
-import unittest
 from parameterized import parameterized
 
 from pages.auth_page import AuthPage
@@ -12,7 +11,7 @@ class TestLogin(BasePage):
     @parameterized.expand([
         ('admin@gmail.com', 'admin', 'Сompanies'),
         ('user@gmail.com', 'user', 'Create company'),
-        ('cowner@gmail.com', 'cowner', 'My companies')
+        ('cowner@gmail.com', 'cowner', 'My companies1')
     ])
     def test_login_logout(self, user, password, expected):
         page = AuthPage(self)
@@ -28,4 +27,3 @@ class TestLogin(BasePage):
 
         self.header.click_icon()
         self.header.click_log_out()
-

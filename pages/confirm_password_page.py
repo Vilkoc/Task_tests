@@ -1,8 +1,7 @@
-from methods import Methods
 from locators import LocatorsConfirmPassword
 
-
 class ConfirmPassword:
+    """Confirm new password"""
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsConfirmPassword
@@ -15,4 +14,3 @@ class ConfirmPassword:
 
     def click_register_button(self):
         self.browser.click_element(self.locators.REGISTER_BUTTON)
-

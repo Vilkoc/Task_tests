@@ -82,4 +82,3 @@ class Methods(object):
 
     def pause(self, time):
         webdriver.support.wait.time.sleep(time)
-

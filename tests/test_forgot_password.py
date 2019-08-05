@@ -40,4 +40,3 @@ class TestForgotPassword(BasePage):
 
         login.login_user(USERNAME_PASSW_RECOVERY, OLD_PASSWORD)
         assert self.header.is_logined()
-
