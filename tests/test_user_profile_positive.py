@@ -1,3 +1,5 @@
+import unittest
+
 from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.user_profile_page import UserPage

@@ -4,6 +4,7 @@ from credentials import Credentials
 
 class SignInPage():
     """Sign in page with login method for any type of person"""
+
     def __init__(self, base_obj):
         self.header = base_obj.header
         self.browser = base_obj.browser

@@ -35,3 +35,6 @@ class Header:
         while current_person < person_criteria[person]:
             current_person = len(self.browser.get_elements(self.locators.NAVBAR))
         return True if current_person == person_criteria[person] else False
+
+    def move_to_companies(self):
+        self.browser.click_element(self.locators.MOVE_TO_COMPANIES)

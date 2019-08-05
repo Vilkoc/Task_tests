@@ -25,3 +25,4 @@ class TestLoginAll(BasePage):
     def tearDown(self):
         self.header.select_option('Log out')
         self.browser.driver.get(URL)
+
