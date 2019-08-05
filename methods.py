@@ -59,7 +59,5 @@ class DriverWrapper(object):
         """Returns True if property is present"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         element = self.get_elements(locator)[0]
-        temp = element.get_property(prop)
-        return temp
-
+        return element.get_property(prop)
 

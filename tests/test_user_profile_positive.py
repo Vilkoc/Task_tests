@@ -2,11 +2,13 @@ from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.user_profile_page import UserPage
 from user_data import user_data_rab_19 as entry
+from config import URL
 
 
 class TestUserProfilePositive(BasePage):
 
     def setUp(self):
+        self.browser.driver.get(URL)
         start = SignInPage(self)
         self.perform = UserPage(self)
         start.login('USER')

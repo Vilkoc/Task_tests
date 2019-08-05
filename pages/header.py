@@ -1,8 +1,9 @@
 from locators import LocatorsHeader
 
 
-class Header():
+class Header:
     """Header page, which will be inherited by other pages"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsHeader
@@ -12,11 +13,9 @@ class Header():
         self.browser.click_element(self.locators.ICON)
 
     def check_dropdown(self):
+        """Verifies if the dropdown box appeared"""
         flag = self.browser.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
-        if flag == 'true':
-            return True
-        else:
-            return False
+        return True if flag == 'true' else False
 
     def select_option(self, pick_item):
         """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""
@@ -30,11 +29,9 @@ class Header():
             self.click_icon()
 
     def person_verify(self, person):
-        """Returns True if the number of elements on the navbar equals to person_criteria"""
+        """Returns True if the number of elements on the navbar equals to the person_criteria"""
         person_criteria = {'ADMIN': 3, 'USER': 4, 'COWNER': 6}
-        default_person = 2
-        while default_person < person_criteria[person]:
-            default_person = len(self.browser.get_elements(self.locators.NAVBAR))
-        if len(self.browser.get_elements(self.locators.NAVBAR)) == person_criteria[person]:
-            return True
-        return False
+        current_person = 2
+        while current_person < person_criteria[person]:
+            current_person = len(self.browser.get_elements(self.locators.NAVBAR))
+        return True if current_person == person_criteria[person] else False

@@ -5,8 +5,8 @@ from utilities.db import prepare_db
 from config import URL, TIMEOUT, WEBDRIVER
 
 
-class BasePage():
-
+class BasePage:
+    """The parent class for all tests"""
     @classmethod
     def setUpClass(cls):
         prepare_db()
