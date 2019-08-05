@@ -3,8 +3,7 @@ from pages.sign_in_page import SignInPage
 from pages.create_vacancy_page import CreateVacancyPage
 from pages.my_companies_page import MyCompaniesPage
 from pages.view_company_page import ViewCompanyPage
-from test_data import CownerData
-import time
+from data_tests.cowner_data import CownerData
 
 
 class TestCreateVacancy(BasePage):

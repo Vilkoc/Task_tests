@@ -1,7 +1,7 @@
 from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.user_profile_page import UserPage
-from user_data import user_data_rab_19 as entry
+from data_tests.user_data import user_data_rab_19 as entry
 
 
 class TestPositive(BasePage):

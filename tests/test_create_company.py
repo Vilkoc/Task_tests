@@ -2,7 +2,7 @@ from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.create_company_page import CreateCompanyPage
 from pages.my_companies_page import MyCompaniesPage
-from test_data import CownerData
+from data_tests.cowner_data import CownerData
 
 
 class TestCreateCompany(BasePage):
