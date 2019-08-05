@@ -1,4 +1,5 @@
 from locators import LocatorsCreateVacancyPage
+from locators import LocatorsCreateCompanyPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -10,11 +11,9 @@ class CreateVacancyPage():
 
     def __init__(self, base_obj):
         self.locators = LocatorsCreateVacancyPage
+        self.loc = LocatorsCreateCompanyPage
         self.browser = base_obj.browser
         self.wait = WebDriverWait(base_obj.browser.driver, TIMEOUT)
-
-    def click_create_vacancy(self):
-        self.browser.click_element(self.locators.CREATE_VACANCY_BUTTON)
 
     def enter_vacancy_data(self, vac_data):
         """Enters into the specific field data"""
@@ -40,4 +39,12 @@ class CreateVacancyPage():
             c += 1
 
     def click_vacancy_create(self):
+        self.wait.until(EC.element_to_be_clickable(self.locators.VACANCY_CREATE_BUTTON))
         self.browser.click_element(self.locators.VACANCY_CREATE_BUTTON)
+
+    def read_vacancy_data(self):
+        z = self.browser.read_data_in_textbox(self.locators.VACANCY_FIELDS,
+                                              self.loc.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
+        return z
+
+

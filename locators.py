@@ -7,6 +7,7 @@ class LocatorsHeader():
     CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
+
 class LocatorsSignIn():
     EMAIL = (By.ID, "username")
     PASSWORD = (By.ID, "password")
@@ -15,6 +16,7 @@ class LocatorsSignIn():
     PASSWORD_SIGNUP = (By.ID, "password1")
     PASSWORD_VERIFY = (By.ID, "matchingPassword")
     REGISTER_BTN = (By.CSS_SELECTOR, "input[value='Register']")
+
 
 class LocatorsCompaniesPage(object):
     STATUS_OF_CO = (By.CSS_SELECTOR, 'i[title]')
@@ -58,7 +60,7 @@ class LocatorsCreateCompanyPage(object):
     COMPANY_APARTMENT_TEXTBOX = (By.ID, "apartment")
     COMPANY_ZIPCODE_TEXTBOX = (By.ID, "zipCode")
     COMPANY_CREATE_BUTTON = (By.CSS_SELECTOR, "button[class='btn btn-primary']")
-    ATTRIBUTE_OF_COMPANIES_TEXTBOXES = "ng-reflect-model"
+    ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES = "ng-reflect-model"
 
     COMPANY_FIELDS = ["name", "edrpou", "description", "website", "email", "phoneNumber", "country", "city", "street",
                       "building", "apartment", "zipCode"]
@@ -76,21 +78,24 @@ class LocatorsMyCompaniesPage(object):
     MY_COMPANIES = (By.CSS_SELECTOR, "a[href='/companies/my']")
     CREATE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a[href='/createCompany']")
     COMPANY_DETAIL_BUTTON_SOFTSERVE = (By.CSS_SELECTOR, "a[href ='/viewCompany/1']")
-    COMPANY_UPDATE_BUTTON_VALSOFT = (By.CSS_SELECTOR, "a[href='/updateCompany/ValSoft']")
     TABLE_BODY = (By.CSS_SELECTOR, "table>tbody")
     DELETE_COMPANY_BUTTON = (By.CSS_SELECTOR, "a>i[class='fa fa-trash']")
     COMPANY_UPDATE_BUTTON = (By.CSS_SELECTOR, "a>i[class='fa fa-edit']")
 
 
+class LocatorsViewCompanyPage(object):
+    CREATE_VACANCY_BUTTON = (By.CSS_SELECTOR, "a[href='/createVacancy/1']")
+    VACANCY_DETAILS_BUTTON = (By.PARTIAL_LINK_TEXT, "View details")
+    SIMPLE_VACANCY_DIV = (By.CSS_SELECTOR, "div.simpleVacancy")
+
+
 class LocatorsCreateVacancyPage(object):
-    CREATE_VACANCY_BUTTON = (By.CSS_SELECTOR, "a[href='/createVacancy/1']" )
     VACANCY_DESCRIPTION_TEXTBOX =(By.ID, "description")
     VACANCY_POSITION_TEXTBOX = (By.ID, "position")
     VACANCY_EMPLOYMENT_DROPBOX = (By.CSS_SELECTOR, "select>option[value='HOURLY']")
     VACANCY_SALARY_TEXTBOX = (By.ID, "salary")
     VACANCY_CURRRENCY_DROPBOX = (By.CSS_SELECTOR, "select>option[value='USD']")
     ADD_REQUIREMENT_BUTTON =(By.CSS_SELECTOR, "button[class='btn btn-success']")
-    VACANCY_REQUIREMENT_TEXTBOX = (By.ID, "description")
     VAC_REQUIREMENT_TEXTBOX = (By.CSS_SELECTOR, "input[id = 'description'][placeholder = 'Input requirement']")
     VACANCY_CREATE_BUTTON =(By.CSS_SELECTOR, "button[class='btn btn-primary'][type='submit']")
 

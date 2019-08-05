@@ -7,21 +7,20 @@ from test_data import CownerData
 
 class TestUpdateCompanyName(BasePage):
 
-    def test_update_company_name(self, option='Log in',  person='COWNER'):
+    def test_update_company_name(self):
         sign_in = SignInPage(self)
         update_company = UpdateCompanyPage(self)
         my_companies = MyCompaniesPage(self)
-
-        self.header.select_option(option)
-        sign_in.login(person)
+        self.header.select_option(CownerData.OPTION)
+        sign_in.login(CownerData.PERSON)
 
         self.header.click_my_companies()
-        my_companies.click_company_update()
+        my_companies.click_update(CownerData.COMPANY_FOR_UDATING)
         update_company.update_company_name(CownerData.COMPANY_RENAME)
+        update_company.click_update_company_button()
+        my_companies.click_update(CownerData.COMPANY_RENAME)
         a = update_company.check_company_name()
         assert a == CownerData.COMPANY_RENAME
-        update_company.click_update_company_button()
-
 
 
 

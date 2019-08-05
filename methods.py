@@ -74,3 +74,13 @@ class DriverWrapper(object):
                 td = i.find_element(*locator2)
                 td.click()
 
+    def read_data_in_textbox(self, locator_list, locator_attribute):
+        """Gets values from the input fields by attribute and return a list of this values"""
+        data_list = []
+        for el in range(len(locator_list)):
+            a = self.driver.find_element_by_id(locator_list[el]).get_attribute(
+                locator_attribute)
+            data_list.append(a)
+        return data_list
+
+

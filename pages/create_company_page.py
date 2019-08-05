@@ -1,12 +1,13 @@
 from locators import LocatorsCreateCompanyPage, LocatorsMyCompaniesPage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+
 from selenium.webdriver.support.ui import WebDriverWait
 from config import TIMEOUT
 
 
 class CreateCompanyPage():
-    """On this page company owner can create his/her own company"""
+    """On this page company owner can create his/her own company by filling input fields with needed
+    data snd click create"""
 
     def __init__(self, base_obj):
         self.locators = LocatorsCreateCompanyPage
@@ -22,16 +23,7 @@ class CreateCompanyPage():
     def click_create_button(self):
         self.browser.click_element(self.locators.COMPANY_CREATE_BUTTON)
 
-    def click_update(self, company_name):
-        self.wait.until(EC.element_to_be_clickable(self.loc.COMPANY_UPDATE_BUTTON))
-        self.browser.company_view_update_delete(self.loc.TABLE_BODY, self.loc.COMPANY_UPDATE_BUTTON, company_name)
-
-    def read_data_textbox(self):
-        """Gets values from the input fields by attribute and return a list of this values"""
-        self.wait.until(EC.element_to_be_clickable(self.locators.COMPANY_NAME_TEXBOX))
-        co_list = []
-        for el in range(len(self.locators.COMPANY_FIELDS)):
-            a = self.browser.driver.find_element_by_id(self.locators.COMPANY_FIELDS[el]).get_attribute(
-                self.locators.ATTRIBUTE_OF_COMPANIES_TEXTBOXES)
-            co_list.append(a)
-        return co_list
+    def read_data(self):
+        z = self.browser.read_data_in_textbox(self.locators.COMPANY_FIELDS,
+                                              self.locators.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
+        return z
