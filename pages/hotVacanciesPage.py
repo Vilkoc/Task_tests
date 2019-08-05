@@ -1,4 +1,5 @@
 from locators import LocatorsHotVacancies
+from data_tests import guest_data
 
 
 class HotVacanciesPage():
@@ -13,10 +14,10 @@ class HotVacanciesPage():
 
     def check_pagination_next(self):
         self.browser.click_element(self.locators.HOT_VACANCY_PAGE)
-        self.browser.click_element_by_text(self.locators.HOT_PAGINATION_NEXT, 'Next»')
+        self.browser.click_element_by_text(self.locators.HOT_PAGINATION_NEXT, guest_data.HOT_NEXT)
 
     def check_pagination_previous(self):
-        self.browser.click_element_by_text(self.locators.HOT_PAGINATION_PREVIOUS, '«Previous')
+        self.browser.click_element_by_text(self.locators.HOT_PAGINATION_PREVIOUS, guest_data.HOT_PREVIUS)
 
     def details_text(self):
         tmp = self.browser.pop_up_element(self.locators.HOT_VACANCY_INFO).text

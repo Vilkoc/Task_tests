@@ -1,4 +1,5 @@
 from locators import LocatorsSearch
+from data_tests import guest_data
 
 
 class SearchPage():
@@ -16,7 +17,7 @@ class SearchPage():
 
     def key_word_field(self):
         self.browser.click_element(self.locators.KEY_WORD)
-        self.browser.send_keys(self.locators.KEY_WORD, 'chernivtsi')
+        self.browser.send_keys(self.locators.KEY_WORD, guest_data.CHERNIVTSI)
 
     def start_search_click(self):
         self.browser.click_element(self.locators.SEARCH_START)
