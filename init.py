@@ -9,7 +9,7 @@ class BasePage():
 
     @classmethod
     def setUpClass(cls):
-        prepare_db()
+        # prepare_db()
         driver = WebdriverSelection().get_webdriver(WEBDRIVER)
         driver.maximize_window()
         driver.get(URL)

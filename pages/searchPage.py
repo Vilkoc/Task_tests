@@ -2,6 +2,7 @@ from locators import LocatorsSearch
 
 
 class SearchPage():
+    """On this page users can do search"""
 
     def __init__(self, base_obj):
         self.browser = base_obj.browser
@@ -15,8 +16,13 @@ class SearchPage():
 
     def key_word_field(self):
         self.browser.click_element(self.locators.KEY_WORD)
-        # self.clear_element(self.locators.KEY_WORD, text_value='default')
         self.browser.send_keys(self.locators.KEY_WORD, 'chernivtsi')
 
     def start_search_click(self):
         self.browser.click_element(self.locators.SEARCH_START)
+
+    def filter_city(self):
+        tbody = self.browser.get_elements(self.locators.FILTER_CITY)
+        for i in tbody:
+            if "Chernivtsi" in i.text:
+                return True

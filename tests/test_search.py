@@ -3,6 +3,7 @@ from pages.searchPage import SearchPage
 
 
 class SearchTest(BasePage):
+    """On this page, user can do the search"""
 
     def test_search_button(self):
 
@@ -15,9 +16,4 @@ class SearchTest(BasePage):
 
         search.start_search_click()
 
-        # tmp = driver.find_element_by_xpath('//table//td[contains(text(), "Chernivtsi")]').text
-        # self.assertEqual(tmp, "Chernivtsi")
-        #
-        # masive = ['Position', 'Company', 'City', 'Employment', 'Salary']
-        # k = masive.index('City')
-        # print(k)
+        assert search.filter_city()

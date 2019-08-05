@@ -10,16 +10,15 @@ class VacanciesTest(BasePage):
         details.view_details()
         self.browser.driver.back()
 
-        text = details.details_text()
-        assert text == "Junior Engineer"
+        text1 = details.details_text()
+        assert text1 == "Junior Engineer"
 
-        # driver.execute_script('window.scrollTo(200,200)')
         details.check_pagination_next()
 
-        tet = details.next_test()
-        assert tet == "Junior Engineer"
+        text2 = details.next_test()
+        assert text2 == "Junior Engineer"
 
         details.check_pagination_previous()
 
-        tot = details.previous_test()
-        assert tot == "Junior Engineer"
+        text3 = details.previous_test()
+        assert text3 == "Junior Engineer"

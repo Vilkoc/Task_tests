@@ -42,7 +42,7 @@ class LocatorsSearch(object):
     CRITERIA = (By.CSS_SELECTOR, 'option[value="city"]')
     KEY_WORD = (By.NAME, 'searchText')
     SEARCH_START = (By.ID, 'startButton')
-
+    FILTER_CITY = (By.CSS_SELECTOR, 'tbody>tr')
 
 
 class LocatorsCompaniesPage(object):

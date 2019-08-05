@@ -2,6 +2,7 @@ from locators import LocatorsVacancies
 
 
 class VacanciesPage():
+    """On this page users can view details"""
 
     def __init__(self, base_obj):
         self.browser = base_obj.browser
@@ -9,12 +10,6 @@ class VacanciesPage():
 
     def view_details(self):
         self.browser.click_element(self.locators.DETAILS)
-
-    # def check_pagination_next(self):
-    #     self.driver.find_element_by_css_selector(self.pagination_next).click()
-
-    # def check_pagination_previous(self):
-    #     self.driver.find_element_by_css_selector(self.pagination_previous).click()
 
     def check_pagination_next(self):
         self.browser.click_element_by_text(self.locators.PAGINATION_NEXT, 'Next »')
