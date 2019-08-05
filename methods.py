@@ -21,7 +21,6 @@ class DriverWrapper(object):
 
     def click_one_element(self, locator):
         """Clicks on the element with number elem_number"""
-        # WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
         element = self.get_one_element(locator)
         element.click()
 
@@ -79,7 +78,7 @@ class DriverWrapper(object):
 
     def get_attr_value(self, locator, attr):
         """Get attribute value of the element"""
-        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
 
@@ -131,3 +130,14 @@ class DriverWrapper(object):
         """Returns element from pop-up window"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
+
+    def get_property_wrapper(self, locator, prop):
+        """Returns True if property is present"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
+        element = self.get_elements(locator)[0]
+        return element.get_property(prop)
+
+    def get_element_with_time_delay(self, locator):
+        """Returns all elements for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.driver.find_elements(*locator)

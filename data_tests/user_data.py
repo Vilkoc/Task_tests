@@ -16,6 +16,7 @@ user_data_rab_26 = {
     'FIRST_NAME': 'Andrew1',
     'LAST_NAME': '$tuart',
     'BIRTHDAY': ('03', '09', '1814'),
+    'EMAIL': '@yandex.sucks@',
     'PHONE': '+999999999',
     'COUNTRY': 'USA6@',
     'CITY': 'Austin-98',
@@ -23,4 +24,4 @@ user_data_rab_26 = {
     'BUILDING': '7B 4-',
     'APARTMENT': '14-Q',
     'ZIP_CODE': '787414'
-    }
+}

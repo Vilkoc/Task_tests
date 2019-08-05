@@ -21,8 +21,9 @@ class Header():
         self.browser.click_element(self.locators.ICON)
 
     def check_dropdown(self):
+        """Verifies if the dropdown box appeared"""
         flag = self.browser.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
-        return flag == 'true'
+        return True if flag == 'true' else False
 
     def click_log_out(self):
         """Clicks on the round icon"""
@@ -45,19 +46,21 @@ class Header():
             raise Exception('Incorrect value for click_dropdown function')
         self.click_icon()
         if self.check_dropdown():
+
             self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
         else:
             self.click_icon()
 
     def person_verify(self, person):
-        """Returns True if the number of elements on the navbar equals to person_criteria"""
+        """Returns True if the number of elements on the navbar equals to the person_criteria"""
         person_criteria = {'ADMIN': 3, 'USER': 4, 'COWNER': 6}
-        default_person = 2
-        while default_person < person_criteria[person]:
-            default_person = len(self.browser.get_elements(self.locators.NAVBAR))
-        if len(self.browser.get_elements(self.locators.NAVBAR)) == person_criteria[person]:
-            return True
-        return False
+        current_person = 2
+        while current_person < person_criteria[person]:
+            current_person = len(self.browser.get_elements(self.locators.NAVBAR))
+        return True if current_person == person_criteria[person] else False
+
+    def move_to_companies(self):
+        self.browser.click_element(self.locators.MOVE_TO_COMPANIES)
 
     def click_create_company(self):
         self.browser.click_element(self.locator_create_company.CREATE_COMPANY_TAB)
