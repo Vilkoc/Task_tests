@@ -3,6 +3,7 @@ from locators import LocatorsHeader
 
 class Header():
     """Header page, which will be inherited by other pages"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsHeader

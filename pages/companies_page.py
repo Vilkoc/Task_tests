@@ -36,6 +36,11 @@ class CompaniesPage():
         tmp2 = tmp.find_element_by_tag_name('p').text
         return tmp2
 
-    def companies_visible(self):
+    def companies_are_visible(self):
         tmp = self.browser.get_element_with_time_delay(self.locators.TABLE_BODY)
-        return tmp != 0
+        if tmp != 0:
+            return True
+        else:
+            return False
+
+

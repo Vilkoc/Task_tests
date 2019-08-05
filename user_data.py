@@ -23,4 +23,4 @@ user_data_rab_26 = {
     'BUILDING': '7B 4-',
     'APARTMENT': '14-Q',
     'ZIP_CODE': '787414'
-    }
+}

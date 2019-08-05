@@ -3,6 +3,7 @@ from locators import LocatorsUserPage
 
 class UserPage():
     """User Page"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsUserPage

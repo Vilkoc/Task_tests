@@ -7,8 +7,6 @@ from user_data import user_data_rab_19 as entry
 
 
 class TestPositive(BasePage):
-    @unittest.skip('skip due to: "https://ssu-jira.softserveinc.com/browse/RAB-86"')
-
     def test_user_profile_positive(self, person='USER'):
 
         start = SignInPage(self)

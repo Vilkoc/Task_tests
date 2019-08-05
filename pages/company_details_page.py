@@ -2,6 +2,8 @@ from locators import LocatorsCompaniesDetailsPage
 
 
 class CompanyDetailsPage():
+    """Page with details about company and interaction with it"""
+
     def __init__(self, base_obj):
         self.browser = base_obj.browser
         self.locators = LocatorsCompaniesDetailsPage
@@ -20,4 +22,3 @@ class CompanyDetailsPage():
 
     def set_description_of_claim(self):
         self.browser.send_keys(self.locators.CLAIM_DESCRIPTION, self.locators.DESCRIPTION_OF_CLAIM)
-

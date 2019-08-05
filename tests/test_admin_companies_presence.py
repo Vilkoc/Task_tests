@@ -11,4 +11,4 @@ class TestAdmin(BasePage):
         signin = SignInPage(self)
         signin.login(person)
         companies = CompaniesPage(self)
-        companies.companies_visible()
+        assert companies.companies_are_visible()

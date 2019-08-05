@@ -10,5 +10,3 @@ class TestAdminCheckStatusCo(BasePage):
         signin.login(person)
         companies = CompaniesPage(self)
         assert companies.view_status_of_co()
-
-
