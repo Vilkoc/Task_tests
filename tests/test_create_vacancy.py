@@ -28,7 +28,6 @@ class TestCreateVacancy(BasePage):
         create_vacancy.enter_requirements(CownerData.REQUIREMENTS)
         create_vacancy.click_vacancy_create()
         view_company.view_vacancy_details(CownerData.VACANCY_NAME)
-        time.sleep(2)
         z = create_vacancy.read_vacancy_data()
 
         j = 0
