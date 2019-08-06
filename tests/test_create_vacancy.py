@@ -8,6 +8,7 @@ from data_tests.cowner_data import CownerData
 
 class TestCreateVacancy(BasePage):
 
+    @unittest.skip('skip, as password doesnt change')
     def test_create_vacancy(self):
         sign_in = SignInPage(self)
         create_vacancy = CreateVacancyPage(self)

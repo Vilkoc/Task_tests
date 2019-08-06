@@ -10,7 +10,7 @@ from pages.confirm_password_page import ConfirmPassword
 
 
 class TestForgotPassword(BasePage):
-    @unittest.skip('skip, as password doesnt change')
+    #@unittest.skip('skip, as password doesnt change')
     def test_forgot_password(self):
         login = AuthPage(self)
         vacancies = VacanciesPage(self)

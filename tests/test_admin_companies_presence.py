@@ -7,6 +7,7 @@ from pages.sign_in_page import SignInPage
 
 class TestAdmin(BasePage):
 
+    @unittest.skip('skip, as password doesnt change')
     def test_admin_companies_presence(self, person='ADMIN'):
         signin = SignInPage(self)
         signin.login(person)
