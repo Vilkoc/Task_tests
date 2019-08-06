@@ -5,6 +5,7 @@ from pages.view_vacancy_page import ViewVacancyPage
 from pages.preview_resume_page import PreviewResumePage
 from pages.edit_resume_page import EditResumePage
 from data_tests import test_data_Nazar as td
+import unittest
 
 
 class TestChangeData(BasePage):

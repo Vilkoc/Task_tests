@@ -1,5 +1,6 @@
 from init import BasePage
 from parameterized import parameterized
+import unittest
 
 from pages.auth_page import AuthPage
 

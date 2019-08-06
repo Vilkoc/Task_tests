@@ -7,6 +7,7 @@ from config import EMAIL_SUBJECT_PASSW_RECOVERY, USERNAME_PASSW_RECOVERY, \
 from utilities.get_email import get_link
 from pages.forgot_password_page import ForgotPasswordPage
 from pages.confirm_password_page import ConfirmPassword
+import unittest
 
 
 class TestForgotPassword(BasePage):

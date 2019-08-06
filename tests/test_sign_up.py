@@ -3,6 +3,7 @@ from pages.auth_page import AuthPage
 from pages.vacancies_page import VacanciesPage
 from config import EMAIL_SUBJECT_SIGNUP, USERNAME_SIGNUP, PASSWORD, EMAIL_SIGNUP, FROM_SIGNUP
 from utilities.get_email import get_link
+import unittest
 
 
 class TestSignUp(BasePage):

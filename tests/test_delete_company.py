@@ -2,6 +2,7 @@ from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.my_companies_page import MyCompaniesPage
 from data_tests.cowner_data import CownerData
+import unittest
 
 
 class TestDeleteCompany(BasePage):

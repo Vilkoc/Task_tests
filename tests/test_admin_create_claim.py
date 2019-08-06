@@ -3,6 +3,7 @@ from pages.companies_page import CompaniesPage
 from pages.company_details_page import CompanyDetailsPage
 from pages.header import Header
 from pages.sign_in_page import SignInPage
+import unittest
 
 
 class TestAdminCreateClaim(BasePage):

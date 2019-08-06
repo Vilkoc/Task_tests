@@ -4,6 +4,7 @@ from pages.create_vacancy_page import CreateVacancyPage
 from pages.my_companies_page import MyCompaniesPage
 from pages.view_company_page import ViewCompanyPage
 from data_tests.cowner_data import CownerData
+import unittest
 
 
 class TestCreateVacancy(BasePage):
