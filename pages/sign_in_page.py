@@ -1,14 +1,14 @@
 from locators import LocatorsSignIn
 from credentials import Credentials
+from pages.header import Header
 
 
 class SignInPage():
     """Sign in page with login method for any type of person"""
 
-    def __init__(self, base_obj):
-        self.header = base_obj.header
-        self.browser = base_obj.browser
-
+    def __init__(self, browser):
+        self.browser = browser
+        self.header = Header(browser)
         self.locators = LocatorsSignIn
 
     def enter_credentials(self, username, passwd):

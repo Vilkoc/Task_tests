@@ -1,20 +1,17 @@
-from init import BasePage
-from pages.user_profile_page import UserPage
+from init import SeleniumTestBase
 from data_tests.user_data import user_data_rab_19 as entry
 
 
-
-class TestNamePositive(BasePage):
+class TestNamePositive(SeleniumTestBase):
 
     def setUp(self):
-        self.login(person="USER")
-        self.perform = UserPage()
+        self.sign_in_page.login("USER")
         self.header.select_option('Profile')
 
     def routine(self, field):
-        valid_entry = self.perform.enter_data_textbox(field, entry[field])
-        self.perform.click_update_profile()
-        read = self.perform.read_data_textbox(field)
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        self.user_profile_page.click_update_profile()
+        read = self.user_profile_page.read_data_textbox(field)
         assert entry[field] == read and valid_entry
 
     def test_first_name(self, field='FIRST_NAME'):
