@@ -17,7 +17,7 @@ class Header():
 
     def click_icon(self):
         """Clicks on the round icon"""
-        self.browser.pause(PAUSE)
+        #self.browser.pause(PAUSE)
         self.browser.click_element(self.locators.ICON)
 
     def check_dropdown(self):
@@ -46,7 +46,6 @@ class Header():
             raise Exception('Incorrect value for click_dropdown function')
         self.click_icon()
         if self.check_dropdown():
-
             self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
         else:
             self.click_icon()

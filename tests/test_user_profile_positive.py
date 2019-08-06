@@ -82,9 +82,6 @@ class TestAddressPositive(BasePage):
     def test_building(self, field='BUILDING'):
         self.routine(field)
 
-    def test_apartment(self, field='APARTMENT'):
-        self.routine(field)
-
     def test_zip_code(self, field='ZIP_CODE'):
         self.routine(field)
 
