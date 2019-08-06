@@ -19,5 +19,3 @@ class PreviewResumePage():
     def confirmation_message(self):
         msg = self.browser.pop_up_element(self.locators.MESSAGE).text
         return msg
-
-

@@ -5,8 +5,8 @@ from pages.header import Header
 from utilities.db import prepare_db
 
 
-class BasePage():
-
+class BasePage:
+    """The parent class for all tests"""
     @classmethod
     def setUpClass(cls):
         prepare_db()
@@ -15,6 +15,7 @@ class BasePage():
         driver.get(URL)
         cls.browser = DriverWrapper(driver, TIMEOUT)
         cls.header = Header(cls)
+
 
     @classmethod
     def tearDownClass(cls):

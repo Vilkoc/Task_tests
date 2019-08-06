@@ -1,8 +1,8 @@
 from init import BasePage
 from pages.sign_in_page import SignInPage
 from pages.vacancies_page import VacanciesPage
-from pages.viewVacancy_page import ViewVacancyPage
-from pages.previewResume_page import PreviewResumePage
+from pages.view_vacancy_page import ViewVacancyPage
+from pages.preview_resume_page import PreviewResumePage
 from data_tests import test_data_Nazar as td
 
 
