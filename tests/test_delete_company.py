@@ -5,6 +5,7 @@ from data_tests.cowner_data import CownerData
 class TestDeleteCompany(SeleniumTestBase):
 
     def test_create_vacancy(self):
+
         self.header.select_option(CownerData.OPTION)
         self.sign_in_page.login(CownerData.PERSON)
 

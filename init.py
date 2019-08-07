@@ -10,6 +10,7 @@ from pages.my_companies_page import MyCompaniesPage
 from pages.create_company_page import CreateCompanyPage
 from pages.create_vacancy_page import CreateVacancyPage
 from pages.view_company_page import ViewCompanyPage
+from pages.update_company_page import UpdateCompanyPage
 
 
 class SeleniumTestBase(TestCase):
@@ -28,6 +29,7 @@ class SeleniumTestBase(TestCase):
         cls.create_company_page = CreateCompanyPage(cls.browser)
         cls.create_vacancy_page = CreateVacancyPage(cls.browser)
         cls.view_company_page = ViewCompanyPage(cls.browser)
+        cls.update_company_page = UpdateCompanyPage(cls.browser)
 
     @classmethod
     def tearDownClass(cls):

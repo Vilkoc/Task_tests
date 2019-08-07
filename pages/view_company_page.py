@@ -8,10 +8,10 @@ class ViewCompanyPage():
     """On this page company owner can look through company information, create vacancies,
      view their details and close/re-open them"""
 
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsViewCompany
-        self.wait = WebDriverWait(base_obj.browser.driver, TIMEOUT)
+        self.wait = WebDriverWait(browser.driver, TIMEOUT)
 
     def click_create_vacancy(self):
         self.browser.click_element(self.locators.CREATE_VACANCY_BUTTON)
@@ -19,9 +19,9 @@ class ViewCompanyPage():
     def view_vacancy_details(self, vacancy_name):
         self.wait.until(EC.element_to_be_clickable(self.locators.VACANCY_DETAILS_BUTTON))
         card = self.browser.get_elements(self.locators.SIMPLE_VACANCY_DIV)
-        for i in card:
-            if vacancy_name in i.text:
-                td = i.find_element(*self.locators.VACANCY_DETAILS_BUTTON)
+        for element in card:
+            if vacancy_name in element.text:
+                td = element.find_element(*self.locators.VACANCY_DETAILS_BUTTON)
                 td.click()
 
     def click_claim_button(self):

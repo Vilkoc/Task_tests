@@ -5,10 +5,10 @@ from pages.create_company_page import CreateCompanyPage
 class UpdateCompanyPage(CreateCompanyPage):
     """On this page company owner can update company information and save it"""
 
-    def __init__(self, base_obj):
-        super().__init__(base_obj)
+    def __init__(self, browser):
+        super().__init__(browser)
         self.locators = LocatorsUpdateCompanyPage
-        self.browser = base_obj.browser
+        self.browser = browser
 
     def update_company_name(self, company_name):
         self.browser.clear_element(LocatorsUpdateCompanyPage.COMPANY_NAME_TEXBOX)

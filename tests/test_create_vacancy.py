@@ -19,9 +19,9 @@ class TestCreateVacancy(SeleniumTestBase):
         self.create_vacancy_page.enter_requirements(CownerData.REQUIREMENTS)
         self.create_vacancy_page.click_vacancy_create()
         self.view_company_page.view_vacancy_details(CownerData.VACANCY_NAME)
-        z = self.create_vacancy_page.read_vacancy_data()
+        all_vacancy_data = self.create_vacancy_page.read_vacancy_data()
 
-        j = 0
-        for i in CownerData.VACANCY_DATA:
-            assert i == z[j]
-            j += 1
+        num_of_vac_data = 0
+        for vac_data in CownerData.VACANCY_DATA:
+            assert vac_data == all_vacancy_data[num_of_vac_data]
+            num_of_vac_data += 1

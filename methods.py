@@ -6,7 +6,7 @@ from selenium import webdriver
 class DriverWrapper(object):
     """Webdriver wrapper"""
 
-    def __init__(self, driver, default_timeout=10):
+    def __init__(self, driver, default_timeout=20):
         self.driver = driver
         self.default_timeout = default_timeout
 

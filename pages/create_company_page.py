@@ -23,6 +23,6 @@ class CreateCompanyPage():
         self.browser.click_element(self.locators.COMPANY_CREATE_BUTTON)
 
     def read_data(self):
-        z = self.browser.read_data_in_textbox(self.locators.COMPANY_FIELDS,
-                                              self.locators.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
-        return z
+        input_data = self.browser.read_data_in_textbox(self.locators.COMPANY_FIELDS,
+                                                       self.locators.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
+        return input_data

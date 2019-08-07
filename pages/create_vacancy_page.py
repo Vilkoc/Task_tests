@@ -32,17 +32,17 @@ class CreateVacancyPage():
     def enter_requirements(self, req):
         """Enters into the requirement fields data"""
         self.click_add_requirement()
-        a = self.browser.get_elements(self.locators.VAC_REQUIREMENT_TEXTBOX)
-        c = 0
-        for i in a:
-            i.send_keys(req[c])
-            c += 1
+        all_req_fields = self.browser.get_elements(self.locators.VAC_REQUIREMENT_TEXTBOX)
+        index_of_textbox = 0
+        for req_field in all_req_fields:
+            req_field.send_keys(req[index_of_textbox])
+            index_of_textbox += 1
 
     def click_vacancy_create(self):
         self.wait.until(EC.element_to_be_clickable(self.locators.VACANCY_CREATE_BUTTON))
         self.browser.click_element(self.locators.VACANCY_CREATE_BUTTON)
 
     def read_vacancy_data(self):
-        z = self.browser.read_data_in_textbox(self.locators.VACANCY_FIELDS,
+        vacancy_data = self.browser.read_data_in_textbox(self.locators.VACANCY_FIELDS,
                                               self.loc.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
-        return z
+        return vacancy_data

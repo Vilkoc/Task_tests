@@ -31,8 +31,8 @@ class MyCompaniesPage():
 
     def check_company_present(self, co_name):
         tbody = self.browser.get_elements(self.locators.TABLE_BODY)
-        for i in tbody:
-            if co_name not in i.text:
+        for element in tbody:
+            if co_name not in element.text:
                 return True
             else:
                 return False
