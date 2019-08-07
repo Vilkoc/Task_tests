@@ -4,8 +4,8 @@ from locators import LocatorsEditResume
 class EditResumePage():
     """On this page user or cowner can change information in resume"""
 
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsEditResume
 
     def change_positionField(self, position):

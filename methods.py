@@ -6,7 +6,7 @@ from selenium import webdriver
 class DriverWrapper(object):
     """Webdriver wrapper"""
 
-    def __init__(self, driver, default_timeout=10):
+    def __init__(self, driver, default_timeout=30):
         self.driver = driver
         self.default_timeout = default_timeout
 
@@ -106,16 +106,16 @@ class DriverWrapper(object):
     def pause(self, time):
         webdriver.support.wait.time.sleep(time)
 
-    def click_element_double_locator(self, locator1, locator2):
+    def click_element_double_locator(self, locator_wait, locator_find_element):
         """This function takes two locators, first one for 'WebDriverWait', the second one for click on the element"""
-        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator1))
-        element = self.get_one_element(locator2)
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator_wait))
+        element = self.get_one_element(locator_find_element)
         element.click()
 
-    def click_one_button(self, locator1, locator2):
+    def click_change_button(self, locator_wait, locator_find_element):
         """Special function for press 'Change' button"""
-        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator2))
-        buttons = self.get_elements(locator1)
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator_wait))
+        buttons = self.get_elements(locator_find_element)
         change = None
         for i in buttons:
             if i.text == 'Change':

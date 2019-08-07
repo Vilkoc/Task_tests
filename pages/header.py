@@ -6,7 +6,7 @@ from locators import LocatorsYourResume
 
 class Header:
     """Header page, which will be inherited by other pages"""
-    def __init__(self, browser):
+    def  __init__(self, browser):
         self.browser = browser
         self.locators = LocatorsHeader
         self.locator_create_company = LocatorsCreateCompanyPage

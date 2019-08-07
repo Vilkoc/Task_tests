@@ -4,8 +4,8 @@ from locators import LocatorsViewVacancy
 
 class ViewVacancyPage():
     """On this page users can return to all vacancies page, view info about company, and go to preview resume"""
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.wait = WebDriverWait(self.browser.driver, 20)
         self.locators = LocatorsViewVacancy
 
