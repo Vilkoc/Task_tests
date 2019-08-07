@@ -4,10 +4,11 @@ from pages.vacancies_page import VacanciesPage
 from pages.view_vacancy_page import ViewVacancyPage
 from pages.preview_resume_page import PreviewResumePage
 from data_tests import test_data_Nazar as td
+import unittest
 
 
 class TestSendResume(BasePage):
-
+    @unittest.skip()
     def test_send_resume(self):
         sign_in_page = SignInPage(self)
 
