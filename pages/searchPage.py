@@ -25,5 +25,5 @@ class SearchPage():
     def filter_city(self):
         tbody = self.browser.get_elements(self.locators.FILTER_CITY)
         for i in tbody:
-            if "Chernivtsi" in i.text:
+            if guest_data.CHERNIVTSI in i.text:
                 return True
