@@ -1,26 +1,24 @@
-from init import BasePage
-from pages.hot_vacancies_page import HotVacanciesPage
+from init import SeleniumTestBase
 from data_tests import guest_data
 
 
 
-class TestVacancies(BasePage):
+class TestVacancies(SeleniumTestBase):
 
     def test_hot_vacancies(self):
 
-        details = HotVacanciesPage(self)
-        details.view_details()
+        self.hot_vacancies_page.view_details()
         self.browser.driver.back()
 
-        text1 = details.details_text()
+        text1 = self.hot_vacancies_page.details_text()
         assert text1 == guest_data.TOP_VACANCY
 
-        details.check_pagination_next()
+        self.hot_vacancies_page.check_pagination_next()
 
-        text2 = details.next_test()
+        text2 = self.hot_vacancies_page.next_test()
         assert text2 == guest_data.TOP_VACANCY
 
-        details.check_pagination_previous()
+        self.hot_vacancies_page.check_pagination_previous()
 
-        text3 = details.previous_test()
+        text3 = self.hot_vacancies_page.previous_test()
         assert text3 == guest_data.TOP_VACANCY

@@ -5,8 +5,8 @@ from data_tests import guest_data
 class SearchPage():
     """On this page users can do search"""
 
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsSearch
 
     def search_button_click(self):
@@ -21,6 +21,7 @@ class SearchPage():
 
     def start_search_click(self):
         self.browser.click_element(self.locators.SEARCH_START)
+        self.browser.get_element_with_time_delay(self.locators.FILTER_CITY)
 
     def filter_city(self):
         tbody = self.browser.get_elements(self.locators.FILTER_CITY)

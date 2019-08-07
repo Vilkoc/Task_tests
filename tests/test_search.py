@@ -1,19 +1,17 @@
-from init import BasePage
-from pages.search_page import SearchPage
+from init import SeleniumTestBase
 
 
-class TestSearch(BasePage):
+class TestSearch(SeleniumTestBase):
     """On this page, user can do the search"""
 
     def test_search_button(self):
 
-        search = SearchPage(self)
-        search.search_button_click()
+        self.search_page.search_button_click()
 
-        search.criteria_choose()
+        self.search_page.criteria_choose()
 
-        search.key_word_field()
+        self.search_page.key_word_field()
 
-        search.start_search_click()
+        self.search_page.start_search_click()
 
-        assert search.filter_city()
+        assert self.search_page.filter_city()

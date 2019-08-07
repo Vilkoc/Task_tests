@@ -2,8 +2,11 @@ from methods import DriverWrapper
 from driver_selection import WebdriverSelection
 from config import URL, TIMEOUT, WEBDRIVER
 from pages.header import Header
+from pages.hot_vacancies_page import HotVacanciesPage
+from pages.search_page import SearchPage
 from pages.user_profile_page import UserPage
 from pages.sign_in_page import SignInPage
+from pages.vacancies_page import VacanciesPage
 from utilities.db import prepare_db
 from unittest import TestCase
 
@@ -12,7 +15,7 @@ class SeleniumTestBase(TestCase):
     """The parent class for all tests"""
     @classmethod
     def setUpClass(cls):
-        prepare_db()
+        # prepare_db()
         driver = WebdriverSelection().get_webdriver(WEBDRIVER)
         driver.maximize_window()
         driver.get(URL)
@@ -20,6 +23,9 @@ class SeleniumTestBase(TestCase):
         cls.header = Header(cls.browser)
         cls.sign_in_page = SignInPage(cls.browser)
         cls.user_profile_page = UserPage(cls.browser)
+        cls.vacancies_page = VacanciesPage(cls.browser)
+        cls.hot_vacancies_page = HotVacanciesPage(cls.browser)
+        cls.search_page = SearchPage(cls.browser)
 
     @classmethod
     def tearDownClass(cls):

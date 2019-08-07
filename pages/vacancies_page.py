@@ -6,8 +6,8 @@ from data_tests import guest_data
 class VacanciesPage():
     """On this page user or cowner can view vacancies"""
 
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsVacancies
 
     def is_confirmation_sent(self):
