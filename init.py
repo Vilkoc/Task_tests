@@ -1,6 +1,7 @@
 from methods import DriverWrapper
 from driver_selection import WebdriverSelection
 from config import URL, TIMEOUT, WEBDRIVER
+from pages.companies_page import CompaniesPage
 from pages.header import Header
 from pages.user_profile_page import UserPage
 from pages.sign_in_page import SignInPage
@@ -20,6 +21,7 @@ class SeleniumTestBase(TestCase):
         cls.header = Header(cls.browser)
         cls.sign_in_page = SignInPage(cls.browser)
         cls.user_profile_page = UserPage(cls.browser)
+        cls.companies_page = CompaniesPage(cls.browser)
 
     @classmethod
     def tearDownClass(cls):
