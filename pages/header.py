@@ -41,10 +41,30 @@ class Header:
         values = ('Log in', 'Profile', 'Log out')
         if pick_item not in values:
             raise Exception('Incorrect value for click_dropdown function')
-        if self.check_dropdown():
-            self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
-        else:
+
+       # if self.check_dropdown():
+        url_0 = self.browser.driver.current_url
+        while True:
             self.click_icon()
+            print('clicked icon')
+            while True:
+                if self.check_dropdown():
+                    print('dropdown available')
+                    self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
+                    print('clicked', pick_item)
+                    break
+                else:
+                    self.click_icon()
+                    print('Emerge click icon')
+            url_1 = self.browser.driver.current_url
+            if url_0 != url_1:
+                print('URL changed')
+                break
+            else:
+                if pick_item == 'Log out':
+                    if self.browser.get_text_of_element(self.locators.DROPDOWN) == 'Log in':
+                        break
+
 
     def person_verify(self, person):
         """Returns True if the number of elements on the navbar equals to the person_criteria"""

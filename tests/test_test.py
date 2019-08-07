@@ -5,6 +5,7 @@ from data_tests.user_data import user_data_rab_19 as entry
 class TestNamePositive(SeleniumTestBase):
 
     def setUp(self):
+        self.header.select_option('Log in')
         self.sign_in_page.login("USER")
         self.header.select_option('Profile')
 

@@ -1,7 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium import webdriver
-from config import TIMEOUT
 
 
 class DriverWrapper(object):
@@ -9,7 +8,7 @@ class DriverWrapper(object):
 
     def __init__(self, driver, default_timeout=10):
         self.driver = driver
-        self.driver_wait = WebDriverWait(self.driver, TIMEOUT)
+        self.default_timeout = default_timeout
 
     def get_elements(self, locator):
         """Returns all elements for the specific locator"""
@@ -17,7 +16,7 @@ class DriverWrapper(object):
 
     def get_one_element(self, locator):
         """Returns element for the specific locator"""
-        self.driver_wait.until(EC.presence_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         return self.driver.find_element(*locator)
 
     def click_one_element(self, locator):
@@ -27,7 +26,7 @@ class DriverWrapper(object):
 
     def get_elements_by_text(self, locator):
         """Returns element with specific text for the specific locator"""
-        self.driver_wait.until(EC.element_to_be_clickable(locator[0]))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator[0]))
         elements = self.driver.find_elements(*locator[0])
         for element in elements:
             if element.text == locator[1]:
@@ -35,13 +34,13 @@ class DriverWrapper(object):
 
     def click_element(self, locator, elem_number=0):
         """Clicks on the element with number elem_number"""
-        self.driver_wait.until(EC.element_to_be_clickable(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
         elements = self.get_elements(locator)
         elements[elem_number].click()
 
     def click_element_by_text(self, locator, text_value):
         """Clicks on the element with text attribute text_value"""
-        self.driver_wait.until(EC.element_to_be_clickable(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
         elements = self.get_elements(locator)
         for element in elements:
             if element.text == text_value:
@@ -49,7 +48,7 @@ class DriverWrapper(object):
 
     def click_element_by_text_simple(self, locator_and_text):
         """Clicks on the element with text attribute text_value"""
-        self.driver_wait.until(EC.element_to_be_clickable(locator_and_text[0]))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator_and_text[0]))
         elements = self.get_elements(locator_and_text[0])
         for element in elements:
             if element.text == locator_and_text[1]:
@@ -57,7 +56,7 @@ class DriverWrapper(object):
 
     def clear_element(self, locator, text_value='default'):
         """Clears the element with the specific text_value"""
-        self.driver_wait.until(EC.presence_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         elements = self.get_elements(locator)
         if text_value == 'default':
             elements[0].clear()
@@ -68,7 +67,7 @@ class DriverWrapper(object):
 
     def send_keys(self, locator, keys, text_value='default'):
         """Send keys to the element with the the specific text_value"""
-        self.driver_wait.until(EC.presence_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         elements = self.get_elements(locator)
         if text_value == 'default':
             elements[0].send_keys(keys)
@@ -79,7 +78,7 @@ class DriverWrapper(object):
 
     def get_attr_value(self, locator, attr):
         """Get attribute value of the element"""
-        self.driver_wait.until(EC.presence_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_attribute(attr)
 
@@ -109,13 +108,13 @@ class DriverWrapper(object):
 
     def click_element_double_locator(self, locator1, locator2):
         """This function takes two locators, first one for 'WebDriverWait', the second one for click on the element"""
-        self.driver_wait.until(EC.visibility_of_element_located(locator1))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator1))
         element = self.get_one_element(locator2)
         element.click()
 
     def click_one_button(self, locator1, locator2):
         """Special function for press 'Change' button"""
-        self.driver_wait.until(EC.visibility_of_element_located(locator2))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator2))
         buttons = self.get_elements(locator1)
         change = None
         for i in buttons:
@@ -125,20 +124,20 @@ class DriverWrapper(object):
 
     def invisibility_of_element(self, locator):
         """This function wait until element will be invisible"""
-        self.driver_wait.until(EC.invisibility_of_element(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.invisibility_of_element(locator))
 
     def pop_up_element(self, locator):
         """Returns element from pop-up window"""
-        self.driver_wait.until(EC.visibility_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
 
     def get_property_wrapper(self, locator, prop):
         """Returns True if property is present"""
-        self.driver_wait.until(EC.presence_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         element = self.get_elements(locator)[0]
         return element.get_property(prop)
 
     def get_element_with_time_delay(self, locator):
         """Returns all elements for the specific locator"""
-        self.driver_wait.until(EC.visibility_of_element_located(locator))
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.driver.find_elements(*locator)
