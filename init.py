@@ -6,6 +6,10 @@ from pages.user_profile_page import UserPage
 from pages.sign_in_page import SignInPage
 from utilities.db import prepare_db
 from unittest import TestCase
+from pages.my_companies_page import MyCompaniesPage
+from pages.create_company_page import CreateCompanyPage
+from pages.create_vacancy_page import CreateVacancyPage
+from pages.view_company_page import ViewCompanyPage
 
 
 class SeleniumTestBase(TestCase):
@@ -20,6 +24,10 @@ class SeleniumTestBase(TestCase):
         cls.header = Header(cls.browser)
         cls.sign_in_page = SignInPage(cls.browser)
         cls.user_profile_page = UserPage(cls.browser)
+        cls.my_companies_page = MyCompaniesPage(cls.browser)
+        cls.create_company_page = CreateCompanyPage(cls.browser)
+        cls.create_vacancy_page = CreateVacancyPage(cls.browser)
+        cls.view_company_page = ViewCompanyPage(cls.browser)
 
     @classmethod
     def tearDownClass(cls):

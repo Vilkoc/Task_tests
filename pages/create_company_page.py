@@ -1,6 +1,5 @@
 from locators import LocatorsCreateCompanyPage, LocatorsMyCompaniesPage
 from selenium.webdriver.common.by import By
-
 from selenium.webdriver.support.ui import WebDriverWait
 from config import TIMEOUT
 
@@ -9,11 +8,11 @@ class CreateCompanyPage():
     """On this page company owner can create his/her own company by filling input fields with needed
     data snd click create"""
 
-    def __init__(self, base_obj):
+    def __init__(self, browser):
         self.locators = LocatorsCreateCompanyPage
         self.loc = LocatorsMyCompaniesPage
-        self.browser = base_obj.browser
-        self.wait = WebDriverWait(base_obj.browser.driver, TIMEOUT)
+        self.browser = browser
+        self.wait = WebDriverWait(browser.driver, TIMEOUT)
 
     def enter_data(self, co_data):
         """Enters into the specific field data"""

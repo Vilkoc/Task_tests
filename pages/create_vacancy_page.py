@@ -9,11 +9,11 @@ from config import TIMEOUT
 class CreateVacancyPage():
     """On this page company owner can create vacancy after creation of the company"""
 
-    def __init__(self, base_obj):
+    def __init__(self, browser):
         self.locators = LocatorsCreateVacancyPage
         self.loc = LocatorsCreateCompanyPage
-        self.browser = base_obj.browser
-        self.wait = WebDriverWait(base_obj.browser.driver, TIMEOUT)
+        self.browser = browser
+        self.wait = WebDriverWait(browser.driver, TIMEOUT)
 
     def enter_vacancy_data(self, vac_data):
         """Enters into the specific field data"""
