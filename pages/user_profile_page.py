@@ -3,9 +3,8 @@ from locators import LocatorsUserPage
 
 class UserPage:
     """User page with user's Profile"""
-
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsUserPage
 
     def clear_data_textbox(self, key):

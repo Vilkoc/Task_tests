@@ -1,28 +1,24 @@
-from init import BasePage
-from pages.sign_in_page import SignInPage
-from config import URL
+from init import SeleniumTestBase
 
 
-class TestLoginAll(BasePage):
+class TestLoginAll(SeleniumTestBase):
 
     def setUp(self):
-        self.browser.driver.get(URL)
-        self.inquire = SignInPage(self)
+        self.header.select_option('Log in')
 
-    def routine(self, person):
-        self.inquire.login(person)
+    def test_login_admin(self, person="ADMIN"):
+        self.sign_in_page.login(person)
         assert self.header.person_verify(person)
 
-    def test_login_admin(self):
-        self.routine('ADMIN')
+    def test_login_user(self, person="USER"):
+        self.sign_in_page.login(person)
+        assert self.header.person_verify(person)
 
-    def test_login_user(self):
-        self.routine('USER')
-
-    def test_login_cowner(self):
-        self.routine('COWNER')
+    def test_login_cowner(self, person="COWNER"):
+        self.sign_in_page.login(person)
+        assert self.header.person_verify(person)
 
     def tearDown(self):
         self.header.select_option('Log out')
-        self.browser.driver.get(URL)
+
 
