@@ -1,6 +1,4 @@
 from init import SeleniumTestBase
-from pages.companies_page import CompaniesPage
-from pages.sign_in_page import SignInPage
 
 
 class TestAdminCheckStatusCo(SeleniumTestBase):
