@@ -1,11 +1,12 @@
 from methods import DriverWrapper
 from driver_selection import WebdriverSelection
-from config import URL, TIMEOUT, WEBDRIVER
+from config import URL, TIMEOUT
 from pages.header import Header
 from pages.user_profile_page import UserPage
 from pages.sign_in_page import SignInPage
 from utilities.db import prepare_db
 from unittest import TestCase
+import os
 
 
 class SeleniumTestBase(TestCase):
@@ -13,7 +14,7 @@ class SeleniumTestBase(TestCase):
     @classmethod
     def setUpClass(cls):
         prepare_db()
-        driver = WebdriverSelection().get_webdriver(WEBDRIVER)
+        driver = WebdriverSelection().get_webdriver(os.getenv('BROWSER'))
         driver.maximize_window()
         driver.get(URL)
         cls.browser = DriverWrapper(driver, TIMEOUT)

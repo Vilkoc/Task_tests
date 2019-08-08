@@ -11,8 +11,11 @@ class TestNamePositive(SeleniumTestBase):
 
     def routine(self, field):
         valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        print('entered into', field, entry[field])
         self.user_profile_page.click_update_profile()
+        print('clicked Update Profile')
         read = self.user_profile_page.read_data_textbox(field)
+        print('Read data = ', read)
         assert entry[field] == read and valid_entry
 
     def test_first_name(self, field='FIRST_NAME'):
@@ -22,6 +25,7 @@ class TestNamePositive(SeleniumTestBase):
         self.routine(field)
 
     def tearDown(self):
+        print("It's teardown")
         self.header.select_option('Log out')
 
 
