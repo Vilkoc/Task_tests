@@ -1,12 +1,12 @@
-from init import BasePage
+from init import SeleniumTestBase
 from pages.companies_page import CompaniesPage
 from pages.sign_in_page import SignInPage
 
 
-class TestAdminCheckStatusCo(BasePage):
+class TestAdminCheckStatusCo(SeleniumTestBase):
 
-    def test_admin_check_status_co(self, person='ADMIN'):
-        signin = SignInPage(self)
-        signin.login(person)
-        companies = CompaniesPage(self)
-        assert companies.view_status_of_co()
+    def test_admin_check_status_co(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('ADMIN')
+
+        assert self.companies_page.view_status_of_co()

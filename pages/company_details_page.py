@@ -4,8 +4,8 @@ from locators import LocatorsCompaniesDetailsPage
 class CompanyDetailsPage():
     """Page with details about company and interaction with it"""
 
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsCompaniesDetailsPage
 
     def create_claim(self):

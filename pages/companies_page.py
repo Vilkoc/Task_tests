@@ -4,8 +4,8 @@ from locators import LocatorsCompaniesPage
 class CompaniesPage():
     """On this page admin can moderate companies"""
 
-    def __init__(self, base_obj):
-        self.browser = base_obj.browser
+    def __init__(self, browser):
+        self.browser = browser
         self.locators = LocatorsCompaniesPage
 
     def view_detail_about_co(self):
