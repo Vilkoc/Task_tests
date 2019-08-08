@@ -6,23 +6,18 @@ from selenium import webdriver
 class DriverWrapper(object):
     """Webdriver wrapper"""
 
-    def __init__(self, driver, default_timeout=30):
+    def __init__(self, driver, default_timeout=10):
         self.driver = driver
         self.default_timeout = default_timeout
 
-    def get_elements(self, locator):
-        """Returns all elements for the specific locator"""
-        return self.driver.find_elements(*locator)
-
     def get_element(self, locator):
-        """Returns element for the specific locator"""
-        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
+        """Returns all elements for the specific locator"""
         return self.driver.find_element(*locator)
 
-    def click_one_element(self, locator):
-        """Clicks on the element"""
-        element = self.get_element(locator)
-        element.click()
+    def get_elements(self, locator):
+        """Returns all elements for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_all_elements_located(locator))
+        return self.driver.find_elements(*locator)
 
     def get_elements_by_text(self, locator):
         """Returns element with specific text for the specific locator"""
@@ -57,13 +52,7 @@ class DriverWrapper(object):
     def clear_element(self, locator, text_value='default'):
         """Clears the element with the specific text_value"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
-        elements = self.get_elements(locator)
-        if text_value == 'default':
-            elements[0].clear()
-        else:
-            for element in elements:
-                if element.text == text_value:
-                    element.clear()
+        self.get_element(locator).clear()
 
     def send_keys(self, locator, keys, text_value='default'):
         """Send keys to the element with the the specific text_value"""
@@ -79,7 +68,7 @@ class DriverWrapper(object):
     def get_attr_value(self, locator, attr):
         """Get attribute value of the element"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
-        element = self.get_elements(locator)[0]
+        element = self.get_element(locator)
         return element.get_attribute(attr)
 
     def company_view_update_delete(self, locator1, locator2, company_name):
@@ -106,16 +95,16 @@ class DriverWrapper(object):
     def pause(self, time):
         webdriver.support.wait.time.sleep(time)
 
-    def click_element_double_locator(self, locator_wait, locator_find_element):
+    def click_element_double_locator(self, locator_wait, locator_element):
         """This function takes two locators, first one for 'WebDriverWait', the second one for click on the element"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator_wait))
-        element = self.get_element(locator_find_element)
+        element = self.get_element(locator_element)
         element.click()
 
-    def click_button_change(self, locator_find_element, locator_wait):
+    def click_button_change(self, locator_buttons, locator_wait):
         """Special function for press 'Change' button"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator_wait))
-        buttons = self.get_elements(locator_find_element)
+        buttons = self.get_elements(locator_buttons)
         change = None
         for i in buttons:
             if i.text == 'Change':
@@ -134,7 +123,7 @@ class DriverWrapper(object):
     def get_property_wrapper(self, locator, prop):
         """Returns True if property is present"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
-        element = self.get_elements(locator)[0]
+        element = self.get_element(locator)
         return element.get_property(prop)
 
     def get_element_with_time_delay(self, locator):
