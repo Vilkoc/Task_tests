@@ -14,14 +14,14 @@ class DriverWrapper(object):
         """Returns all elements for the specific locator"""
         return self.driver.find_elements(*locator)
 
-    def get_one_element(self, locator):
+    def get_element(self, locator):
         """Returns element for the specific locator"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         return self.driver.find_element(*locator)
 
     def click_one_element(self, locator):
-        """Clicks on the element with number elem_number"""
-        element = self.get_one_element(locator)
+        """Clicks on the element"""
+        element = self.get_element(locator)
         element.click()
 
     def get_elements_by_text(self, locator):
@@ -101,7 +101,7 @@ class DriverWrapper(object):
         return data_list
 
     def get_text_of_element(self, locator):
-        return self.get_one_element(locator).text
+        return self.get_element(locator).text
 
     def pause(self, time):
         webdriver.support.wait.time.sleep(time)
@@ -109,10 +109,10 @@ class DriverWrapper(object):
     def click_element_double_locator(self, locator_wait, locator_find_element):
         """This function takes two locators, first one for 'WebDriverWait', the second one for click on the element"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator_wait))
-        element = self.get_one_element(locator_find_element)
+        element = self.get_element(locator_find_element)
         element.click()
 
-    def click_change_button(self, locator_wait, locator_find_element):
+    def click_button_change(self, locator_find_element, locator_wait):
         """Special function for press 'Change' button"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator_wait))
         buttons = self.get_elements(locator_find_element)

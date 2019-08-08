@@ -14,7 +14,7 @@ class PreviewResumePage():
         self.browser.click_element_by_text(self.locators.BUTTONS, 'Send Email')
 
     def click_change_button(self):
-        self.browser.click_one_button(self.locators.BUTTONS, self.locators.RESUME)
+        self.browser.click_button_change(self.locators.BUTTONS, self.locators.RESUME)
 
     def confirmation_message(self):
         self.browser.driver.execute_script("window.scrollTo(0, 0);")
