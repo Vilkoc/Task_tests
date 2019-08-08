@@ -13,8 +13,8 @@ class SeleniumTestBase(TestCase):
     """The parent class for all tests"""
     @classmethod
     def setUpClass(cls):
-        prepare_db()
-        driver = WebdriverSelection().get_webdriver(os.getenv('BROWSER'))
+        # prepare_db()
+        driver = WebdriverSelection().get_webdriver("Chrome")
         driver.maximize_window()
         driver.get(URL)
         cls.browser = DriverWrapper(driver, TIMEOUT)

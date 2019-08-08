@@ -6,8 +6,8 @@ class LocatorsHeader():
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
-    LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log in"
-    LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']"), "Log out"
+    LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
+    LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']")
     LINKS = (By.CSS_SELECTOR, 'a[class="navbar-brand"]')
     RABOTY_NET = (By.LINK_TEXT, "RabotyNet")
     MOVE_TO_COMPANIES = (By.CSS_SELECTOR, 'a[href="/companies"]')

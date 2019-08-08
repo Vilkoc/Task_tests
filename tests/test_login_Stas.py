@@ -1,27 +1,20 @@
-from init import BasePage
+from init import SeleniumTestBase
 from parameterized import parameterized
 
-from pages.auth_page import AuthPage
-
-USER = 'user@gmail.com'
-PASS = 'user'
-
-
-class TestLogin(BasePage):
+class TestLogin(SeleniumTestBase):
     @parameterized.expand([
         ('admin@gmail.com', 'admin', 'Сompanies'),
         ('user@gmail.com', 'user', 'Create company'),
         ('cowner@gmail.com', 'cowner', 'My companies')
     ])
     def test_login_logout(self, user, password, expected):
-        page = AuthPage(self)
 
         self.header.click_icon()
         self.header.click_log_in()
 
-        page.enter_sign_in_email(user)
-        page.enter_sign_in_password(password)
-        page.click_sign_in()
+        self.sign_in_page.enter_sign_in_email(user)
+        self.sign_in_page.enter_sign_in_password(password)
+        self.sign_in_page.click_sign_in()
 
         assert self.header.get_text_of_first_link() == expected
 

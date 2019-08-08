@@ -1,6 +1,8 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium import webdriver
+import time
+from config import TIMEOUT
 
 
 class DriverWrapper(object):
@@ -36,6 +38,7 @@ class DriverWrapper(object):
     def click_element_by_text(self, locator, text_value):
         """Clicks on the element with text attribute text_value"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.element_to_be_clickable(locator))
+        self.wait_element_with_text(locator, text_value)
         elements = self.get_elements(locator)
         for element in elements:
             if element.text == text_value:
@@ -130,3 +133,14 @@ class DriverWrapper(object):
         """Returns all elements for the specific locator"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.driver.find_elements(*locator)
+
+    def wait_element_with_text(self, locator, text, seconds=TIMEOUT):
+        end = time.time() + seconds
+
+        while time.time() < end:
+            elements = self.get_elements(locator)
+            for element in elements:
+                if element.text == text:
+                    return element
+        print('====data:', locator, text)
+        raise Exception("Time out to find element")

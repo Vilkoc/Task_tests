@@ -24,11 +24,12 @@ class Header:
 
     def click_log_out(self):
         """Clicks on the round icon"""
-        self.browser.click_element_by_text_simple(self.locators.LOG_OUT)
+        self.browser.click_element_by_text(self.locators.LOG_OUT, "Log out")
 
     def click_log_in(self):
         """Clicks on the round icon"""
-        self.browser.click_element_by_text_simple(self.locators.LOG_IN)
+        self.browser.wait_element_with_text(self.locators.LOG_IN, "Log in")
+        self.browser.click_element_by_text(self.locators.LOG_IN, "Log in")
 
     def is_logined(self):
         """ Check if user logined: if 'logout' button exist == logined """
@@ -84,7 +85,7 @@ class Header:
         self.browser.click_element(self.locator_my_companies.MY_COMPANIES)
 
     def get_text_of_first_link(self):
-        self.browser.pause(PAUSE)
+        self.browser.wait_element_with_text(self.locators.LINKS, 'Сompanies', 10)
         return self.browser.get_elements(self.locators.LINKS)[1].text
 
     def go_to_allVacancies(self):
