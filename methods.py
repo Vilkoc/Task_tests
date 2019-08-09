@@ -134,8 +134,8 @@ class DriverWrapper(object):
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.driver.find_elements(*locator)
 
-    def wait_element_with_text(self, locator, text, seconds=TIMEOUT):
-        end = time.time() + seconds
+    def wait_element_with_text(self, locator, text, timeout=TIMEOUT):
+        end = time.time() + timeout
 
         while time.time() < end:
             elements = self.get_elements(locator)
@@ -144,3 +144,15 @@ class DriverWrapper(object):
                     return element
         print('====data:', locator, text)
         raise Exception("Time out to find element")
+
+    def wait_of_quantity_elements(self, locator, quantity, timeout=TIMEOUT):
+        """ Wait while on page will be certain quantity of elements"""
+        end = time.time() + timeout
+
+        while time.time() < end:
+            elements = self.get_elements(locator)
+            if len(elements) >= quantity:
+                return
+        print('====data:', locator, quantity, len(elements))
+        raise Exception("No enougth elements")
+

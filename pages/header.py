@@ -85,7 +85,10 @@ class Header:
         self.browser.click_element(self.locator_my_companies.MY_COMPANIES)
 
     def get_text_of_first_link(self):
-        self.browser.wait_element_with_text(self.locators.LINKS, 'Сompanies', 10)
+        # self.browser.wait_element_with_text(self.locators.ICON, '')
+        # self.browser.driver.execute_script('$(document).ready(function(){});')
+        self.browser.wait_of_quantity_elements(self.locators.LINKS, 3)
+        print(self.browser.get_elements(self.locators.LINKS)[1].text)
         return self.browser.get_elements(self.locators.LINKS)[1].text
 
     def go_to_allVacancies(self):

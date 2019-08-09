@@ -25,7 +25,7 @@ class LocatorsSignIn():
     PASSWORD_SIGN_IN = (By.ID, "password")
     BUTTON_SIGN_IN = (By.CSS_SELECTOR, "input[value='Sign In']")
 
-    TAB_SIGN_UP = (By.CLASS_NAME, 'tablinks'), 'Sign Up'
+    TAB_SIGN_UP = (By.CLASS_NAME, 'tablinks')
     EMAIL_SIGN_UP = (By.ID, "login1")
     PASSWORD_SIGN_UP = (By.ID, "password1")
     PASSWORD_MATCHING_SIGN_UP = (By.ID, "matchingPassword")
