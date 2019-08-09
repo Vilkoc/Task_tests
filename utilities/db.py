@@ -1,5 +1,7 @@
 import psycopg2
 from config import DB_FILE, DB_NAME, DB_USER, DB_PASS, DB_HOST
+import time
+from config import TIMEOUT
 
 
 def prepare_db():
@@ -19,3 +21,29 @@ def prepare_db():
             cur.execute(line)
 
         back_up.close()
+
+
+def change_varification_link(user):
+    with psycopg2.connect(dbname=DB_NAME, user=DB_USER,
+                          password=DB_PASS, host=DB_HOST) as conn:
+        cur = conn.cursor()
+        cur.execute("UPDATE public.verificationtoken SET token='http://localhost:4200/users/auth/confirm?token=3e83667c-c59c-4fda-aa7a-a47346a3cd6a' WHERE user_id=\
+          (SELECT user_id FROM public.users WHERE login='{}');".format(user))
+
+
+def wait_user_update(user, timeout=TIMEOUT):
+    """ Wait while on page will be certain quantity of elements"""
+    end = time.time() + timeout
+    with psycopg2.connect(dbname=DB_NAME, user=DB_USER,
+                          password=DB_PASS, host=DB_HOST) as conn:
+        cur = conn.cursor()
+
+        while time.time() < end:
+            with psycopg2.connect(dbname=DB_NAME, user=DB_USER,
+                                  password=DB_PASS, host=DB_HOST) as conn:
+                cur.execute("SELECT enable FROM public.users WHERE user_id=\
+                  (SELECT user_id FROM public.users WHERE login='{}');".format(user))
+            if cur.fetchone == 'true':
+                return
+    raise Exception("No enougth elements")
+

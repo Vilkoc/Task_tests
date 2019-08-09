@@ -4,6 +4,7 @@ from data_tests.auth import EMAIL_SUBJECT_SIGNUP, USERNAME_SIGNUP, PASSWORD, EMA
 from init import SeleniumTestBase
 from utilities.get_email import get_link
 from utilities.func import login
+from utilities.db import change_varification_link
 
 
 class TestSignUp(SeleniumTestBase):
@@ -21,7 +22,9 @@ class TestSignUp(SeleniumTestBase):
 
         assert self.vacancies.is_confirmation_sent()
 
-        link = get_link(EMAIL_SIGNUP, FROM_SIGNUP, EMAIL_SUBJECT_SIGNUP)
+        change_varification_link(USERNAME_SIGNUP)
+        # link = get_link(EMAIL_SIGNUP, FROM_SIGNUP, EMAIL_SUBJECT_SIGNUP)
+        link = 'http://localhost:4200/users/auth/confirm?token=3e83667c-c59c-4fda-aa7a-a47346a3cd6a'
         self.vacancies.click_confirmation_link(link)
 
         login(self.browser, USERNAME_SIGNUP, PASSWORD)
