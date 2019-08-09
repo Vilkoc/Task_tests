@@ -34,7 +34,7 @@ class Header:
     def is_logined(self):
         """ Check if user logined: if 'logout' button exist == logined """
         self.click_icon()
-        log_out = self.browser.get_elements_by_text(self.locators.LOG_OUT)
+        log_out = self.browser.wait_element_with_text(self.locators.LOG_OUT, "Log out")
         return log_out.text == 'Log out'
 
     def select_option(self, pick_item):

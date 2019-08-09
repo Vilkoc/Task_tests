@@ -11,7 +11,6 @@ class VacanciesPage:
         self.locators = LocatorsVacancies
 
     def is_confirmation_sent(self):
-        self.browser.pause(EXTRA_LONG_PAUSE)
         text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_SIGN_UP_TEXT)
         return text == 'User has been created successfully. Confirm your email and login into site!'
 

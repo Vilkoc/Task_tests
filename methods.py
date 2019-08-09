@@ -93,6 +93,7 @@ class DriverWrapper(object):
         return data_list
 
     def get_text_of_element(self, locator):
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.get_element(locator).text
 
     def pause(self, time):
