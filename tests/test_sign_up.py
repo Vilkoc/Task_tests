@@ -30,4 +30,5 @@ class TestSignUp(SeleniumTestBase):
         wait_user_update(USERNAME_SIGNUP)
 
         login(self.browser, USERNAME_SIGNUP, PASSWORD)
+        print("---debug: logined")
         assert self.header.is_logined()

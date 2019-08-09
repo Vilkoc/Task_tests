@@ -140,9 +140,14 @@ class DriverWrapper(object):
 
         while time.time() < end:
             elements = self.get_elements(locator)
+            print("renew")
             for element in elements:
-                if element.text == text:
-                    return element
+                print('====debug', element.text, bool(element))
+                try:
+                    if  element.text == text:
+                        return element
+                except:
+                    pass
         print('====data:', locator, text)
         raise Exception("Time out to find element")
 
