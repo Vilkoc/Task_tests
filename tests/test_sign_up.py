@@ -3,6 +3,7 @@ from pages.vacancies_page import VacanciesPage
 from data_tests.auth import EMAIL_SUBJECT_SIGNUP, USERNAME_SIGNUP, PASSWORD, EMAIL_SIGNUP, FROM_SIGNUP
 from init import SeleniumTestBase
 from utilities.get_email import get_link
+from utilities.func import login
 
 
 class TestSignUp(SeleniumTestBase):
@@ -23,5 +24,5 @@ class TestSignUp(SeleniumTestBase):
         link = get_link(EMAIL_SIGNUP, FROM_SIGNUP, EMAIL_SUBJECT_SIGNUP)
         self.vacancies.click_confirmation_link(link)
 
-        self.sign_in_page.login_user(USERNAME_SIGNUP, PASSWORD)
+        login(self.browser, USERNAME_SIGNUP, PASSWORD)
         assert self.header.is_logined()
