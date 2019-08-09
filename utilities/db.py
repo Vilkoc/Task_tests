@@ -32,7 +32,7 @@ def change_varification_link(user):
 
 
 def wait_user_update(user, timeout=TIMEOUT):
-    """ Wait while on page will be certain quantity of elements"""
+    """ Wait while user will be registered in db """
     end = time.time() + timeout
     with psycopg2.connect(dbname=DB_NAME, user=DB_USER,
                           password=DB_PASS, host=DB_HOST) as conn:
