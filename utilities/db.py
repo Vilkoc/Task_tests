@@ -39,11 +39,9 @@ def wait_user_update(user, timeout=TIMEOUT):
         cur = conn.cursor()
 
         while time.time() < end:
-            with psycopg2.connect(dbname=DB_NAME, user=DB_USER,
-                                  password=DB_PASS, host=DB_HOST) as conn:
-                cur.execute("SELECT enable FROM public.users WHERE user_id=\
-                  (SELECT user_id FROM public.users WHERE login='{}');".format(user))
-            if cur.fetchone == 'true':
+            cur.execute("SELECT users.enabled FROM public.users WHERE user_id=\
+              (SELECT user_id FROM public.users WHERE login='{}');".format(user))
+            result = cur.fetchone()[0]
+            if result == True:
                 return
     raise Exception("No enougth elements")
-
