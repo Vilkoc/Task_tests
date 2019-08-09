@@ -18,7 +18,6 @@ class VacanciesPage:
         self.browser.driver.get(link)
 
     def is_instructions_sent(self):
-        self.browser.pause(EXTRA_LONG_PAUSE)
         text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_FORGOT_PASSWORD_TEXT)
         return text == 'Please check mail for further instructions!'
 

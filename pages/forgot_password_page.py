@@ -5,7 +5,7 @@ class ForgotPasswordPage:
     """ Page for renew password"""
 
     def __init__(self, base_obj):
-        self.browser = base_obj.browser
+        self.browser = base_obj
         self.locators = LocatorsForgotPassword
 
     def enter_login_email(self, email):
