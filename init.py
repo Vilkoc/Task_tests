@@ -28,6 +28,6 @@ class SeleniumTestBase(TestCase):
         cls.user_profile_page = UserPage(cls.browser)
         cls.vacancies = VacanciesPage(cls.browser)
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.browser.driver.quit()
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.browser.driver.quit()

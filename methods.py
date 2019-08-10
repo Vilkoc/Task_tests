@@ -93,6 +93,7 @@ class DriverWrapper(object):
         return data_list
 
     def get_text_of_element(self, locator):
+        """ Get text from element """
         WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
         return self.get_element(locator).text
 
@@ -136,13 +137,12 @@ class DriverWrapper(object):
         return self.driver.find_elements(*locator)
 
     def wait_element_with_text(self, locator, text, timeout=TIMEOUT):
+        """ Wait while element with certain text appears """
         end = time.time() + timeout
 
         while time.time() < end:
             elements = self.get_elements(locator)
-            print("renew")
             for element in elements:
-                print('====debug', element.text, bool(element))
                 try:
                     if  element.text == text:
                         return element

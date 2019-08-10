@@ -23,12 +23,10 @@ class TestSignUp(SeleniumTestBase):
         assert self.vacancies.is_confirmation_sent()
 
         change_varification_link(USERNAME_SIGNUP)
-        # link = get_link(EMAIL_SIGNUP, FROM_SIGNUP, EMAIL_SUBJECT_SIGNUP)
         link = 'http://localhost:4200/users/auth/confirm?token=3e83667c-c59c-4fda-aa7a-a47346a3cd6a'
         self.vacancies.click_confirmation_link(link)
 
         wait_user_update(USERNAME_SIGNUP)
 
         login(self.browser, USERNAME_SIGNUP, PASSWORD)
-        print("---debug: logined")
         assert self.header.is_logined()
