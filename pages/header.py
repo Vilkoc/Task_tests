@@ -1,6 +1,5 @@
-from locators import LocatorsHeader
+from locators import LocatorsHeader, LocatorsCreateCompanyPage, LocatorsMyCompaniesPage
 from locators import LocatorsYourResume
-
 
 
 class Header():
@@ -14,10 +13,10 @@ class Header():
 
 
     def click_icon(self):
-        self.browser.click_element(self.locators_header.ICON)
+        self.browser.click_element(self.locators.ICON)
 
     def check_dropdown(self):
-        flag = self.browser.get_attr_value(self.locators_header.CHECK_DROPDOWN, 'aria-expanded')
+        flag = self.browser.get_attr_value(self.locators.CHECK_DROPDOWN, 'aria-expanded')
         return flag == 'true'
 
     def select_option(self, pick_item):
@@ -26,9 +25,24 @@ class Header():
             raise Exception('Incorrect value for click_dropdown function')
         self.click_icon()
         if self.check_dropdown():
-            self.browser.click_element_by_text(self.locators_header.DROPDOWN, pick_item)
+            self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
         else:
             self.click_icon()
+
+    def click_log_out(self):
+        """Clicks on the round icon"""
+        self.browser.click_element_by_text(self.locators.LOG_OUT, "Log out")
+
+    def click_log_in(self):
+        """Clicks on the round icon"""
+        self.browser.wait_element_with_text(self.locators.LOG_IN, "Log in")
+        self.browser.click_element_by_text(self.locators.LOG_IN, "Log in")
+
+    def is_logined(self):
+        """ Check if user logined: if 'logout' button exist == logined """
+        self.click_icon()
+        log_out = self.browser.wait_element_with_text(self.locators.LOG_OUT, "Log out")
+        return log_out.text == 'Log out'
 
     def person_verify(self, person):
         person_criteria = {'ADMIN': 3, 'USER': 4, 'COWNER': 6}
@@ -52,4 +66,4 @@ class Header():
 
     def go_to_allVacancies(self):
         self.browser.click_element_double_locator(self.locators_your_resume.SHOW_ALL_INFO_BUTTON,
-                                                  self.locators_header.RABOTY_NET)
+                                                  self.locators.RABOTY_NET)

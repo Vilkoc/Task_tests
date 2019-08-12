@@ -1,16 +1,7 @@
-import time
-
 from init import SeleniumTestBase
-import unittest
-from pages.auth_page import AuthPage
-from pages.vacancies_page import VacanciesPage
-from config import EMAIL_SUBJECT_PASSW_RECOVERY, USERNAME_PASSW_RECOVERY, \
-    EMAIL_FORGOT_PASSWORD, FROM_FORGOT_PASSWORD, OLD_PASSWORD, NEW_PASSWORD
-from utilities.get_email import get_link
+from data_tests.auth import USERNAME_PASSW_RECOVERY, OLD_PASSWORD, NEW_PASSWORD
 from utilities.func import login
 from utilities.db import change_varification_link
-from pages.forgot_password_page import ForgotPasswordPage
-from pages.confirm_password_page import ConfirmPassword
 
 
 class TestForgotPassword(SeleniumTestBase):

@@ -1,7 +1,7 @@
 import psycopg2
 from config import DB_FILE, DB_NAME, DB_USER, DB_PASS, DB_HOST
 from config import TIMEOUT
-
+import time
 
 
 def prepare_db():

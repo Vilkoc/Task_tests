@@ -1,6 +1,8 @@
 from methods import DriverWrapper
 from driver_selection import WebdriverSelection
 from config import URL, TIMEOUT, WEBDRIVER
+from pages.confirm_password_page import ConfirmPassword
+from pages.forgot_password_page import ForgotPasswordPage
 from pages.header import Header
 from pages.user_profile_page import UserPage
 from pages.sign_in_page import SignInPage

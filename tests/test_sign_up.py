@@ -1,8 +1,5 @@
-from pages.auth_page import AuthPage
-from pages.vacancies_page import VacanciesPage
-from data_tests.auth import EMAIL_SUBJECT_SIGNUP, USERNAME_SIGNUP, PASSWORD, EMAIL_SIGNUP, FROM_SIGNUP
+from data_tests.auth import USERNAME_SIGNUP, PASSWORD
 from init import SeleniumTestBase
-from utilities.get_email import get_link
 from utilities.func import login
 from utilities.db import change_varification_link, wait_user_update
 

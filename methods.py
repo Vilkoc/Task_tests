@@ -1,5 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+import time
+from config import TIMEOUT
 
 
 class DriverWrapper(object):
@@ -44,6 +46,11 @@ class DriverWrapper(object):
         """Clears the element with the specific text_value"""
         WebDriverWait(self.driver, self.default_timeout).until(EC.presence_of_element_located(locator))
         self.get_element(locator).clear()
+
+    def get_text_of_element(self, locator):
+        """ Get text from element """
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.get_element(locator).text
 
     def send_keys(self, locator, keys, text_value='default'):
         """Send keys to the element with the the specific text_value"""
