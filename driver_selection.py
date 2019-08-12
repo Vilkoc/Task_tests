@@ -1,6 +1,5 @@
 from selenium import webdriver
 
-
 class WebdriverSelection():
     @staticmethod
     def get_webdriver(browser_name):

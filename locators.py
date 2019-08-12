@@ -6,8 +6,8 @@ class LocatorsHeader():
     DROPDOWN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
     CHECK_DROPDOWN = (By.CSS_SELECTOR, "a[data-toggle='dropdown']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
-    LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']"), "Log in"
-    LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']"), "Log out"
+    LOG_IN = (By.CSS_SELECTOR, "a[class='dropdown-item']")
+    LOG_OUT = (By.CSS_SELECTOR, "a[class^='dropdown-item']")
     LINKS = (By.CSS_SELECTOR, 'a[class="navbar-brand"]')
     RABOTY_NET = (By.LINK_TEXT, "RabotyNet")
     MOVE_TO_COMPANIES = (By.CSS_SELECTOR, 'a[href="/companies"]')
@@ -25,7 +25,7 @@ class LocatorsSignIn():
     PASSWORD_SIGN_IN = (By.ID, "password")
     BUTTON_SIGN_IN = (By.CSS_SELECTOR, "input[value='Sign In']")
 
-    TAB_SIGN_UP = (By.CLASS_NAME, 'tablinks'), 'Sign Up'
+    TAB_SIGN_UP = (By.CLASS_NAME, 'tablinks')
     EMAIL_SIGN_UP = (By.ID, "login1")
     PASSWORD_SIGN_UP = (By.ID, "password1")
     PASSWORD_MATCHING_SIGN_UP = (By.ID, "matchingPassword")
@@ -199,6 +199,13 @@ class LocatorsEditResume(object):
     POSITION_FIELD = (By.ID, 'position')
     PREVIEW_PDF_BUTTON = (By.CSS_SELECTOR, 'button[class="btn btn-success"]')
     GET_TEXT_FROM_FIELD = 'ng-reflect-model'
+
+
+class LocatorsViewCompany(object):
+    CLAIM_BUTTON = (By.CSS_SELECTOR, 'button[class = "btn btn-warning"]')
+    TITLE = (By.CSS_SELECTOR, 'select[id="title"]>option')
+    DESCRIPTION_FIELD = (By.ID, 'description')
+    SEND_CLAIM_BUTTON = (By.CSS_SELECTOR, 'input[value="Claim"]')
 
 
 class LocatorsCompaniesDetailsPage:

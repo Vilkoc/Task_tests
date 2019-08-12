@@ -1,3 +1,4 @@
+from selenium.webdriver.support.ui import WebDriverWait
 from locators import LocatorsCompaniesPage
 
 

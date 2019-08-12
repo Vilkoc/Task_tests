@@ -1,4 +1,4 @@
-from config import EXTRA_LONG_PAUSE
+from selenium.webdriver.support.ui import WebDriverWait
 from locators import LocatorsVacancies
 from data_tests import guest_data
 
@@ -11,7 +11,6 @@ class VacanciesPage():
         self.locators = LocatorsVacancies
 
     def is_confirmation_sent(self):
-        self.browser.pause(EXTRA_LONG_PAUSE)
         text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_SIGN_UP_TEXT)
         return text == 'User has been created successfully. Confirm your email and login into site!'
 
@@ -19,7 +18,6 @@ class VacanciesPage():
         self.browser.driver.get(link)
 
     def is_instructions_sent(self):
-        self.browser.pause(EXTRA_LONG_PAUSE)
         text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_FORGOT_PASSWORD_TEXT)
         return text == 'Please check mail for further instructions!'
 

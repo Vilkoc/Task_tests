@@ -5,7 +5,7 @@ class ConfirmPassword:
     """Confirm new password"""
 
     def __init__(self, base_obj):
-        self.browser = base_obj.browser
+        self.browser = base_obj
         self.locators = LocatorsConfirmPassword
 
     def enter_new_password(self, password):
