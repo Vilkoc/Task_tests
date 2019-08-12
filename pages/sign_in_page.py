@@ -1,6 +1,8 @@
 from locators import LocatorsSignIn
 from credentials import Credentials
 
+import inspect
+
 
 class SignInPage:
     """Sign in page with login method for any type of person"""
@@ -26,6 +28,8 @@ class SignInPage:
 
     def enter_sign_in_email(self, email):
         self.browser.send_keys(self.locators.EMAIL_SIGN_IN, email)
+        for i in inspect.stack():
+            print('====debug===', i[2], i[3], i[4])
 
     def enter_sign_in_password(self, password):
         self.browser.send_keys(self.locators.PASSWORD_SIGN_IN, password)
@@ -64,3 +68,16 @@ class SignInPage:
 
     def click_ok(self):
         self.browser.click_element(self.locators.POP_UP_FORGOT_PASSWORD_BUTTON)
+
+    def is_email_wrong(self):
+        text = self.browser.get_text_of_element(self.locators.EMAIL_SIGN_UP_WRONG)
+        return text == 'Login is incorrect!'
+
+    def is_password_sign_up_wrong(self):
+        text = self.browser.get_text_of_element(self.locators.PASSWORD_SIGN_UP_WRONG)
+        return text == 'Password must be no less than 9 symbols (uppercase, lowercase, number and one special symbol)!'
+
+    def is_psswords_mismatch(self):
+        text = self.browser.get_text_of_element(self.locators.PASSWORD_MATCHING_SIGN_UP_WRONG)
+        return text == "Passwords don`t match!"
+

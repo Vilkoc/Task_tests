@@ -27,8 +27,11 @@ class LocatorsSignIn():
 
     TAB_SIGN_UP = (By.CLASS_NAME, 'tablinks')
     EMAIL_SIGN_UP = (By.ID, "login1")
+    EMAIL_SIGN_UP_WRONG = (By.CSS_SELECTOR, "#sign-up > div:nth-child(1) > div > div:nth-child(1)")
     PASSWORD_SIGN_UP = (By.ID, "password1")
+    PASSWORD_SIGN_UP_WRONG = (By.CSS_SELECTOR, '#sign-up > div:nth-child(2) > div > div:nth-child(2)')
     PASSWORD_MATCHING_SIGN_UP = (By.ID, "matchingPassword")
+    PASSWORD_MATCHING_SIGN_UP_WRONG = (By.CSS_SELECTOR, "#sign-up > div:nth-child(3) > div")
     BUTTON_SIGN_UP = (By.CSS_SELECTOR, "input[value='Register']")
     NAVBAR = (By.CSS_SELECTOR, "a[class='navbar-brand']")
 
@@ -37,6 +40,7 @@ class LocatorsSignIn():
     POP_UP_FORGOT_PASSWORD_TEXT = (By.TAG_NAME, 'p')
     POP_UP_FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, 'div.wrap > button')
     POP_UP_FORGOT_PASSWORD_TEXT_CHECK = 'Password restored successfully! Please sign in.'
+
 
 
 class LocatorsVacancies(object):

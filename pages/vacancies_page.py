@@ -12,6 +12,7 @@ class VacanciesPage:
 
     def is_confirmation_sent(self):
         text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_SIGN_UP_TEXT)
+        print(text)
         return text == 'User has been created successfully. Confirm your email and login into site!'
 
     def click_confirmation_link(self, link):
@@ -20,6 +21,10 @@ class VacanciesPage:
     def is_instructions_sent(self):
         text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_FORGOT_PASSWORD_TEXT)
         return text == 'Please check mail for further instructions!'
+
+    def is_email_taken(self):
+        text = self.browser.get_text_of_element(self.locators.POP_UP_WINDOW_FORGOT_PASSWORD_TEXT)
+        return text == 'There is an account with that email! Try with another one or login, please!'
 
     def click_ok(self):
         self.browser.click_element(self.locators.POP_UP_WINDOW_FORGOT_PASSWORD_BUTTON)
