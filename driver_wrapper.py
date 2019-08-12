@@ -107,10 +107,28 @@ class DriverWrapper(object):
     def wait_of_quantity_elements(self, locator, quantity, timeout=TIMEOUT):
         """ Wait while on page will be certain quantity of elements"""
         end = time.time() + timeout
-
         while time.time() < end:
             elements = self.get_elements(locator)
             if len(elements) >= quantity:
                 return
         print('====data:', locator, quantity, len(elements))
         raise Exception("No enougth elements")
+
+    def company_view_update_delete(self, locator1, locator2, company_name):
+        """This function clicks on company details/update/delete buttons
+         according to the company name and specific locators"""
+        tbody = self.driver.find_elements(*locator1)
+        for i in tbody:
+            if company_name in i.text:
+                td = i.find_element(*locator2)
+                td.click()
+
+    def read_data_in_textbox(self, locator_list, locator_attribute):
+        """Gets values from the input fields by attribute and return a list of this values"""
+        data_list = []
+        for el in range(len(locator_list)):
+            a = self.driver.find_element_by_id(locator_list[el]).get_attribute(
+                locator_attribute)
+            data_list.append(a)
+        return data_list
+

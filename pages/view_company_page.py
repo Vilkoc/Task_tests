@@ -19,9 +19,9 @@ class ViewCompanyPage():
     def view_vacancy_details(self, vacancy_name):
         self.wait.until(EC.element_to_be_clickable(self.locators.VACANCY_DETAILS_BUTTON))
         card = self.browser.get_elements(self.locators.SIMPLE_VACANCY_DIV)
-        for i in card:
-            if vacancy_name in i.text:
-                td = i.find_element(*self.locators.VACANCY_DETAILS_BUTTON)
+        for element in card:
+            if vacancy_name in element.text:
+                td = element.find_element(*self.locators.VACANCY_DETAILS_BUTTON)
                 td.click()
 
     def click_claim_button(self):

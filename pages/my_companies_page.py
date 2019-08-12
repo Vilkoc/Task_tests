@@ -8,10 +8,10 @@ class MyCompaniesPage():
     """On this page company owner can create company, look through his all companies,
     update their info and delete them"""
 
-    def __init__(self, base_obj):
+    def __init__(self, browser):
         self.locators = LocatorsMyCompaniesPage
-        self.browser = base_obj.browser
-        self.wait = WebDriverWait(base_obj.browser.driver, TIMEOUT)
+        self.browser = browser
+        self.wait = WebDriverWait(browser.driver, TIMEOUT)
 
     def click_create_company(self):
         self.browser.click_element(self.locators.CREATE_COMPANY_BUTTON)
@@ -31,8 +31,8 @@ class MyCompaniesPage():
 
     def check_company_present(self, co_name):
         tbody = self.browser.get_elements(self.locators.TABLE_BODY)
-        for i in tbody:
-            if co_name not in i.text:
+        for element in tbody:
+            if co_name not in element.text:
                 return True
             else:
                 return False

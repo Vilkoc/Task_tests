@@ -6,10 +6,13 @@ from pages.sign_in_page import SignInPage
 
 class TestAdminBlockCo(BasePage):
 
+    def __init__(self):
+        self.signin = SignInPage(self)
+
     @unittest.skip('skip due to: "https://ssu-jira.softserveinc.com/browse/RAB-86"')
     def test_block_co(self, person='ADMIN'):
-        signin = SignInPage(self)
-        signin.login(person)
+
+        self.signin.login(person)
         companies = CompaniesPage(self)
         companies.block_co()
         assert companies.confirm_with_popup() == "Company blocked"

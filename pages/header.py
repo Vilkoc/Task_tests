@@ -4,15 +4,15 @@ from locators import LocatorsYourResume
 
 class Header():
     """Header page, which will be inherited by other pages"""
-    def  __init__(self, browser):
+    def __init__(self, browser):
         self.browser = browser
         self.locators = LocatorsHeader
         self.locator_create_company = LocatorsCreateCompanyPage
         self.locator_my_companies = LocatorsMyCompaniesPage
         self.locators_your_resume = LocatorsYourResume
 
-
     def click_icon(self):
+        """Clicks on the round icon"""
         self.browser.click_element(self.locators.ICON)
 
     def check_dropdown(self):
@@ -20,6 +20,7 @@ class Header():
         return flag == 'true'
 
     def select_option(self, pick_item):
+        """The pick_item is default string parameter which accepts only 'Log in', 'Profile', 'Log out' values"""
         values = ('Log in', 'Profile', 'Log out')
         if pick_item not in values:
             raise Exception('Incorrect value for click_dropdown function')
@@ -45,6 +46,7 @@ class Header():
         return log_out.text == 'Log out'
 
     def person_verify(self, person):
+        """Returns True if the number of elements on the navbar equals to the person_criteria"""
         person_criteria = {'ADMIN': 3, 'USER': 4, 'COWNER': 6}
         current_person = 2
         while current_person < person_criteria[person]:
