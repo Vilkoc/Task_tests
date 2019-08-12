@@ -1,6 +1,5 @@
 from config import EXTRA_LONG_PAUSE
 from locators import LocatorsVacancies
-from data_tests import guest_data
 
 
 class VacanciesPage():
@@ -31,12 +30,6 @@ class VacanciesPage():
 
     def view_details(self):
         self.browser.click_element(self.locators.DETAILS)
-
-    def check_pagination_next(self):
-        self.browser.click_element_by_text(self.locators.PAGINATION_NEXT, guest_data.NEXT)
-
-    def check_pagination_previous(self):
-        self.browser.click_element_by_text(self.locators.PAGINATION_PREVIOUS, guest_data.PREVIOUS)
 
     def details_text(self):
         tmp = self.browser.pop_up_element(self.locators.VACANCY_INFO).text

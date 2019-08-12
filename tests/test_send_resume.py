@@ -1,13 +1,23 @@
-from init import SeleniumTestBase
+from pages.header import Header
+from pages.sign_in_page import SignInPage
+from pages.vacancies_page import VacanciesPage
+from pages.view_vacancy_page import ViewVacancyPage
+from pages.preview_resume_page import PreviewResumePage
+import pytest
+from init import setup
 
 
-class TestSendResume(SeleniumTestBase):
-
-    def setUp(self):
-        self.header.select_option("Log in")
-        self.sign_in_page.login("USER")
+@pytest.mark.usefixtures('setup')
+class TestSendResume():
 
     def test_send_resume(self):
+        self.header = Header(self.browser)
+        self.sign_in_page = SignInPage(self.browser)
+        self.vacancies_page = VacanciesPage(self.browser)
+        self.view_vacancy_page = ViewVacancyPage(self.browser)
+        self.preview_resume_page = PreviewResumePage(self.browser)
+        self.header.select_option("Log in")
+        self.sign_in_page.login("USER")
         self.header.go_to_allVacancies()
 
         self.vacancies_page.click_viewDetails_button()
