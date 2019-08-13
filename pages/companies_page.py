@@ -47,10 +47,10 @@ class CompaniesPage():
         self.browser.driver.execute_script("window.scrollTo(0, 0);")
         self.browser.click_element(self.locators.SHOW_CLAIMS_BUTTON)
 
-    def description(self):
+    def find_description(self, des):
         element = self.browser.get_elements(self.locators.DESCRIPTION)
         description = None
         for i in element:
-            if i.text == 'Text':
+            if i.text == des:
                 description = i.text
         return description
