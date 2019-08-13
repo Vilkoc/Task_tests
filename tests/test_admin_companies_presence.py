@@ -1,14 +1,10 @@
-import time
-
-from init import BasePage
-from pages.companies_page import CompaniesPage
-from pages.sign_in_page import SignInPage
+from init import SeleniumTestBase
 
 
-class TestAdmin(BasePage):
+class TestAdmin(SeleniumTestBase):
 
-    def test_admin_companies_presence(self, person='ADMIN'):
-        signin = SignInPage(self)
-        signin.login(person)
-        companies = CompaniesPage(self)
-        assert companies.companies_are_visible()
+    def test_admin_companies_presence(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('ADMIN')
+
+        assert self.companies_page.companies_are_visible()

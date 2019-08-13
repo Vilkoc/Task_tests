@@ -132,3 +132,14 @@ class DriverWrapper(object):
             data_list.append(a)
         return data_list
 
+    def get_element_with_time_delay(self, locator):
+        """Returns all elements for the specific locator"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.driver.find_elements(*locator)
+
+    def pop_up_element(self, locator):
+        """Returns element from pop-up window"""
+        WebDriverWait(self.driver, self.default_timeout).until(EC.visibility_of_element_located(locator))
+        return self.driver.find_element(*locator)
+
+

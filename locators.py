@@ -133,9 +133,11 @@ class LocatorsViewCompany(object):
     VACANCY_DETAILS_BUTTON = (By.PARTIAL_LINK_TEXT, "View details")
     SIMPLE_VACANCY_DIV = (By.CSS_SELECTOR, "div.simpleVacancy")
     CLAIM_BUTTON = (By.CSS_SELECTOR, 'button[class = "btn btn-warning"]')
+    CANCEL_CLAIM_BTN = (By.CSS_SELECTOR, 'input[value="Cancel"]')
     TITLE = (By.CSS_SELECTOR, 'select[id="title"]>option')
     DESCRIPTION_FIELD = (By.ID, 'description')
     SEND_CLAIM_BUTTON = (By.CSS_SELECTOR, 'input[value="Claim"]')
+    DESCRIPTION_OF_CLAIM = 'Description'
 
 
 class LocatorsCreateVacancyPage(object):
@@ -201,17 +203,7 @@ class LocatorsEditResume(object):
     GET_TEXT_FROM_FIELD = 'ng-reflect-model'
 
 
-class LocatorsViewCompany(object):
-    CLAIM_BUTTON = (By.CSS_SELECTOR, 'button[class = "btn btn-warning"]')
-    TITLE = (By.CSS_SELECTOR, 'select[id="title"]>option')
-    DESCRIPTION_FIELD = (By.ID, 'description')
-    SEND_CLAIM_BUTTON = (By.CSS_SELECTOR, 'input[value="Claim"]')
 
 
-class LocatorsCompaniesDetailsPage:
-    CREATE_CLAIM_BTN = (By.CSS_SELECTOR, 'button[class="btn btn-warning"]')
-    CANCEL_CLAIM_BTN = (By.CSS_SELECTOR, 'input[value="Cancel"]')
-    SEND_CLAIM_BTN = (By.CSS_SELECTOR, 'input[class="btn btn-danger"]')
-    SELECT_TITLE = (By.CSS_SELECTOR, 'option[value="None"')
-    CLAIM_DESCRIPTION = (By.CSS_SELECTOR, '#description')
-    DESCRIPTION_OF_CLAIM = 'Description'
+
+

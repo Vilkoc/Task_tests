@@ -1,18 +1,14 @@
 import unittest
-from init import BasePage
-from pages.companies_page import CompaniesPage
-from pages.sign_in_page import SignInPage
+from init import SeleniumTestBase
 
 
-class TestAdminBlockCo(BasePage):
-
-    def __init__(self):
-        self.signin = SignInPage(self)
+class TestAdminBlockCo(SeleniumTestBase):
 
     @unittest.skip('skip due to: "https://ssu-jira.softserveinc.com/browse/RAB-86"')
-    def test_block_co(self, person='ADMIN'):
+    def test_block_co(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('ADMIN')
 
-        self.signin.login(person)
-        companies = CompaniesPage(self)
-        companies.block_co()
-        assert companies.confirm_with_popup() == "Company blocked"
+        self.companies_page.block_co()
+
+        assert self.companies_page.confirm_with_popup() == "Company blocked"

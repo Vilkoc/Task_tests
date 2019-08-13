@@ -44,5 +44,5 @@ class CreateVacancyPage():
 
     def read_vacancy_data(self):
         vacancy_data = self.browser.read_data_in_textbox(self.locators.VACANCY_FIELDS,
-                                              self.loc.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
+                                                         self.loc.ATTRIBUTE_OF_COMPANIES_VACANCIES_TEXTBOXES)
         return vacancy_data
