@@ -5,9 +5,9 @@ from data_tests import guest_data
 class HotVacanciesPage():
     """On this page users can view details of hot vacancies"""
 
-    def __init__(self, base_obj):
+    def __init__(self, browser):
         self.locators = LocatorsHotVacancies
-        self.browser = base_obj.browser
+        self.browser = browser
 
     def view_details(self):
         self.browser.click_element(self.locators.HOT_DETAILS)
