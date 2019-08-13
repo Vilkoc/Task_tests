@@ -144,7 +144,7 @@ class DriverWrapper(object):
             elements = self.get_elements(locator)
             for element in elements:
                 try:
-                    if  element.text == text:
+                    if element.text == text:
                         return element
                 except:
                     pass

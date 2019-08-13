@@ -2,7 +2,6 @@ from methods import DriverWrapper
 from driver_selection import WebdriverSelection
 from config import URL, TIMEOUT
 from pages.header import Header
-from pages.user_profile_page import UserPage
 from pages.sign_in_page import SignInPage
 from pages.vacancies_page import VacanciesPage
 from pages.forgot_password_page import ForgotPasswordPage
@@ -48,7 +47,6 @@ def resource_setup(request):
     page.sign_in_page = SignInPage(browser)
     page.forgot_password = ForgotPasswordPage(browser)
     page.confirmation_password = ConfirmPassword(browser)
-    page.user_profile_page = UserPage(browser)
     page.vacancies = VacanciesPage(browser)
     def resource_teardown():
         print('finish fix')

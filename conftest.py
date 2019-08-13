@@ -1,0 +1,1 @@
+from aplication import resource_setup
