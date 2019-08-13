@@ -1,0 +1,4 @@
+selenium
+psycopg2
+parameterized
+nose

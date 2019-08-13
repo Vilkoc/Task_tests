@@ -1,12 +1,18 @@
 from base64 import b64decode as decode
 
-TIMEOUT = 10
+TIMEOUT = 30
+WEBDRIVER = 'Chrome'
+URL = 'http://localhost:4200'
 
-PAUSE = 2
-EXTRA_LONG_PAUSE = 120
+PAUSE = 1
+EXTRA_LONG_PAUSE = 20
 
-EMAIL = "rabotynet.test@gmail.com"
-FROM_PWD = decode(b'cm9tYV9leHBlcnQ=').decode()
+EMAIL_SIGNUP = "rabotynet.test@gmail.com"
+FROM_SIGNUP = decode(b'cm9tYV9leHBlcnQ=').decode()
+
+EMAIL_FORGOT_PASSWORD = "rabotynet.test.fp@gmail.com"
+FROM_FORGOT_PASSWORD = decode(b'cm9tYV9leHBlcnQ=').decode()
+
 SMTP_SERVER = "imap.gmail.com"
 
 DB_FILE = 'backup.sql'
@@ -15,13 +21,12 @@ DB_USER = 'postgres'
 DB_PASS = 'postgres'
 DB_HOST = 'localhost'
 
-
 EMAIL_SUBJECT_SIGNUP = "Registration on website RabotyNet"
 USERNAME_SIGNUP = 'rabotynet.test@gmail.com'
 PASSWORD = 'Qdrwbj!23'
 PASSWORD_INCORRECT = 'vdeytvdv'
 
-EMAIL_SUBJECT = 'Restore password on website RabotyNet'
-USERNAME_PASSW_RECOVERY = 'rabotynet.test@gmail.com'
+EMAIL_SUBJECT_PASSW_RECOVERY = 'Restore password on website RabotyNet'
+USERNAME_PASSW_RECOVERY = 'rabotynet.test.fp@gmail.com'
 OLD_PASSWORD = 'Qdrwbj!23'
 NEW_PASSWORD = 'Qdrwbj1@3'

@@ -3,3 +3,14 @@ user_profile.py
 .xml
 .iml
 .pyc
+tests/ssstest_login_out.py
+test_login_out.py
+musor.py
+test_musor.py
+__pycache__/
+pages/__pycache__
+sample.png
+tests/sample.png
+
+
+
