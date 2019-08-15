@@ -1,7 +1,5 @@
 from init import SeleniumTestBase
 from data_tests.user_data import user_data_rab_26 as entry
-import unittest
-from config import URL
 
 
 # class TestNameNegative(SeleniumTestBase):
