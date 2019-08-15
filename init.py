@@ -1,6 +1,6 @@
 from driver_wrapper import DriverWrapper
 from driver_selection import WebdriverSelection
-from config import URL, TIMEOUT, WEBDRIVER
+from config import URL, TIMEOUT
 from pages.company_details_page import CompanyDetailsPage
 from pages.confirm_password_page import ConfirmPassword
 from pages.forgot_password_page import ForgotPasswordPage
@@ -29,7 +29,7 @@ class SeleniumTestBase(TestCase):
     @classmethod
     def setUpClass(cls):
         prepare_db()
-        driver = WebdriverSelection().get_webdriver(WEBDRIVER)
+        driver = WebdriverSelection().get_webdriver(os.getenv('BROWSER'))
         driver.maximize_window()
         driver.get(URL)
         cls.browser = DriverWrapper(driver, TIMEOUT)

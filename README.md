@@ -11,3 +11,9 @@
 6.2. into tomcat/webapps/front run npm start  ("ng serve") // initialize project
 7. open http://localhost:4200/
 
+
+Enviroment variable:
+
+BROWSER = Chrome
+
+

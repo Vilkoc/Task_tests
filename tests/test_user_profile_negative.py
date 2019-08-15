@@ -77,6 +77,4 @@ class TestAddressNegative(SeleniumTestBase):
         self.routine(field)
 
     def tearDown(self):
-        print("tear down")
         self.header.select_option('Log out')
-        print('Home page')
