@@ -2,77 +2,118 @@ from init import SeleniumTestBase
 from data_tests.user_data import user_data_rab_26 as entry
 
 
-# class TestNameNegative(SeleniumTestBase):
-#
-#     def setUp(self):
-#         self.header.select_option('Log in')
-#         self.sign_in_page.login('USER')
-#         self.header.select_option('Profile')
-#
-#     def routine(self, field):
-#         valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
-#         button_disabled = self.user_profile_page.disabled_update_profile_button()
-#         assert not valid_entry and button_disabled
-#
-#     def test_first_name(self, field='FIRST_NAME'):
-#         self.routine(field)
-#
-#     def test_last_name(self, field='LAST_NAME'):
-#         self.routine(field)
-#
-#     def tearDown(self):
-#         self.header.select_option('Log out')
-
-
-# class TestContactsNegative(SeleniumTestBase):
-#
-#     def setUp(self):
-#         self.header.select_option('Log in')
-#         self.sign_in_page.login('USER')
-#         self.header.select_option('Profile')
-#
-#     def routine(self, field):
-#         valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
-#         button_disabled = self.user_profile_page.disabled_update_profile_button()
-#         assert not valid_entry and button_disabled
-#
-#     @unittest.skip("skip due to bug according to 'https://ssu-jira.softserveinc.com/browse/RAB-80'")
-#     def test_email(self, field='EMAIL'):
-#         self.routine(field)
-#
-#     def test_phone(self, field='PHONE'):
-#         self.routine(field)
-#
-#     def tearDown(self):
-#         self.header.select_option('Log out')
-
-
-class TestAddressNegative(SeleniumTestBase):
+class TestFirstName(SeleniumTestBase):
     def setUp(self):
         self.header.select_option('Log in')
         self.sign_in_page.login('USER')
         self.header.select_option('Profile')
 
-    def routine(self, field):
+    def test_first_name(self, field='FIRST_NAME'):
         valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
-        print('Entered', field)
         button_disabled = self.user_profile_page.disabled_update_profile_button()
-        assert not valid_entry and button_disabled
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestLastName(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
+
+    def test_first_name(self, field='LAST_NAME'):
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestCountry(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
 
     def test_country(self, field='COUNTRY'):
-        self.routine(field)
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestPhone(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
+
+    def test_phone(self, field='PHONE'):
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestCity(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
 
     def test_city(self, field='CITY'):
-        self.routine(field)
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestStreet(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
 
     def test_street(self, field='STREET'):
-        self.routine(field)
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestBuilding(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
 
     def test_building(self, field='BUILDING'):
-        self.routine(field)
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestApartment(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
+
+    def test_apartment(self, field='APARTMENT'):
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled
+
+
+class TestZipCode(SeleniumTestBase):
+    def setUp(self):
+        self.header.select_option('Log in')
+        self.sign_in_page.login('USER')
+        self.header.select_option('Profile')
 
     def test_zip_code(self, field='ZIP_CODE'):
-        self.routine(field)
-
-    def tearDown(self):
-        self.header.select_option('Log out')
+        valid_entry = self.user_profile_page.enter_data_textbox(field, entry[field])
+        button_disabled = self.user_profile_page.disabled_update_profile_button()
+        assert not valid_entry
+        assert button_disabled

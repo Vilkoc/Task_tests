@@ -25,7 +25,7 @@ class Header():
         if pick_item not in values:
             raise Exception('Incorrect value for click_dropdown function')
         self.click_icon()
-        if self.check_dropdown():
+        while self.check_dropdown():
             self.browser.click_element_by_text(self.locators.DROPDOWN, pick_item)
         else:
             self.click_icon()
